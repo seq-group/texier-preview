@@ -1,4 +1,4 @@
-<!doctype html><meta charset="utf-8"><meta name="robots" content="noindex,nofollow"><meta name="viewport" content="width=device-width,initial-scale=1"><meta charset="utf-8">
+<!doctype html><html lang="en-AU"><meta name="robots" content="noindex,nofollow"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta property="og:image" content="https://seq-group.github.io/texier-preview/img/og.jpg"><meta name="twitter:card" content="summary_large_image"><meta charset="utf-8">
 <title>Texier: numbered golf headcovers, made by hand in Bordeaux</title>
 <meta name="description" content="Golf headcovers made by hand in France, in Bordeaux, from Italian and French wool, each piece individually numbered. Born on the Gold Coast, stocked in Australia.">
 <meta property="og:title" content="Texier"><meta property="og:description" content="Numbered golf headcovers, made by hand in France. Born on the Gold Coast."><meta property="og:type" content="website"><meta name="theme-color" content="#141311">
@@ -8,6 +8,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,400;6..96,500;6..96,600&family=Jost:wght@300;400;500&family=Herr+Von+Muellerhoff&family=Fraunces:opsz,wght@9..144,740&display=swap">
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","name":"Texier","description":"Numbered golf headcovers and accessories, made by hand in Bordeaux, France. Born on the Gold Coast.","areaServed":"AU","foundingLocation":"Gold Coast, Australia"},{"@type":"WebSite","name":"Texier","inLanguage":"en-AU"}]}</script>
 <style>
 /* A printed catalogue, not a template: paper, ink, one wine red (Bordeaux) used like a wax seal,
    and handwriting in blue-black fountain-pen ink. Garamond for reading, Caslon Display for numbers and the house name. */
@@ -87,7 +88,7 @@ button { font: inherit; color: inherit; }
 
 /* ---------- opening ---------- */
 .hero { position: relative; height: 100svh; min-height: 560px; color: #fff; overflow: hidden; background: var(--night); }
-.hero .ph { position: absolute; inset: -6% 0; background: url(img/hero.jpg) center 58% / cover; filter: none; transform: scale(1.14); will-change: transform; }
+.hero .ph { position: absolute; inset: -6% 0; filter: none; transform: scale(1.14); will-change: transform; }
 .ready .hero .ph { animation: heroin 2.8s var(--ease) both, kb 30s 2.8s ease-in-out infinite alternate; }
 @keyframes heroin { from { transform: scale(1.14); opacity: .0; } to { transform: scale(1); opacity: 1; } }
 @keyframes kb { from { transform: scale(1) translate(0, 0); } to { transform: scale(1.075) translate(-1.1%, -.7%); } }
@@ -174,7 +175,7 @@ button { font: inherit; color: inherit; }
 .reg a.go { font: 500 14px var(--sans); }
 .reg .meter { margin-top: 36px; display: grid; gap: 10px; max-width: 460px; }
 .reg .bar2 { height: 1px; background: #3A3733; } .reg .bar2 b { display: block; height: 100%; width: 0; background: var(--paper); transition: width 1.6s var(--ease); }
-.reg small { color: #9C958A; font: 400 13px var(--sans); }
+.reg small { color: #B3AC9F; font: 400 13px var(--sans); }
 
 /* ---------- the wool ---------- */
 .wool { padding-block: clamp(80px, 14vh, 170px); }
@@ -222,9 +223,9 @@ button { font: inherit; color: inherit; }
 .closing .done { margin: 12px 0 0; color: var(--pen); font-style: italic; min-height: 1.5em; }
 footer { background: var(--night); color: #CFC8BB; padding-block: clamp(56px, 8vh, 90px) 28px; }
 footer .g { display: grid; grid-template-columns: 1.6fr 1fr 1fr; gap: 40px; }
-footer h4 { font: 500 11.5px var(--sans); letter-spacing: .14em; text-transform: uppercase; color: #8F887C; margin: 0 0 14px; }
+footer h4 { font: 500 11.5px var(--sans); letter-spacing: .14em; text-transform: uppercase; color: #A59E91; margin: 0 0 14px; }
 footer ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 8px; font-size: 16px; }
-footer .legal { margin-top: 64px; padding-top: 18px; border-top: 1px solid #34312C; display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; font: 400 12.5px var(--sans); color: #8F887C; }
+footer .legal { margin-top: 64px; padding-top: 18px; border-top: 1px solid #34312C; display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; font: 400 12.5px var(--sans); color: #A59E91; }
 footer .lock { font-size: 34px; align-items: flex-start; padding-left: 1.75em; color: var(--paper); }
 footer .lock .sig { color: #C9CCDB; }
 
@@ -472,7 +473,7 @@ footer .lock .sig { color: #C9CCDB; }
 .sheet.is-open { visibility: visible; opacity: 1; transition: opacity .45s var(--ease); }
 .sheet a { font: 400 clamp(36px, 10vw, 54px)/1.2 var(--serif); padding: 6px 0; opacity: 0; transform: translateY(16px); transition: opacity .6s var(--ease), transform .6s var(--ease); }
 .sheet.is-open a { opacity: 1; transform: none; transition-delay: calc(var(--i, 0) * 70ms + .15s); }
-.sheet button { min-height: 44px; } .sheet .sfoot { margin: auto 0 0; font: italic 400 17px var(--serif); color: #B7B0A3; }
+.sheet button { min-height: 44px; } .sheet .sfoot { margin: auto 0 0; font: italic 400 17px var(--serif); color: #C4BDB0; }
 .gdots, .mbar, .msum { display: none; }
 .toast { bottom: calc(24px + env(safe-area-inset-bottom, 0px)); }
 @media (max-width: 700px) {
@@ -526,7 +527,7 @@ body { font: 300 clamp(16.5px, 1.1vw, 18px)/1.72 var(--body); letter-spacing: .0
 .rmap .on { font: 500 9px var(--body); font-style: normal; letter-spacing: .34em; fill: var(--pen); opacity: .55; }
 .mcap { font: 300 clamp(15px, 1.25vw, 17.5px)/1.6 var(--body); font-style: normal; color: var(--mute); letter-spacing: .01em; max-width: 52em; margin-inline: auto; }
 .story .sl, .sheet .sfoot { font: 400 11.5px/1.8 var(--body); letter-spacing: .26em; text-transform: uppercase; font-style: normal; color: var(--mute); }
-.sheet .sfoot { color: #9C958A; }
+.sheet .sfoot { color: #B3AC9F; }
 .gal .cap { font: 300 13.5px/1.5 var(--body); font-style: normal; color: var(--mute); }
 .hero .hello { font: 300 clamp(14px, 1.2vw, 17px)/1.4 var(--body); font-style: normal; letter-spacing: .06em; color: rgba(255,255,255,.88); }
 .ph { font-style: normal; }
@@ -535,7 +536,7 @@ body { font: 300 clamp(16.5px, 1.1vw, 18px)/1.72 var(--body); letter-spacing: .0
 .btn, .cta { letter-spacing: .12em; text-transform: uppercase; font-weight: 400; font-size: 12.5px; }
 .card .pr, .price, .buy .price { font-weight: 300; font-variant-numeric: lining-nums tabular-nums; }
 
-.rgl { display: block; margin-bottom: 14px; color: #8F887C; }
+.rgl { display: block; margin-bottom: 14px; color: #A59E91; }
 .nmnote { margin: -8px 0 0; font: 300 14px/1.6 var(--body); color: var(--mute); max-width: 36em; }
 .mine2 .nn2 { letter-spacing: .04em; }
 
@@ -563,7 +564,7 @@ body { font: 300 clamp(16.5px, 1.1vw, 18px)/1.72 var(--body); letter-spacing: .0
 }
 .closing { background: var(--night); color: var(--paper); border-top: 0; padding-block: clamp(90px, 16vh, 200px) clamp(60px, 10vh, 120px); } .closing::before { display: none; }
 .closing .h2 { font-size: clamp(34px, 4.6vw, 74px); max-width: 14ch; }
-.closing form { border-bottom-color: #6B655B; } .closing input { color: var(--paper); } .closing input::placeholder { color: #8F887C; } .closing form button { color: var(--paper); } .closing .done { color: #C9CCDB; }
+.closing form { border-bottom-color: #6B655B; } .closing input { color: var(--paper); } .closing input::placeholder { color: #A59E91; } .closing form button { color: var(--paper); } .closing .done { color: #C9CCDB; }
 footer { border-top: 1px solid #2A2723; overflow: hidden; }
 .bigmark { font: 740 clamp(60px, 17vw, 320px)/.84 var(--logo); font-variation-settings: "opsz" 144, "SOFT" 0, "WONK" 0; letter-spacing: .08em; padding-left: .08em; color: #272420; text-align: center; margin-top: clamp(40px, 6vw, 90px); user-select: none; white-space: nowrap; }
 @media (max-width: 900px) {
@@ -642,7 +643,7 @@ html.smooth { scroll-behavior: auto; }
 .mega .mi b { font: 500 16px var(--serif); letter-spacing: -.01em; margin-top: 6px; } .mega .mi small { font: 300 12.5px var(--body); color: var(--mute); } .mega .mi.out { opacity: .55; }
 .mega .mall { font: 400 11.5px var(--body); letter-spacing: .2em; text-transform: uppercase; border-bottom: 1px solid var(--ink); padding-bottom: 3px; align-self: end; white-space: nowrap; }
 @media (max-width: 900px) { .mega { display: none; } }
-.sheet .subs { display: flex; flex-wrap: wrap; gap: 4px 18px; padding: 0 0 12px; opacity: 0; transition: opacity .6s var(--ease) .35s; } .sheet.is-open .subs { opacity: 1; } .sheet .subs a { font: 300 15px var(--body); letter-spacing: .04em; color: #B7B0A3; opacity: 1; transform: none; padding: 2px 0; }
+.sheet .subs { display: flex; flex-wrap: wrap; gap: 4px 18px; padding: 0 0 12px; opacity: 0; transition: opacity .6s var(--ease) .35s; } .sheet.is-open .subs { opacity: 1; } .sheet .subs a { font: 300 15px var(--body); letter-spacing: .04em; color: #C4BDB0; opacity: 1; transform: none; padding: 2px 0; }
 
 .covers { padding-block: clamp(60px, 9vh, 110px) clamp(80px, 12vh, 150px); } .covers .head { margin-bottom: clamp(24px, 3vw, 40px); }
 @media (min-width: 901px) {
@@ -706,7 +707,7 @@ footer .g { grid-template-columns: 1.5fr repeat(4, 1fr); } footer .legal { justi
 @media (prefers-reduced-motion: reduce) { .make { height: auto; } .makein { position: static; height: auto; grid-template-columns: 1fr; } .mk-img { height: 60vh; } .mk-stack { display: block; } .ch { opacity: 1; visibility: visible; transform: none; margin: 28px 0; } .mk-bar, .mk-count { display: none; } }
 
 /* ---------- the marks ---------- */
-.mark { display: block; overflow: visible; } .mset { display: flex; align-items: center; gap: clamp(14px, 2vw, 28px); } .mset.v { flex-direction: column; } .mset figure { margin: 0; display: grid; justify-items: center; gap: 10px; } .mset small { font: 400 9.5px var(--body); letter-spacing: .26em; text-transform: uppercase; color: #9C958A; white-space: nowrap; }
+.mark { display: block; overflow: visible; } .mset { display: flex; align-items: center; gap: clamp(14px, 2vw, 28px); } .mset.v { flex-direction: column; } .mset figure { margin: 0; display: grid; justify-items: center; gap: 10px; } .mset small { font: 400 9.5px var(--body); letter-spacing: .26em; text-transform: uppercase; color: #B3AC9F; white-space: nowrap; }
 .bigwrap .rstamp { position: static !important; margin-top: clamp(78px, 7vw, 100px); opacity: 1; line-height: 0; } .bigwrap .rstamp .mset { align-items: flex-start; }
 .mk-img .bigstamp .mset { align-items: center; }
 .mine2 { gap: 20px; } .mine2 .mset { flex: none; } .env .ecard .tstamp { right: 5%; bottom: 7%; } .env .ecard .tstamp .mset { gap: 8px; }
@@ -815,7 +816,7 @@ small { font-size: 11.5px; }
 .bigmark { max-width: 100%; overflow: hidden; padding-right: 0; }
 
 /* the header adapts: a scrim over the photograph, paper over light sections, smoked glass over dark ones */
-.bar::before { content: ""; position: absolute; left: 0; right: 0; top: 0; height: 150px; pointer-events: none; background: linear-gradient(180deg, rgba(10,9,8,.34), rgba(10,9,8,.14) 55%, transparent); opacity: 1; transition: opacity .5s; z-index: -1; }
+.bar::before { content: ""; position: absolute; left: 0; right: 0; top: 0; height: 150px; pointer-events: none; background: linear-gradient(180deg, rgba(10,9,8,.5), rgba(10,9,8,.22) 55%, transparent); opacity: 1; transition: opacity .5s; z-index: -1; }
 .bar.solid::before { opacity: 0; }
 .bar.solid { background: rgba(244,241,235,.92); -webkit-backdrop-filter: blur(14px) saturate(1.2); backdrop-filter: blur(14px) saturate(1.2); }
 .bar.solid.dk { background: rgba(20,19,17,.78); color: #F4F1EB; box-shadow: 0 1px 0 rgba(255,255,255,.08); }
@@ -832,11 +833,11 @@ small { font-size: 11.5px; }
 /* ---------- the register page ---------- */
 .reg .g { align-items: center; grid-template-columns: 1.1fr 1fr; gap: clamp(40px, 6vw, 110px); }
 .reg .regr { max-width: 560px; } .reg .regr h3 { margin-bottom: 14px; } .reg .regr > p { margin: 0 0 clamp(22px, 2.6vw, 34px); max-width: 34em; }
-.rtab { width: 100%; border-collapse: collapse; font-variant-numeric: tabular-nums; } .rtab caption { text-align: left; padding-bottom: 12px; color: #8F887C; border-bottom: 1px solid #5A554D; }
+.rtab { width: 100%; border-collapse: collapse; font-variant-numeric: tabular-nums; } .rtab caption { text-align: left; padding-bottom: 12px; color: #A59E91; border-bottom: 1px solid #5A554D; }
 .rtab td { padding: 13px 10px 13px 0; border-bottom: 1px solid #2E2B27; vertical-align: baseline; } .rtab .no { font: 400 22px var(--num); width: 98px; color: #F4F1EB; font-optical-sizing: none; font-variation-settings: "opsz" 8; font-weight: 500; }
-.rtab .pc { font: 300 15.5px var(--body); color: #D8D1C3; } .rtab .dt { text-align: right; font: 400 11.5px var(--body); letter-spacing: .18em; text-transform: uppercase; color: #8F887C; padding-right: 0; }
+.rtab .pc { font: 300 15.5px var(--body); color: #D8D1C3; } .rtab .dt { text-align: right; font: 400 11.5px var(--body); letter-spacing: .18em; text-transform: uppercase; color: #A59E91; padding-right: 0; }
 .rtab tr.cur .no { color: #D9C8A5; } .rtab tr.cur .pc { color: #F4F1EB; } .rtab tr { transition: background .4s; } .rtab tr:hover td { background: rgba(255,255,255,.03); }
-.rfoot { display: flex; justify-content: space-between; align-items: baseline; gap: 16px; flex-wrap: wrap; margin-top: 20px; font: 300 13.5px var(--body); color: #8F887C; } .rfoot a { color: #F4F1EB; font: 500 11.5px var(--body); letter-spacing: .18em; text-transform: uppercase; }
+.rfoot { display: flex; justify-content: space-between; align-items: baseline; gap: 16px; flex-wrap: wrap; margin-top: 20px; font: 300 13.5px var(--body); color: #A59E91; } .rfoot a { color: #F4F1EB; font: 500 11.5px var(--body); letter-spacing: .18em; text-transform: uppercase; }
 .reg .rstamp, .reg .meter { display: none; }
 .regline .stm { opacity: .9; }
 @media (max-width: 900px) { .reg .g { grid-template-columns: 1fr; gap: 56px; } .rtab .no { font-size: 19px; width: 84px; } }
@@ -861,9 +862,9 @@ small { font-size: 11.5px; }
 footer { padding-block: clamp(36px, 5vh, 56px) 18px; }
 footer .g { grid-template-columns: 1.3fr repeat(4, minmax(0, 1fr)); gap: clamp(20px, 3vw, 56px); align-items: start; }
 footer .lock { font-size: 26px; }
-footer h4 { font: 500 10.5px var(--body); letter-spacing: .24em; margin: 4px 0 16px; color: #8A8377; }
+footer h4 { font: 500 10.5px var(--body); letter-spacing: .24em; margin: 4px 0 16px; color: #A59E91; }
 footer ul { gap: 11px; font-size: 14px; } footer ul li, footer ul a { font: 300 14px/1.35 var(--body); color: #C9C2B4; white-space: nowrap; letter-spacing: .01em; } footer ul a:hover { color: #F4F1EB; }
-footer .legal { margin-top: clamp(30px, 4vh, 48px); padding-top: 14px; font: 300 11.5px var(--body); letter-spacing: .06em; color: #7D766A; border-top-color: #2A2723; }
+footer .legal { margin-top: clamp(30px, 4vh, 48px); padding-top: 14px; font: 300 11.5px var(--body); letter-spacing: .06em; color: #A8A194; border-top-color: #2A2723; }
 .bigmark { font-size: clamp(44px, 12.5vw, 220px); margin-top: clamp(14px, 2.4vw, 34px); color: #1F1D1A; line-height: .8; letter-spacing: .12em; padding-left: .12em; height: .62em; overflow: hidden; -webkit-mask-image: linear-gradient(180deg, #000 20%, transparent 100%); mask-image: linear-gradient(180deg, #000 20%, transparent 100%); }
 @media (max-width: 900px) { footer .g { grid-template-columns: 1fr 1fr; gap: 28px 20px; } footer .g > div:first-child { grid-column: 1 / -1; } .closing .g { grid-template-columns: 1fr; } .closing .h2 { max-width: 20ch; } footer ul a, footer ul li { white-space: normal; } }
 
@@ -874,11 +875,11 @@ footer .legal { margin-top: clamp(30px, 4vh, 48px); padding-top: 14px; font: 300
 .sheet button { align-self: auto; margin: 0; font: 400 11px var(--body); letter-spacing: .24em; text-transform: uppercase; padding: 12px 0 12px 16px; min-height: 44px; }
 .sheet .sh-nav { margin-top: clamp(10px, 3vh, 28px); display: grid; align-content: start; }
 .sheet .sh-nav > a { display: flex; justify-content: space-between; align-items: baseline; font: 400 clamp(30px, 8.6vw, 40px)/1.15 var(--serif); letter-spacing: -.02em; padding: 14px 0; border-bottom: 1px solid rgba(255,255,255,.1); font-optical-sizing: none; font-variation-settings: "opsz" 24; color: #F4F1EB; }
-.sheet .sh-nav > a em { font: 400 10.5px var(--body); font-style: normal; letter-spacing: .22em; text-transform: uppercase; color: #8F887C; }
+.sheet .sh-nav > a em { font: 400 10.5px var(--body); font-style: normal; letter-spacing: .22em; text-transform: uppercase; color: #A59E91; }
 .sheet .subs { display: grid; grid-template-columns: 1fr 1fr; gap: 0 18px; padding: 10px 0 16px; border-bottom: 1px solid rgba(255,255,255,.1); }
 .sheet .subs a { font: 300 15.5px/1 var(--body); letter-spacing: .01em; color: #BDB6A8; padding: 11px 0; opacity: 1; transform: none; } .sheet .subs a.all { grid-column: 1 / -1; margin-top: 4px; font: 500 10.5px var(--body); letter-spacing: .24em; text-transform: uppercase; color: #D9C8A5; }
 .sheet .sh-foot { margin-top: auto; padding-top: 20px; display: flex; gap: 28px; } .sheet .sh-foot a { font: 400 11px var(--body); letter-spacing: .24em; text-transform: uppercase; color: #F4F1EB; border-bottom: 1px solid rgba(255,255,255,.35); padding: 4px 0 5px; opacity: 1; transform: none; }
-.sheet .sfoot { margin: 18px 0 0; font: 300 11px/1.7 var(--body); letter-spacing: .16em; text-transform: uppercase; color: #7D766A; }
+.sheet .sfoot { margin: 18px 0 0; font: 300 11px/1.7 var(--body); letter-spacing: .16em; text-transform: uppercase; color: #A8A194; }
 @media (max-height: 640px) { .sheet .sh-nav > a { padding: 8px 0; font-size: 28px; } .sheet .subs a { padding: 8px 0; } }
 
 /* chapter four: the numbered card lies on the wool */
@@ -977,7 +978,7 @@ footer .legal { margin-top: clamp(26px, 3.4vh, 40px); }
 .ni, .needle { display: inline-flex; line-height: 0; } .ni svg { width: 15px; height: 15px; opacity: .55; } .needle svg { width: 28px; height: 28px; }
 .ann .ni { color: rgba(255,255,255,.7); }
 .fneedle { display: inline-flex; width: 18px; height: 18px; opacity: .5; } .fneedle::after { content: ""; width: 100%; height: 100%; background: currentColor; -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Cg fill='none' stroke='%23000' stroke-width='1.5' stroke-linecap='round'%3E%3Cpath d='M9 34 L31 6'/%3E%3Cpath d='M31 34 L9 6'/%3E%3Cellipse cx='29.6' cy='8' rx='1.1' ry='2.4' transform='rotate(38 29.6 8)'/%3E%3Cellipse cx='10.4' cy='8' rx='1.1' ry='2.4' transform='rotate(-38 10.4 8)'/%3E%3C/g%3E%3C/svg%3E") center / contain no-repeat; mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Cg fill='none' stroke='%23000' stroke-width='1.5' stroke-linecap='round'%3E%3Cpath d='M9 34 L31 6'/%3E%3Cpath d='M31 34 L9 6'/%3E%3Cellipse cx='29.6' cy='8' rx='1.1' ry='2.4' transform='rotate(38 29.6 8)'/%3E%3Cellipse cx='10.4' cy='8' rx='1.1' ry='2.4' transform='rotate(-38 10.4 8)'/%3E%3C/g%3E%3C/svg%3E") center / contain no-repeat; }
-footer .legal { align-items: center; } footer .fneedle { color: #8A8377; }
+footer .legal { align-items: center; } footer .fneedle { color: #A59E91; }
 .stk-empty { display: grid; gap: 10px; justify-items: start; padding: 26px 0; border-block: 1px solid var(--rule); margin: 26px 0; } .stk-empty .needle { color: var(--wine); }
 /* Camille, and the owner's note */
 .meet { display: flex; gap: 20px; align-items: flex-start; margin-top: 34px; padding-top: 26px; border-top: 1px solid var(--rule); max-width: 36em; }
@@ -1010,6 +1011,32 @@ footer .legal { align-items: center; } footer .fneedle { color: #8A8377; }
 .bar.solid .ann, .bar.mega-open .ann { display: flex; height: 0; opacity: 0; overflow: hidden; pointer-events: none; }
 .bar { will-change: transform; }
 @media (max-width: 700px) { .ann { height: 30px; } .bar.solid .ann, .bar.mega-open .ann { height: 0; } }
+
+/* ---------- real images, accessibility, phone ---------- */
+.hero .ph img, .bgph img, .mki i img, .im i img, .vi img, .cbg img, .gal .b i img { display: block; width: 100%; height: 100%; object-fit: cover; }
+.bgph, .cbg { overflow: hidden; } .bgph img, .cbg img { position: absolute; inset: 0; }
+.mki i img, .im i img { position: absolute; inset: 0; } .gal .b i { position: relative; overflow: hidden; }
+.skip { position: fixed; left: 12px; top: -60px; z-index: 200; background: var(--ink); color: var(--paper); padding: 12px 16px; font: 500 12px var(--body); letter-spacing: .14em; text-transform: uppercase; transition: top .2s; } .skip:focus { top: 12px; }
+.bar::before { height: 160px; }
+@media (max-width: 900px) {
+  .label, .lab, .rgl, .vl, .mc-txt, .mc-foot, .gl, footer h4, .legal, .services h4, .tabs button, .szr button, .sgl, .jd, .stk, .fship, .note2, .terms, figcaption, small { font-size: max(12px, 1em); }
+  .ann { font-size: 11px; } footer h4, footer .legal, footer .legal span { font-size: 12px; } .mset small { font-size: 11px; }
+  footer ul a, footer ul li { display: inline-block; padding: 11px 0; font-size: 15px; } footer ul { gap: 0; }
+  .tabs button, .szr button, .thsw button, .sty button { min-height: 44px; } .tabs { gap: 6px 14px; }
+  .bar nav a, .bar .menu, .sheet button, .sheet .subs a, .sheet .sh-foot a { min-height: 44px; display: inline-flex; align-items: center; }
+  .cta, .btn, input, select, textarea, .nrow button, .closing form button { min-height: 48px; }
+  .back, .go, .ln.on { display: inline-block; padding: 10px 0; }
+}
+
+@media (max-width: 900px) {
+  footer ul a { min-height: 44px; display: inline-flex; align-items: center; padding: 0; }
+  .go, .back, .ln.on, .hero a.go, .reg a.go { min-height: 44px; display: inline-flex; align-items: center; padding-block: 0; }
+  .sheet .sfoot, .vista .vl, .sheet .subs a.all, .sheet button, .bar .menu, .sheet .sh-nav > a em, .stm small, .por small, .jd { font-size: 12px; }
+  .sheet .subs a { min-height: 44px; } .sheet .sh-foot a { min-height: 44px; display: inline-flex; align-items: center; }
+  .ph, .ph2 { font-size: 12px; } .fld label, .nrow .lab { font-size: 12px; }
+}
+
+@media (max-width: 900px) { .sheet .sh-foot a, .rl .dn, .go, .closing form button, .reg .regr .go, .hero a.go { font-size: 12px; } .jh { flex-direction: column; align-items: flex-start; gap: 8px; } }
 </style>
 
 <svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs><symbol id="sMaison" viewBox="0 -10 266 116">
@@ -1028,6 +1055,7 @@ footer .legal { align-items: center; } footer .fneedle { color: #8A8377; }
 
 <div class="curtain" id="curtain" aria-hidden="true"><div class="lock lk stroke " id="csig" style="--t:1.9s"><div class="sig"><svg class="sigsvg" viewBox="0 -10 266 116" aria-hidden="true"><g transform="skewX(-8) translate(12 0)"><path pathLength="1" d="M4,94 Q6,92 8,90 C18,70 28,22 40,6 C46,-3 51,6 47,22 C42,50 38,70 36,86 C42,62 53,32 63,22 C68,17 70,25 67,37 C64,53 61,70 61,83 C66,72 76,63 86,62 C78,60 69,68 69,77 C69,85 78,86 84,79 C86,76 88,70 89,63 C88,72 87,80 92,84 C98,80 102,68 104,62 C103,72 103,80 108,84 C112,78 116,70 120,64 C124,72 126,78 122,83 C119,86 113,85 112,83 C118,86 126,82 131,74 C134,66 138,63 141,63 C133,62 128,72 130,79 C132,86 142,84 144,76 C146,69 144,63 141,63 C146,63 151,64 156,62 C156,70 155,80 155,86 C159,72 167,60 173,62 C179,64 175,78 178,86 C194,92 226,86 248,70 C256,64 258,57 251,58"/><path class="dot" d="M110,46 c2,-1.5 4,-0.5 3,1.5 c-1,1.5 -3.5,1 -3,-1.5 z"/></g></svg></div><div class="caps">TEXIER</div></div></div>
 
+<a class="skip" href="#main">Skip to content</a>
 <div class="prog2" id="prog2" aria-hidden="true"></div>
 <header class="bar" id="bar"><div class="ann" id="ann" role="note"><span id="ann1">Complimentary delivery over A$300</span><b class="ni"><svg viewBox="0 0 40 40" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M9 34 L31 6"/><path d="M31 34 L9 6"/><ellipse cx="29.6" cy="8" rx="1.1" ry="2.4" transform="rotate(38 29.6 8)"/><ellipse cx="10.4" cy="8" rx="1.1" ry="2.4" transform="rotate(-38 10.4 8)"/></g></svg></b><span class="ann2">Returns within 30 days</span><b class="ni"><svg viewBox="0 0 40 40" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M9 34 L31 6"/><path d="M31 34 L9 6"/><ellipse cx="29.6" cy="8" rx="1.1" ry="2.4" transform="rotate(38 29.6 8)"/><ellipse cx="10.4" cy="8" rx="1.1" ry="2.4" transform="rotate(-38 10.4 8)"/></g></svg></b><span class="ann3">Made by hand in France</span></div><div class="wrap in">
   <button class="menu" id="menu" type="button" aria-label="Open the menu">Menu</button>
@@ -1049,9 +1077,9 @@ footer .legal { align-items: center; } footer .fneedle { color: #8A8377; }
   <p class="sfoot">Born on the Gold Coast. Made in France.</p>
 </div>
 
-<main id="home" class="view">
+<main id="main"><div id="home" class="view">
 <section class="hero" id="top">
-  <div class="ph" id="par"></div><div class="flare" aria-hidden="true"></div><div class="tod" id="tod" aria-hidden="true"></div><div class="cue" aria-hidden="true"></div>
+  <div class="ph" id="par"><img src="img/o/hero-1200.webp" srcset="img/o/hero-800.webp 800w, img/o/hero-1200.webp 1200w, img/o/hero-1600.webp 1600w" sizes="100vw" width="1200" height="900" alt="Low evening sun over a golf green, with long shadows across the fairway" fetchpriority="high" style="object-position:center 58%"></div><div class="flare" aria-hidden="true"></div><div class="tod" id="tod" aria-hidden="true"></div><div class="cue" aria-hidden="true"></div>
   <div class="clocks"><div class="wrap"><span class="gc"><b>Gold Coast</b><span data-tz="Australia/Brisbane">--:--</span></span><span><b>Bordeaux</b><span data-tz="Europe/Paris">--:--</span></span></div></div>
   <div class="copy"><div class="wrap">
     <h1 id="h1">The house signs every piece.</h1>
@@ -1059,7 +1087,7 @@ footer .legal { align-items: center; } footer .fneedle { color: #8A8377; }
   </div></div>
 </section>
 
-<section class="state dark"><div class="bgph" style="background-image:url(img/wool4.jpg)"></div><div class="wrap">
+<section class="state dark"><div class="bgph"><img src="img/o/wool4-1200.webp" srcset="img/o/wool4-800.webp 800w, img/o/wool4-1200.webp 1200w, img/o/wool4-1600.webp 1600w" sizes="100vw" width="1200" height="1600" alt="" loading="lazy" decoding="async"></div><div class="wrap">
   <p id="statement">Rare Italian and French wools, many from limited remnants of luxury textile production, cut and finished by hand in Bordeaux, France, and set with finished leather. Every piece is individually numbered.</p>
   <div class="by rv"><div class="lock lk stroke " id="ssig"><div class="sig"><svg class="sigsvg" viewBox="0 -10 266 116" aria-hidden="true"><g transform="skewX(-8) translate(12 0)"><path pathLength="1" d="M4,94 Q6,92 8,90 C18,70 28,22 40,6 C46,-3 51,6 47,22 C42,50 38,70 36,86 C42,62 53,32 63,22 C68,17 70,25 67,37 C64,53 61,70 61,83 C66,72 76,63 86,62 C78,60 69,68 69,77 C69,85 78,86 84,79 C86,76 88,70 89,63 C88,72 87,80 92,84 C98,80 102,68 104,62 C103,72 103,80 108,84 C112,78 116,70 120,64 C124,72 126,78 122,83 C119,86 113,85 112,83 C118,86 126,82 131,74 C134,66 138,63 141,63 C133,62 128,72 130,79 C132,86 142,84 144,76 C146,69 144,63 141,63 C146,63 151,64 156,62 C156,70 155,80 155,86 C159,72 167,60 173,62 C179,64 175,78 178,86 C194,92 226,86 248,70 C256,64 258,57 251,58"/><path class="dot" d="M110,46 c2,-1.5 4,-0.5 3,1.5 c-1,1.5 -3.5,1 -3,-1.5 z"/></g></svg></div><div class="caps">TEXIER</div></div><span class="label">The Art of the Game</span></div>
 </div></section>
@@ -1069,7 +1097,7 @@ footer .legal { align-items: center; } footer .fneedle { color: #8A8377; }
   <div class="grid" id="grid"></div><div class="gdots" id="gdots" aria-hidden="true"></div><div class="seeall"><a class="go ln on" id="seeall" href="#shop">See all pieces</a></div>
 </div></section>
 
-<section class="making" id="craft" aria-label="The making, in four movements"><div class="wrap"><div class="mkh"><span class="label">The making, in four movements</span></div><div class="mkl"><article class="mkc rv"><div class="mki"><i style="background-image:url(img/loom.jpg)"></i></div><div class="mkt"><span class="no">I</span><h3>Chosen from the remnant.</h3><p>Italian and French mills cut cloth for fashion houses. What remains of the roll reaches the atelier in Bordeaux, in the south-west of France, where it is chosen for its hand and character.</p></div></article><article class="mkc rv"><div class="mki"><i style="background-image:url(img/hands.jpg)"></i></div><div class="mkt"><span class="no">II</span><h3>Cut and matched by hand.</h3><p>Each piece is cut from its own pattern by the hands that will stitch it, the weave aligned across every seam.</p></div></article><article class="mkc rv"><div class="mki"><i style="background-image:url(img/bench.jpg)"></i></div><div class="mkt"><span class="no">III</span><h3>Finished in leather.</h3><p>A leather collar, saddle-stitched. It deepens with every round and, in time, takes on its own patina.</p></div></article><article class="mkc rv"><div class="mki"><i style="background-image:url(img/wool2.jpg)"></i><span class="bigstamp" id="stm4"></span></div><div class="mkt"><span class="no">IV</span><h3>Numbered as it is made.</h3><p>Camille numbers each piece by hand when she finishes it, and writes the number on the card in the box. The number is never chosen: it belongs to the piece.</p></div></article></div></div></section>
+<section class="making" id="craft" aria-label="The making, in four movements"><div class="wrap"><div class="mkh"><span class="label">The making, in four movements</span></div><div class="mkl"><article class="mkc rv"><div class="mki"><i><img src="img/o/loom-800.webp" srcset="img/o/loom-480.webp 480w, img/o/loom-800.webp 800w, img/o/loom-1200.webp 1200w" sizes="(max-width:900px) 100vw, 58vw" width="800" height="1200" alt="A loom strung with cream and brown warp, with olive silk cloth in the foreground" loading="lazy" decoding="async"></i></div><div class="mkt"><span class="no">I</span><h3>Chosen from the remnant.</h3><p>Italian and French mills cut cloth for fashion houses. What remains of the roll reaches the atelier in Bordeaux, in the south-west of France, where it is chosen for its hand and character.</p></div></article><article class="mkc rv"><div class="mki"><i><img src="img/o/hands-800.webp" srcset="img/o/hands-480.webp 480w, img/o/hands-800.webp 800w, img/o/hands-1200.webp 1200w" sizes="(max-width:900px) 100vw, 58vw" width="800" height="534" alt="Hands marking a pattern on leather with a pen" loading="lazy" decoding="async"></i></div><div class="mkt"><span class="no">II</span><h3>Cut and matched by hand.</h3><p>Each piece is cut from its own pattern by the hands that will stitch it, the weave aligned across every seam.</p></div></article><article class="mkc rv"><div class="mki"><i><img src="img/o/bench-800.webp" srcset="img/o/bench-480.webp 480w, img/o/bench-800.webp 800w, img/o/bench-1200.webp 1200w" sizes="(max-width:900px) 100vw, 58vw" width="800" height="1204" alt="A leather card holder on a workbench beside saddler's tools" loading="lazy" decoding="async"></i></div><div class="mkt"><span class="no">III</span><h3>Finished in leather.</h3><p>A leather collar, saddle-stitched. It deepens with every round and, in time, takes on its own patina.</p></div></article><article class="mkc rv"><div class="mki"><i><img src="img/o/wool2-1200.webp" srcset="img/o/wool2-480.webp 480w, img/o/wool2-800.webp 800w, img/o/wool2-1200.webp 1200w, img/o/wool2-1600.webp 1600w" sizes="(max-width:900px) 100vw, 58vw" width="1200" height="1600" alt="Navy plaid wool folded over grey cloth, with the numbered card resting on it" loading="lazy" decoding="async"></i><span class="bigstamp" id="stm4"></span></div><div class="mkt"><span class="no">IV</span><h3>Numbered as it is made.</h3><p>Camille numbers each piece by hand when she finishes it, and writes the number on the card in the box. The number is never chosen: it belongs to the piece.</p></div></article></div></div></section>
 
 <section class="route" id="route"><div class="wrap">
   <div class="head"><h2 class="h2 rv">Born on the Gold Coast. Made in France.</h2><span class="label rv">From France to Australia</span></div>
@@ -1092,7 +1120,7 @@ footer .legal { align-items: center; } footer .fneedle { color: #8A8377; }
   <p class="mcap">Each piece is made by hand in Bordeaux, France, and stocked in Australia, ready to send. The shortest line between the two is about 17,000 km. Everything is sent tracked.</p>
 </div></section>
 
-<section class="vista rv" id="vista2" aria-label="A golf course above the sea"><div class="vi" style="background-image:url(img/golf-sea.jpg);background-position:50% 62%"></div><div class="vc wrap"><span class="vl">Born on the Gold Coast</span></div></section>
+<section class="vista rv" id="vista2" aria-label="A golf course above the sea"><div class="vi"><img src="img/o/golf-sea-1200.webp" srcset="img/o/golf-sea-800.webp 800w, img/o/golf-sea-1200.webp 1200w, img/o/golf-sea-1800.webp 1800w" sizes="100vw" width="1200" height="800" alt="A golf course above the sea at dusk, the flag in the distance" loading="lazy" decoding="async" style="object-position:50% 62%"></div><div class="vc wrap"><span class="vl">Born on the Gold Coast</span></div></section>
 
 <section class="reg" id="register"><div class="wrap g">
   <div class="bigwrap" id="bw"><div class="big" id="count" aria-label="N°0034">N°0000</div></div>
@@ -1104,14 +1132,14 @@ footer .legal { align-items: center; } footer .fneedle { color: #8A8377; }
 <section class="wool" id="wool"><div class="wrap">
   <div class="head"><h2 class="h2 rv">Cloth that may never be woven again.</h2><p class="rv">The wool varies from piece to piece, so there are no named fabrics. Here is some of the cloth in the atelier in Bordeaux, France.</p></div>
   <div class="hs" id="hs"><div class="hsin"><div class="sw">
-    <figure class="rv"><div class="im"><i style="background-image:url(img/wool1.jpg)"></i></div><figcaption>Italian wool, woven</figcaption></figure>
-    <figure class="rv" style="transition-delay:.08s"><div class="im"><i style="background-image:url(img/wool3.jpg)"></i></div><figcaption>Italian wool, terracotta</figcaption></figure>
-    <figure class="rv" style="transition-delay:.16s"><div class="im"><i style="background-image:url(img/tweed.jpg)"></i></div><figcaption>French wool, tweed</figcaption></figure>
+    <figure class="rv"><div class="im"><i><img src="img/o/wool1-800.webp" srcset="img/o/wool1-480.webp 480w, img/o/wool1-800.webp 800w, img/o/wool1-1200.webp 1200w" sizes="(max-width:700px) 50vw, 30vw" width="800" height="1067" alt="Cream and sage woven wool, folded" loading="lazy" decoding="async"></i></div><figcaption>Italian wool, woven</figcaption></figure>
+    <figure class="rv" style="transition-delay:.08s"><div class="im"><i><img src="img/o/wool3-800.webp" srcset="img/o/wool3-480.webp 480w, img/o/wool3-800.webp 800w, img/o/wool3-1200.webp 1200w" sizes="(max-width:700px) 50vw, 30vw" width="800" height="1067" alt="Terracotta wool, folded" loading="lazy" decoding="async"></i></div><figcaption>Italian wool, terracotta</figcaption></figure>
+    <figure class="rv" style="transition-delay:.16s"><div class="im"><i><img src="img/o/tweed-800.webp" srcset="img/o/tweed-480.webp 480w, img/o/tweed-800.webp 800w, img/o/tweed-1200.webp 1200w" sizes="(max-width:700px) 100vw, 30vw" width="800" height="533" alt="Blue and cream tweed, folded" loading="lazy" decoding="async"></i></div><figcaption>French wool, tweed</figcaption></figure>
   </div></div></div>
   
 </div></section>
 
-<section class="vista rv" id="vista3" aria-label="Late sun through the trees on a fairway"><div class="vi" style="background-image:url(img/golf-trees.jpg);background-position:50% 70%"></div><div class="vc wrap"><span class="vl"></span></div></section>
+<section class="vista rv" id="vista3" aria-label="Late sun through the trees on a fairway"><div class="vi"><img src="img/o/golf-trees-1200.webp" srcset="img/o/golf-trees-800.webp 800w, img/o/golf-trees-1200.webp 1200w, img/o/golf-trees-1800.webp 1800w" sizes="100vw" width="1200" height="800" alt="Late sun through tall trees over a fairway" loading="lazy" decoding="async" style="object-position:50% 70%"></div><div class="vc wrap"><span class="vl"></span></div></section>
 
 <section class="story" id="story"><div class="wrap"><div class="g">
   <div class="ph rv"><div class="por"><span class="pi"></span><b>Camille Texier</b><small>Bordeaux, France</small><em>Portrait to come</em></div></div>
@@ -1126,12 +1154,12 @@ footer .legal { align-items: center; } footer .fneedle { color: #8A8377; }
   </div>
 </div></div></section>
 
-</main>
+</div>
 
-<main id="pdp" class="pdp view" hidden></main>
-<main id="co" class="co view" hidden></main>
-<main id="info" class="info view" hidden></main>
-<main id="shop" class="shopv" hidden></main>
+<div id="pdp" class="pdp view" hidden></div>
+<div id="co" class="co view" hidden></div>
+<div id="info" class="info view" hidden></div>
+<div id="shop" class="shopv" hidden></div></main>
 
 <section class="qt" id="qt" hidden><div class="wrap"><p class="qq" id="qq"></p><p class="qb" id="qb"></p></div></section>
 
@@ -1144,7 +1172,7 @@ footer .legal { align-items: center; } footer .fneedle { color: #8A8377; }
   <div><h4>Secure payment</h4><p>Cards, Apple Pay and Shop Pay.</p></div>
 </div></section>
 
-<section class="closing" id="closing"><div class="cbg" style="background-image:url(img/golf-coast.jpg)"></div><div class="wrap g"><div><h2 class="h2">Be among the first to hear when new pieces leave the atelier.</h2></div><div><form id="news"><label class="sr" for="em">Email</label><input id="em" type="email" placeholder="Your email" required autocomplete="email"><button type="submit">Subscribe</button></form><p class="done" id="done" aria-live="polite"></p></div></div></section>
+<section class="closing" id="closing"><div class="cbg"><img src="img/o/golf-coast-1200.webp" srcset="img/o/golf-coast-800.webp 800w, img/o/golf-coast-1200.webp 1200w, img/o/golf-coast-1800.webp 1800w" sizes="100vw" width="1200" height="800" alt="" loading="lazy" decoding="async"></div><div class="wrap g"><div><h2 class="h2">Be among the first to hear when new pieces leave the atelier.</h2></div><div><form id="news"><label class="sr" for="em">Email</label><input id="em" type="email" placeholder="Your email" required autocomplete="email"><button type="submit">Subscribe</button></form><p class="done" id="done" aria-live="polite"></p></div></div></section>
 
 <footer id="foot"><div class="wrap"><div class="g">
   <div><div class="lock"><div class="sig"><svg class="sigsvg" viewBox="0 -10 266 116" aria-hidden="true"><use href="#sMaison"/></svg></div><div class="caps">TEXIER</div></div></div>
@@ -1172,16 +1200,16 @@ footer .legal { align-items: center; } footer .fneedle { color: #8A8377; }
   /* ---------- the range (preview prices and numbers are examples) ---------- */
   var PH = {}; /* optional stand-in photographs per piece: { id: { a: main, b: close-up } } */
   var PIECES = [
-    { id: "bois-n1", name: "Bois N°1", club: "Driver cover", type: "headcover", kind: "driver", wool: "img/wool2.jpg", price: 245, on: "img/vintagebag.jpg", fit: "Fits drivers up to 460 cc." },
-    { id: "bois-n3", name: "Bois N°3", club: "Fairway wood cover", type: "headcover", kind: "fairway", wool: "img/wool3.jpg", price: 225, on: "img/trolley.jpg", fit: "Fits fairway woods from 3 to 7." },
-    { id: "hybride", name: "L'Hybride", club: "Hybrid cover", type: "headcover", kind: "hybrid", wool: "img/wool4.jpg", price: 215, on: "img/gloves.jpg", fit: "Fits hybrids and rescue clubs." },
-    { id: "lame", name: "La Lame", club: "Blade putter cover", type: "headcover", kind: "blade", wool: "img/wool1.jpg", price: 235, on: "img/benchbag.jpg", fit: "Fits blade putters. Magnetic closure." },
-    { id: "maillet", name: "Le Maillet", club: "Mallet putter cover", type: "headcover", kind: "mallet", wool: "img/wool2.jpg", price: 265, on: "img/course.jpg", fit: "Fits mallet heads up to 12 cm. Magnetic closure." },
-    { id: "cadet", name: "Le Cadet", club: "Set of three headcovers", type: "set", kind: "set", wool: "img/wool4.jpg", price: 620, on: "img/benchbag.jpg", fit: "Driver, fairway wood and hybrid covers, cut together so the cloth matches." },
-    { id: "pochette", name: "La Pochette", club: "Valuables pouch", type: "accessory", kind: "pouch", wool: "img/wool3.jpg", price: 95, on: "img/gloves.jpg", fit: "Holds keys, phone and glasses. Drawstring closure." },
-    { id: "fourreau", name: "Le Fourreau", club: "Alignment stick sleeve", type: "accessory", kind: "sleeve", wool: "img/wool1.jpg", price: 85, on: "img/trolley.jpg", fit: "Fits standard alignment sticks." },
-    { id: "reperes", name: "Les Repères", club: "Set of three ball markers", type: "accessory", kind: "discs", wool: "img/wool2.jpg", price: 45, on: "img/gloves.jpg", fit: "Three markers, each a disc of wool with a leather centre. Magnetic back for a hat or a glove." },
-    { id: "serviette", name: "La Serviette", club: "Course towel", type: "accessory", kind: "towel", wool: "img/wool3.jpg", price: 65, on: "img/benchbag.jpg", fit: "Wool-blend towel with a leather tab, to clip to the bag." }
+    { id: "bois-n1", name: "Bois N°1", club: "Driver cover", type: "headcover", kind: "driver", wool: "img/o/wool2-800.webp", price: 245, on: "img/vintagebag.jpg", fit: "Fits drivers up to 460 cc." },
+    { id: "bois-n3", name: "Bois N°3", club: "Fairway wood cover", type: "headcover", kind: "fairway", wool: "img/o/wool3-800.webp", price: 225, on: "img/trolley.jpg", fit: "Fits fairway woods from 3 to 7." },
+    { id: "hybride", name: "L'Hybride", club: "Hybrid cover", type: "headcover", kind: "hybrid", wool: "img/o/wool4-800.webp", price: 215, on: "img/gloves.jpg", fit: "Fits hybrids and rescue clubs." },
+    { id: "lame", name: "La Lame", club: "Blade putter cover", type: "headcover", kind: "blade", wool: "img/o/wool1-800.webp", price: 235, on: "img/benchbag.jpg", fit: "Fits blade putters. Magnetic closure." },
+    { id: "maillet", name: "Le Maillet", club: "Mallet putter cover", type: "headcover", kind: "mallet", wool: "img/o/wool2-800.webp", price: 265, on: "img/course.jpg", fit: "Fits mallet heads up to 12 cm. Magnetic closure." },
+    { id: "cadet", name: "Le Cadet", club: "Set of three headcovers", type: "set", kind: "set", wool: "img/o/wool4-800.webp", price: 620, on: "img/benchbag.jpg", fit: "Driver, fairway wood and hybrid covers, cut together so the cloth matches." },
+    { id: "pochette", name: "La Pochette", club: "Valuables pouch", type: "accessory", kind: "pouch", wool: "img/o/wool3-800.webp", price: 95, on: "img/gloves.jpg", fit: "Holds keys, phone and glasses. Drawstring closure." },
+    { id: "fourreau", name: "Le Fourreau", club: "Alignment stick sleeve", type: "accessory", kind: "sleeve", wool: "img/o/wool1-800.webp", price: 85, on: "img/trolley.jpg", fit: "Fits standard alignment sticks." },
+    { id: "reperes", name: "Les Repères", club: "Set of three ball markers", type: "accessory", kind: "discs", wool: "img/o/wool2-800.webp", price: 45, on: "img/gloves.jpg", fit: "Three markers, each a disc of wool with a leather centre. Magnetic back for a hat or a glove." },
+    { id: "serviette", name: "La Serviette", club: "Course towel", type: "accessory", kind: "towel", wool: "img/o/wool3-800.webp", price: 65, on: "img/benchbag.jpg", fit: "Wool-blend towel with a leather tab, to clip to the bag." }
   ];
   /* ---------- the plates: each cover drawn as an engraved catalogue plate ---------- */
   var SH = {
@@ -1319,7 +1347,7 @@ footer .legal { align-items: center; } footer .fneedle { color: #8A8377; }
     s += '</g></svg>';
     return s;
   }
-  var WOOL = "img/wool2.jpg", WOOLS2 = ["img/wool1.jpg", "img/wool2.jpg", "img/wool3.jpg", "img/wool4.jpg"];
+  var WOOL = "img/o/wool2-800.webp", WOOLS2 = ["img/o/wool1-800.webp", "img/o/wool2-800.webp", "img/o/wool3-800.webp", "img/o/wool4-800.webp"];
   var LED = [[34, "Bois N°1", "27 Oct"], [33, "La Lame", "24 Oct"], [32, "Bois N°3", "21 Oct"], [31, "L'Hybride", "17 Oct"], [30, "Bois N°1", "14 Oct"]];
   var nextNo = function () { return 35 + ordered() + bag.length; };
   var bag = []; try { bag = JSON.parse(localStorage.getItem("mt-bag") || "[]"); } catch (e) {}
@@ -1384,7 +1412,7 @@ footer .legal { align-items: center; } footer .fneedle { color: #8A8377; }
     link.addEventListener("mouseenter", open); link.addEventListener("focus", open); bar.addEventListener("mouseleave", close); mg.addEventListener("mouseenter", open); mg.addEventListener("click", function () { bar.classList.remove("mega-open"); }); link.addEventListener("click", function () { bar.classList.remove("mega-open"); }); addEventListener("scroll", function () { bar.classList.remove("mega-open"); }, { passive: true });
   })();
   $("#ann1").textContent = "Complimentary delivery over " + money(SHIP_FREE); $("#svc1").textContent = "On orders over " + money(SHIP_FREE) + ", tracked within Australia."; $("#stm4").innerHTML = makerCard({ num: "0034" });  $("#stm1").innerHTML = lozenge({ size: 58, rot: -6 });  $("#stm2").innerHTML = lozenge({ size: 84, rot: -5 });
-  var cat = "feat", FEATURED = ["bois-n1", "bois-n3", "hybride", "lame", "cadet"], CATS = [{ id: "headcover", label: "Headcovers" }, { id: "set", label: "Sets" }, { id: "accessory", label: "Accessories" }];
+  var cat = "feat", FEATURED = ["bois-n1", "bois-n3", "lame", "cadet", "reperes"], CATS = [{ id: "headcover", label: "Headcovers" }, { id: "set", label: "Sets" }, { id: "accessory", label: "Accessories" }];
   function cardHtml(p) {
     return '<a class="card rv' + (left(p) ? "" : " is-out") + '" href="#p-' + p.id + '"><div class="f' + (PH[p.id] ? " photo" : "") + '">' + (PH[p.id] ? '<div class="pf"><i style="background-image:url(' + PH[p.id].a + ')"></i><i style="background-image:url(' + PH[p.id].b + ')"></i></div>' : '<div class="pl">' + plate(p, CUSTOM ? { text: "MT" } : { none: 1 }) + '</div>') + '<span class="view">Discover</span>' + stkBadge(p) + '</div><div class="t"><h3>' + p.name + '</h3><span class="pr">' + money(p.price) + '</span></div><div class="cl">' + p.club + '</div></a>';
   }
@@ -1426,7 +1454,7 @@ footer .legal { align-items: center; } footer .fneedle { color: #8A8377; }
   if (reduce || seen || !homeHash) { $("#curtain").classList.add("gone"); setTimeout(function () { $("#curtain").style.display = "none"; }, 50); openUp(); }
   else {
     setTimeout(function () { $("#csig").classList.add("go"); }, 200);
-    setTimeout(function () { $("#curtain").classList.add("gone"); openUp(); }, 2700);
+    setTimeout(function () { $("#curtain").classList.add("gone"); openUp(); try { sessionStorage.setItem("mt-intro", "1"); } catch (e) {} }, 2300);
     setTimeout(function () { $("#curtain").style.display = "none"; }, 4000);
   }
 
@@ -1436,12 +1464,7 @@ footer .legal { align-items: center; } footer .fneedle { color: #8A8377; }
     var y = window.scrollY, vh = innerHeight, onHome = !$("#home").hidden;
     var solid = !onHome || y > vh * .86; bar.classList.toggle("solid", solid);
     var dk = false; if (onHome) { $$(".hero, .state.dark, .reg, .closing, footer").forEach(function (d) { var q = d.getBoundingClientRect(); if (q.top <= 42 && q.bottom > 42) dk = true; }); } bar.classList.toggle("dk", dk && solid);
-    /* the header tucks away only after a clear run down, and returns after a short run up: small reversals are ignored */
-    var dy = y - lastY; lastY = y; if (dy !== 0) { if ((dy > 0) !== (runY > 0)) runY = 0; runY += dy; }
-    var away = bar.classList.contains("away");
-    if (!onHome || y < vh * .6 || $("#sheet").classList.contains("is-open")) { if (away) bar.classList.remove("away"); runY = 0; }
-    else if (!away && runY > 90) { bar.classList.add("away"); runY = 0; }
-    else if (away && runY < -36) { bar.classList.remove("away"); runY = 0; }
+    lastY = y; bar.classList.remove("away");
     if (!onHome) return;
     route2();
     var par = $("#par"); if (par && !LITE && y < vh * 1.3) { par.style.translate = "0 " + (y * .2) + "px"; par.style.scale = 1 + Math.min(1, y / vh) * .1; }
@@ -1546,34 +1569,6 @@ footer .legal { align-items: center; } footer .fneedle { color: #8A8377; }
     });
     $$(".story .ph").forEach(function (e) { io.observe(e); });
     if (reduce) return;
-    /* the nav text rolls */
-    $$(".bar nav a").forEach(function (a) { if (a.id === "bagbtn" || a.id === "acct") return; var t = a.textContent; a.classList.remove("ln"); a.innerHTML = '<span class="tr"><span>' + t + "</span><span>" + t + "</span></span>"; });
-    if (!fine) return;
-    /* inertial scroll: wheel input glides */
-    var target = 0, cur = 0, active = false, de = document.documentElement; de.classList.add("smooth");
-    var clamp = function (v) { return Math.max(0, Math.min(v, de.scrollHeight - innerHeight)); };
-    function loop() { cur += (target - cur) * .09; if (Math.abs(target - cur) < .5) { cur = target; active = false; scrollTo(0, cur); return; } scrollTo(0, cur); requestAnimationFrame(loop); }
-    addEventListener("wheel", function (e) {
-      if (e.ctrlKey || e.defaultPrevented) return;
-      for (var n = e.target; n && n !== document.body; n = n.parentElement) { var o = getComputedStyle(n).overflowY; if ((o === "auto" || o === "scroll") && n.scrollHeight > n.clientHeight) return; }
-      if ($("#drawer").classList.contains("is-open") || $("#sheet").classList.contains("is-open")) return;
-      e.preventDefault(); if (!active) { cur = scrollY; target = scrollY; }
-      target = clamp(target + e.deltaY * (e.deltaMode === 1 ? 34 : 1) * .92); if (!active) { active = true; requestAnimationFrame(loop); }
-    }, { passive: false });
-    addEventListener("scroll", function () { if (!active) { cur = scrollY; target = scrollY; } }, { passive: true });
-    document.addEventListener("click", function (e) {
-      var a = e.target.closest && e.target.closest('a[href^="#"]'); if (!a || $("#home").hidden) return; var id = a.getAttribute("href").slice(1), el = id && document.getElementById(id);
-      if (!el || !$("#home").contains(el)) return; e.preventDefault(); history.replaceState(null, "", "#" + id); cur = scrollY; target = clamp(el.getBoundingClientRect().top + scrollY - 60); if (!active) { active = true; requestAnimationFrame(loop); }
-    });
-    /* cursor label on the collection, spotlight on the dark rooms, tilt on the plates */
-    var cl = document.createElement("div"); cl.className = "curl"; cl.textContent = "View"; document.body.appendChild(cl);
-    var cx = 0, cy = 0, tx = 0, ty = 0, on = false; (function mv() { cx += (tx - cx) * .2; cy += (ty - cy) * .2; cl.style.transform = "translate(" + cx + "px," + cy + "px) scale(" + (on ? 1 : 0) + ")"; requestAnimationFrame(mv); })();
-    document.addEventListener("pointermove", function (e) {
-      tx = e.clientX; ty = e.clientY; var f = e.target.closest && e.target.closest(".card .f"); on = !!f && !f.closest(".is-out");
-      var dk = e.target.closest && e.target.closest(".reg, .closing"); $$(".reg, .closing").forEach(function (x) { x.classList.toggle("lit", x === dk); }); if (dk) { var r = dk.getBoundingClientRect(); dk.style.setProperty("--mx", (e.clientX - r.left) + "px"); dk.style.setProperty("--my", (e.clientY - r.top) + "px"); }
-      $$(".card .f").forEach(function (x) { if (x !== f) x.style.transform = ""; }); if (f) { var q = f.getBoundingClientRect(), px = (e.clientX - q.left) / q.width - .5, py = (e.clientY - q.top) / q.height - .5; f.style.transform = "perspective(900px) rotateY(" + (px * 4).toFixed(2) + "deg) rotateX(" + (-py * 4).toFixed(2) + "deg)"; }
-    }, { passive: true });
-    document.addEventListener("pointerdown", function () { $$(".card .f").forEach(function (x) { x.style.transform = ""; }); on = false; });
   }
 
   /* ---------- finishing touches ---------- */
@@ -1602,14 +1597,6 @@ footer .legal { align-items: center; } footer .fneedle { color: #8A8377; }
     $$(".stm, .rstamp, .tstamp, .mine2 .mset").forEach(function (e) { e.classList.add("press"); pio.observe(e); });
     /* the large wordmark in the footer rises letter by letter */
     var bm = $(".bigmark"); if (bm && bm.querySelector("svg")) { var bo2 = new IntersectionObserver(function (es) { if (es[0].isIntersecting) { bm.classList.add("in"); bo2.disconnect(); } }, { threshold: .2 }); bo2.observe(bm); } else if (bm && !bm.dataset.fx) { bm.dataset.fx = 1; var t = bm.textContent; bm.setAttribute("aria-label", t); bm.innerHTML = t.split("").map(function (c, i) { return '<span class="bl" style="transition-delay:' + (i * 70) + 'ms">' + c + "</span>"; }).join(""); var bo = new IntersectionObserver(function (es) { if (es[0].isIntersecting) { bm.classList.add("in"); bo.disconnect(); } }, { threshold: .25 }); bo.observe(bm); }
-    if (!matchMedia("(pointer: fine)").matches) return;
-    /* buttons lean a little toward the pointer */
-    document.addEventListener("pointermove", function (e) {
-      var b = e.target.closest && e.target.closest(".cta, .btn"); $$(".cta.mag, .btn.mag").forEach(function (x) { if (x !== b) { x.style.transform = ""; x.classList.remove("mag"); } });
-      if (b && !b.disabled) { var r = b.getBoundingClientRect(), mx = (e.clientX - (r.left + r.width / 2)) / r.width, my = (e.clientY - (r.top + r.height / 2)) / r.height; b.classList.add("mag"); b.style.transform = "translate(" + (mx * 8).toFixed(1) + "px," + (my * 6).toFixed(1) + "px)"; }
-    }, { passive: true });
-    /* a quiet light follows the pointer across the welcome photograph */
-    var hero = $(".hero"); if (hero) { var gl = document.createElement("div"); gl.className = "hglow"; hero.appendChild(gl); hero.addEventListener("pointermove", function (e) { var r = hero.getBoundingClientRect(); gl.style.opacity = 1; gl.style.transform = "translate(" + (e.clientX - r.left - 260) + "px," + (e.clientY - r.top - 260) + "px)"; }, { passive: true }); hero.addEventListener("pointerleave", function () { gl.style.opacity = 0; }); }
   }
   /* ---------- reveal on arrival ---------- */
   var io = new IntersectionObserver(function (es) { es.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add("in"); if (e.target.classList.contains("stroke")) e.target.classList.add("go"); io.unobserve(e.target); } }); }, { threshold: .18 });
@@ -1629,7 +1616,7 @@ footer .legal { align-items: center; } footer .fneedle { color: #8A8377; }
     var THN = [["cream", "Cream"], ["gold", "Gold"], ["ink", "Ink"], ["wine", "Wine"]];
     $("#pdp").innerHTML = '<div class="wrap g"><div class="gal">' + (PH[p.id] ?
         '<div class="pl photo rv in"><i style="background-image:url(' + PH[p.id].a + ')"></i></div><p class="cap">Stand-in photograph for the look. Final photography will show the actual piece.</p><div class="b"><i style="background-image:url(' + PH[p.id].b + ')"></i><div class="pt">' + plate(p, { none: 1 }) + '</div></div>' :
-        '<div class="pl rv in"><div id="plwrap" style="height:100%">' + plate(p, CUSTOM ? cur : { none: 1 }) + '</div></div><p class="cap">Illustration. Your piece is cut from whichever cloth the atelier holds when it is made.</p><div class="b"><i style="background-image:url(img/hands.jpg)"></i><i style="background-image:url(img/bench.jpg)"></i></div>') + '</div>' +
+        '<div class="pl rv in"><div id="plwrap" style="height:100%">' + plate(p, CUSTOM ? cur : { none: 1 }) + '</div></div><p class="cap">Illustration. Your piece is cut from whichever cloth the atelier holds when it is made.</p><div class="b"><i><img src="img/o/hands-800.webp" width="800" height="533" loading="lazy" decoding="async" alt="Hands marking a pattern on leather"></i><i><img src="img/o/bench-800.webp" width="800" height="1204" loading="lazy" decoding="async" alt="A leather card holder on a workbench"></i></div>') + '</div>' +
       '<div class="buy"><a class="back ln" href="#pieces">← The collection</a>' +
       '<div class="ttl"><span class="label">' + p.club + '</span><h1>' + p.name + '</h1><div class="price">' + money(p.price) + '</div></div>' +
       '<p class="lede">Cut and finished by hand in Bordeaux, France, by Camille Texier, from Italian and French wool and finished leather. Every piece is individually numbered.</p>' +
@@ -1651,6 +1638,7 @@ footer .legal { align-items: center; } footer .fneedle { color: #8A8377; }
     $$("#pdp .buy > *").forEach(function (e, i) { e.style.setProperty("--i", i); });
     var others = PIECES.filter(function (x) { return x.id !== p.id; }).sort(function (a, b) { return (a.type === p.type) - (b.type === p.type); }).slice(0, 4);
     $("#pdp").insertAdjacentHTML("beforeend", '<section class="more"><div class="wrap"><div class="mh"><h2 class="h2">Also in the collection</h2><a class="ln on" href="#pieces">See all</a></div><div class="mr">' + others.map(function (x) { var n = left(x); return '<a class="mc' + (n ? "" : " out") + '" href="#p-' + x.id + '"><span class="mt">' + plate(x, { none: 1 }) + '</span><div class="mtt"><b>' + x.name + '</b><span>' + (n ? money(x.price) : "Sold out") + '</span></div><small>' + x.club + "</small></a>"; }).join("") + "</div></div></section>");
+    (function () { var old = $("#ldp"); if (old) old.remove(); var j = document.createElement("script"); j.type = "application/ld+json"; j.id = "ldp"; j.textContent = JSON.stringify({ "@context": "https://schema.org", "@type": "Product", name: p.name, description: p.club + ". " + p.fit + " Made by hand in Bordeaux, France.", brand: { "@type": "Brand", name: "Texier" }, offers: { "@type": "Offer", priceCurrency: "AUD", price: String(p.price), availability: left(p) ? "https://schema.org/InStock" : "https://schema.org/OutOfStock", itemCondition: "https://schema.org/NewCondition" } }); document.head.appendChild(j); document.title = p.name + ", " + p.club.toLowerCase() + " | Texier"; })();
     function writeLine() { var w = $("#wr"); if (!w) return; var b = { text: cur.text.trim(), collar: cur.collar.trim() }, s = "Made in France by Camille. Add your lettering and it is written on your card too.";
       if (b.text || b.collar) s = "Lettered " + [b.text && "\u201C" + b.text + "\u201D", b.collar && "\u201C" + b.collar.toUpperCase() + "\u201D on the collar"].filter(Boolean).join(", ") + ". Made for you, in Bordeaux.";
       if (w.dataset.t === s) return; w.dataset.t = s; w.classList.remove("on"); void w.offsetWidth; w.textContent = s; w.classList.add("on"); }
@@ -1818,6 +1806,7 @@ footer .legal { align-items: center; } footer .fneedle { color: #8A8377; }
       else if (fromId) { var cd = $('.card[href="#p-' + fromId + '"]'); if (cd) cd.scrollIntoView({ block: "center", behavior: "instant" }); }
       else if (current && current !== "home") scrollTo(0, 0);
       var vis = view === "home" ? $("#home") : (view === "pdp" ? $("#pdp") : (view === "info" ? $("#info") : (view === "shop" ? $("#shop") : $("#co")))); if (!vtOn) { vis.classList.remove("fade"); void vis.offsetWidth; vis.classList.add("fade"); }
+      if (view === "home") { document.title = "Texier: numbered golf headcovers, made by hand in Bordeaux"; var lp = $("#ldp"); if (lp) lp.remove(); } else if (view === "shop") document.title = "The collection | Texier"; else if (view === "info") { var it = INFO[h.slice(1)]; document.title = (it ? it.t : (h.indexOf("#journal") === 0 ? "Journal" : "Texier")) + " | Texier"; }
       watch(vis); $$(".rv", vis).forEach(function (e) { var r = e.getBoundingClientRect(); if (r.top < innerHeight) e.classList.add("in"); });
       frame();
     };
