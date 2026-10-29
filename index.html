@@ -1,7 +1,9 @@
-<!doctype html><meta charset="utf-8"><meta name="robots" content="noindex,nofollow"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Texier: numbered golf headcovers, made by hand in Bordeaux</title>
+<!doctype html><meta charset="utf-8"><meta name="robots" content="noindex,nofollow"><meta name="viewport" content="width=device-width,initial-scale=1"><meta charset="utf-8">
+<title>Texier: numbered golf headcovers, made by hand in Bordeaux</title>
 <meta name="description" content="Golf headcovers made by hand in France, in Bordeaux, from Italian and French wool, each piece individually numbered. Designed on the Gold Coast, stocked in Australia.">
 <meta property="og:title" content="Texier"><meta property="og:description" content="Numbered golf headcovers, made by hand in France. Designed on the Gold Coast."><meta property="og:type" content="website"><meta name="theme-color" content="#141311">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%235B1E2D'/%3E%3Ctext x='32' y='46' text-anchor='middle' font-family='Georgia,serif' font-weight='700' font-size='40' fill='%23F4F1EB'%3ET%3C/text%3E%3C/svg%3E">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="claude:viewport-fit-sides" content="cover">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -674,7 +676,7 @@ html.smooth { scroll-behavior: auto; }
 footer .g { grid-template-columns: 1.5fr repeat(4, 1fr); } footer .legal { justify-content: space-between; }
 @media (max-width: 900px) { .services .sg { grid-template-columns: 1fr 1fr; } footer .g { grid-template-columns: 1fr 1fr; } footer .g > div:first-child { grid-column: 1 / -1; } }
 /* ---------- tighter rhythm: no dead air ---------- */
-.hs { height: 175vh; } .wool { padding-block: clamp(56px, 8vh, 100px) clamp(40px, 6vh, 80px); }
+@media (min-width: 901px) { .hs { height: 175vh; } } .wool { padding-block: clamp(56px, 8vh, 100px) clamp(40px, 6vh, 80px); }
 .story { padding-block: clamp(24px, 4vh, 50px) clamp(70px, 11vh, 140px); } .story .g { padding-top: clamp(24px, 4vh, 56px); }
 .route { padding-block: clamp(50px, 8vh, 100px) clamp(30px, 5vh, 70px); } .reg { padding-block: clamp(70px, 11vh, 140px); }
 .craft figure { margin-bottom: clamp(48px, 9vh, 110px); } .craft .im { height: min(78vh, 760px); }
@@ -761,6 +763,42 @@ footer .g { grid-template-columns: 1.5fr repeat(4, 1fr); } footer .legal { justi
 .mega .mgi { max-width: 760px; }
 @media (max-width: 1180px) { .mega .mi small { display: none; } }
 @media (max-width: 1000px) { .mega { display: none; } }
+
+/* v52 · mobile: the swash belongs to the number; nothing may widen the page */
+html, body { overflow-x: clip; max-width: 100%; }
+.bigbox { position: relative; display: inline-block; max-width: 100%; }
+
+/* v52 · phone: the two place names sit in a caption row under the map instead of on top of it */
+@media (max-width: 700px) {
+  .rmap { display: grid; grid-template-columns: 1fr 1fr; }
+  .rmap svg { grid-column: 1 / -1; }
+  .rmap .rl { position: static !important; background: none; padding: 18px var(--pad) 0; white-space: normal; }
+  .rmap .rl.a { grid-column: 1; text-align: left; } .rmap .rl.b { grid-column: 2; text-align: right; }
+  .rmap .rl em { font-size: 24px; } .rmap .rl b, .rmap .rl.b b { font-size: 25px; }
+  .rmap .rl span { display: block !important; font-size: 11px; margin-top: 4px; }
+}
+
+/* v52 · the stitching interlude when a piece opens */
+#stitchwall { position: fixed; inset: 0; z-index: 95; background: var(--paper); display: grid; place-content: center; justify-items: center; gap: 18px; opacity: 0; pointer-events: all; transition: opacity .28s var(--ease); }
+#stitchwall.on { opacity: 1; }
+#stitchwall svg { overflow: visible; max-width: 70vw; height: auto; }
+#stitchwall .stn { font: 400 30px/1 var(--hand, var(--serif)); color: var(--ink); letter-spacing: 0; opacity: 0; transform: translateY(6px); animation: stnIn .5s .5s var(--ease) forwards; }
+@keyframes stnIn { to { opacity: 1; transform: none; } }
+@media (prefers-reduced-motion: reduce) { #stitchwall { display: none; } }
+
+/* v52 · phone: the cloth gallery becomes a swatch cabinet; small labels and tap targets brought up */
+html { -webkit-tap-highlight-color: transparent; }
+.wool .sw { counter-reset: sw; }
+.wool .sw .im { padding: 9px; background: #FBF8F1; box-shadow: 0 1px 0 rgba(21,19,15,.07), 0 18px 30px -22px rgba(21,19,15,.5); }
+.wool .sw .im i { filter: none; }
+.wool .sw figcaption { counter-increment: sw; font: 500 11.5px/1.4 var(--sans); letter-spacing: .14em; text-transform: uppercase; color: var(--mute); padding-top: 12px; }
+.wool .sw figcaption::before { content: "0" counter(sw) "  ·  "; color: var(--wine); }
+.label { font-size: 11.5px; }
+small { font-size: 11.5px; }
+@media (pointer: coarse) {
+  footer a, a.go, .ln, .seeall, .tabs button, .chips button, .cats button { padding-block: 13px; margin-block: -13px; }
+  .tabs button, .cats button { min-height: 44px; }
+}
 </style>
 
 <svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs><symbol id="sMaison" viewBox="0 -10 266 116">
@@ -844,7 +882,7 @@ footer .g { grid-template-columns: 1.5fr repeat(4, 1fr); } footer .legal { justi
 </div></section>
 
 <section class="reg" id="register"><div class="wrap g">
-  <div class="bigwrap" id="bw"><span class="label rgl">The most recent piece numbered</span><div class="numline"><div class="big" id="count">N°0000</div><div class="loopbox" aria-hidden="true"><svg class="loop" viewBox="0 0 400 140" preserveAspectRatio="none"><path pathLength="1" d="M6 128 C 58 136, 126 118, 214 125 S 352 124, 394 109"/></svg></div><span class="note">written in by Camille<svg class="nl" viewBox="0 0 34 30" aria-hidden="true"><path pathLength="1" d="M30 26 C 18 24, 8 16, 4 2 M4 2 L2 11 M4 2 L11 6"/></svg></span></div></div>
+  <div class="bigwrap" id="bw"><span class="label rgl">The most recent piece numbered</span><div class="numline"><div class="bigbox"><div class="big" id="count">N°0000</div><div class="loopbox" aria-hidden="true"><svg class="loop" viewBox="0 0 400 140" preserveAspectRatio="none"><path pathLength="1" d="M6 128 C 58 136, 126 118, 214 125 S 352 124, 394 109"/></svg></div></div><span class="note">written in by Camille<svg class="nl" viewBox="0 0 34 30" aria-hidden="true"><path pathLength="1" d="M30 26 C 18 24, 8 16, 4 2 M4 2 L2 11 M4 2 L11 6"/></svg></span></div></div>
   <div><h3>The register.</h3><p>Every piece is numbered by hand in Bordeaux, France, as it is made, in one continuous register. A number is never chosen or assigned to an order: it belongs to the piece, is written on the card in the box, and appears in your account when your piece is dispatched.</p><a class="go ln on" href="#pieces">Browse the collection</a>
     <div class="rstamp" id="stm3"></div><div class="meter"><div class="bar2"><b id="meter"></b></div><small>34 pieces numbered since the Maison opened.</small></div></div>
 </div></section>
@@ -1130,7 +1168,7 @@ footer .g { grid-template-columns: 1.5fr repeat(4, 1fr); } footer .legal { justi
   }
   addEventListener("scroll", frame, { passive: true }); addEventListener("resize", frame);
 
-  /* ---------- the route is sewn as you reach it: a needle carries the thread, dipping in and out of the cloth ---------- */
+  /* ---------- the route is sewn as you scroll: a needle carries the thread, dipping in and out of the cloth ---------- */
   var rbase = $("#rbase"), needle = $("#needle"), PER = 20, SEG = 12, OFF = 4;
   /* a running stitch: each stitch is a length of thread lying on the paper, with its shadow, a highlight along the twist, and the pin-pricks where it goes under */
   (function sew() {
@@ -1148,8 +1186,8 @@ footer .g { grid-template-columns: 1.5fr repeat(4, 1fr); } footer .legal { justi
     var knot = '<path d="M' + st.x.toFixed(1) + " " + st.y.toFixed(1) + ' q-9 -7 -19 -2 M' + st.x.toFixed(1) + " " + st.y.toFixed(1) + ' q-6 8 -15 11" fill="none" stroke="#7A2438" stroke-width="1.5" stroke-linecap="round"/><circle cx="' + st.x.toFixed(1) + '" cy="' + st.y.toFixed(1) + '" r="4.2" fill="#7A2438"/><circle cx="' + (st.x - 1.3).toFixed(1) + '" cy="' + (st.y - 1.5).toFixed(1) + '" r="1.3" fill="rgba(255,255,255,.5)"/>';
     $("#rstitch").innerHTML = '<g fill="rgba(20,8,8,.42)">' + ho + '</g><g fill="none" stroke="rgba(30,10,10,.38)" stroke-width="3.6" stroke-linecap="round">' + sh + '</g><g fill="none" stroke="#7A2438" stroke-width="3.4" stroke-linecap="round">' + th + '</g><g fill="none" stroke="rgba(255,190,190,.5)" stroke-width=".9" stroke-linecap="round">' + hi + '</g>' + knot;
   })();
-  /* the sewing: one continuous glide when the map arrives, not tied to the wheel. The needle rocks gently with each stitch; the thread trails in a soft curve. */
-  var ease = function (u) { return .5 - Math.cos(Math.PI * u) / 2; }, sewn = false, sewing = false;
+  /* the sewing follows the scroll: the further you scroll down, the further the needle has travelled from Bordeaux to the Gold
+     Coast, and scrolling back up unpicks the thread. Nothing is timed. The needle rocks gently with each stitch; the thread trails in a soft curve. */
   function place(p) {
     var L = rbase.getTotalLength(), sl = L * p, a = rbase.getPointAtLength(Math.max(0, sl - 2)), b = rbase.getPointAtLength(Math.min(L, sl + 2)), ang = Math.atan2(b.y - a.y, b.x - a.x), nx = -Math.sin(ang), ny = Math.cos(ang);
     var ph = sl / PER * Math.PI * 2, rock = Math.sin(ph) * .12, dip = Math.cos(ph) * 1.2, px = b.x + nx * dip, py = b.y + ny * dip;
@@ -1159,18 +1197,26 @@ footer .g { grid-template-columns: 1.5fr repeat(4, 1fr); } footer .legal { justi
     var tail = rbase.getPointAtLength(Math.max(0, sl - 30)), ex = px - Math.cos(ang + rock) * 19, ey = py - Math.sin(ang + rock) * 19, slack = 5 + Math.sin(ph + 1) * 3;
     $("#rthread").setAttribute("d", "M" + ex.toFixed(1) + " " + ey.toFixed(1) + " Q" + ((ex + tail.x) / 2 + nx * slack).toFixed(1) + " " + ((ey + tail.y) / 2 + ny * slack).toFixed(1) + " " + tail.x.toFixed(1) + " " + tail.y.toFixed(1));
   }
-  function sewRun() {
-    if (sewing || sewn) return; sewing = true; var th = $("#rthread");
-    if (reduce) { $("#mpath").style.strokeDashoffset = 0; $("#knot").style.opacity = 1; sewn = true; sewing = false; return; }
-    needle.style.transition = "opacity .7s"; th.style.transition = "opacity .7s"; place(0); needle.style.opacity = 1; th.style.opacity = 1;
-    var t0 = null, T = 9500;
-    requestAnimationFrame(function step(t) {
-      if (t0 === null) t0 = t; var u = Math.min(1, (t - t0) / T); place(ease(u));
-      if (u < 1) requestAnimationFrame(step); else { needle.style.opacity = 0; th.style.opacity = 0; $("#mpath").style.strokeDashoffset = 0; $("#knot").style.opacity = 1; sewn = true; sewing = false; }
-    });
+  /* how far along the journey the visitor has scrolled: 0 when the map first rises into the bottom of the screen, 1 when its foot
+     reaches the upper third. On a phone that is about one screen of scrolling; on a desktop a little more. */
+  function routeProgress() {
+    var m = $("#rmap"); if (!m) return 0; var r = m.getBoundingClientRect(), vh = innerHeight;
+    var start = vh * .9, span = vh * .55 + r.height;
+    return Math.max(0, Math.min(1, (start - r.top) / span));
   }
-  function route2() { var m = $("#rmap"); if (!m || sewn || sewing) return; var r = m.getBoundingClientRect(); if (r.top < innerHeight * .7 && r.bottom > innerHeight * .2) sewRun(); }
-  addEventListener("scroll", route2, { passive: true }); addEventListener("resize", route2);
+  var rshown = -1, rtick = false;
+  function routeSew() {
+    rtick = false; var p = routeProgress(), mp = $("#mpath"); if (!mp) return;
+    if (reduce) p = 1;
+    if (Math.abs(p - rshown) < .0004) return; rshown = p;
+    var moving = p > .002 && p < .998;
+    needle.style.transition = "opacity .35s"; $("#rthread").style.transition = "opacity .35s";
+    needle.style.opacity = moving ? 1 : 0; $("#rthread").style.opacity = moving ? 1 : 0;
+    $("#knot").style.opacity = p >= .998 ? 1 : 0;
+    if (moving) place(p); else mp.style.strokeDashoffset = p >= .998 ? 0 : 1;
+  }
+  function route2() { if (!rtick) { rtick = true; requestAnimationFrame(routeSew); } }
+  addEventListener("scroll", route2, { passive: true }); addEventListener("resize", route2); route2();
 
   /* ---------- the sun: day and night on the map, the visitor's hour in the welcome ---------- */
   var RAD = Math.PI / 180;
@@ -1444,6 +1490,7 @@ footer .g { grid-template-columns: 1.5fr repeat(4, 1fr); } footer .legal { justi
       watch(vis); $$(".rv", vis).forEach(function (e) { var r = e.getBoundingClientRect(); if (r.top < innerHeight) e.classList.add("in"); });
       frame();
     };
+    if (view === "pdp" && !first && !reduce && current !== key && !stitching) { stitchIn(h.slice(3), apply); current = key; return; }
     if (first || reduce || current === key || (view === "home" && current === "home")) { apply(); }
     else if (vtOn) {
       var from = null, to = null;
@@ -1470,6 +1517,27 @@ footer .g { grid-template-columns: 1.5fr repeat(4, 1fr); } footer .legal { justi
       }
     } else { var w = $("#wipe"); w.classList.add("on"); setTimeout(function () { apply(); w.classList.remove("on"); }, 420); }
     current = key;
+  }
+  /* ---------- opening a piece: a needle saddle-stitches one thread across the page and writes the piece's name, then lifts ---------- */
+  var stitching = false;
+  function stitchIn(id, apply) {
+    stitching = true;
+    var piece = PIECES.filter(function (x) { return x.id === id; })[0], name = piece ? piece.name : "";
+    var w = document.createElement("div"); w.id = "stitchwall"; w.setAttribute("aria-hidden", "true");
+    w.innerHTML = '<svg viewBox="0 0 320 60" width="320" height="60"><path id="sthr" d="M10 34 H310" pathLength="1" fill="none" stroke="#7A2438" stroke-width="2.2" stroke-linecap="round" stroke-dasharray=".034 .026" stroke-dashoffset="1"/>' +
+      '<g id="sndl" opacity="0"><line x1="-22" y1="0" x2="20" y2="0" stroke="#15130F" stroke-width="1.7" stroke-linecap="round"/><ellipse cx="-16" cy="0" rx="4" ry="1.5" fill="#F4F1EB" stroke="#15130F" stroke-width="1"/></g></svg>' +
+      '<div class="stn">' + name + '</div>';
+    document.body.appendChild(w);
+    requestAnimationFrame(function () { w.classList.add("on"); });
+    var thr = w.querySelector("#sthr"), ndl = w.querySelector("#sndl"), t0 = null, T = 760, done = false;
+    setTimeout(function () { requestAnimationFrame(function step(t) {
+      if (t0 === null) t0 = t; var u = Math.min(1, (t - t0) / T), e = .5 - Math.cos(Math.PI * u) / 2, x = 10 + 300 * e, dip = Math.sin(e * 300 / 14 * Math.PI) * 5;
+      thr.setAttribute("stroke-dashoffset", String(1 - e)); ndl.setAttribute("opacity", u < .98 ? 1 : 0);
+      ndl.setAttribute("transform", "translate(" + x.toFixed(1) + " " + (34 + dip).toFixed(1) + ") rotate(" + (Math.cos(e * 300 / 14 * Math.PI) * 7).toFixed(1) + ")");
+      if (u < 1) requestAnimationFrame(step);
+    }); }, 220);
+    setTimeout(function () { if (done) return; done = true; apply(); }, 640);
+    setTimeout(function () { w.classList.remove("on"); setTimeout(function () { w.remove(); stitching = false; }, 420); }, 1180);
   }
   var wipe = document.createElement("div"); wipe.id = "wipe"; wipe.setAttribute("aria-hidden", "true"); document.body.appendChild(wipe);
   var css = document.createElement("style"); css.textContent = "#wipe{position:fixed;inset:0;background:var(--paper);z-index:70;opacity:0;pointer-events:none;transition:opacity .4s var(--ease)}#wipe.on{opacity:1}.fade{animation:fadein .7s var(--ease)}@keyframes fadein{from{opacity:0}}"; document.head.appendChild(css);
