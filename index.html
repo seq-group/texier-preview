@@ -87,11 +87,11 @@ button { font: inherit; color: inherit; }
 
 /* ---------- opening ---------- */
 .hero { position: relative; height: 100svh; min-height: 560px; color: #fff; overflow: hidden; background: var(--night); }
-.hero .ph { position: absolute; inset: -6% 0; background: url(img/hero.jpg) center 58% / cover; filter: saturate(.9) contrast(1.04); transform: scale(1.14); will-change: transform; }
+.hero .ph { position: absolute; inset: -6% 0; background: url(img/hero.jpg) center 58% / cover; filter: none; transform: scale(1.14); will-change: transform; }
 .ready .hero .ph { animation: heroin 2.8s var(--ease) both, kb 30s 2.8s ease-in-out infinite alternate; }
 @keyframes heroin { from { transform: scale(1.14); opacity: .0; } to { transform: scale(1); opacity: 1; } }
 @keyframes kb { from { transform: scale(1) translate(0, 0); } to { transform: scale(1.075) translate(-1.1%, -.7%); } }
-.hero .flare { position: absolute; inset: 0; z-index: 1; pointer-events: none; mix-blend-mode: screen; opacity: 0; background: radial-gradient(ellipse 34% 30% at 34% 33%, rgba(255,214,150,.55), rgba(255,190,110,.18) 45%, transparent 70%); }
+.hero .flare { position: absolute; inset: 0; z-index: 1; pointer-events: none; mix-blend-mode: screen; opacity: 0; background: radial-gradient(ellipse 34% 30% at 34% 33%, rgba(255,214,150,.38), rgba(255,190,110,.12) 45%, transparent 70%); }
 .ready .hero .flare { animation: flare 10s 1.4s ease-in-out infinite alternate; }
 @keyframes flare { from { opacity: .25; transform: translate(0, 0) scale(.96); } to { opacity: .85; transform: translate(1.5%, .6%) scale(1.08); } }
 .hero .copy, .hero .clocks { will-change: transform, opacity; }
@@ -101,7 +101,7 @@ button { font: inherit; color: inherit; }
 .prog2 { position: fixed; left: 0; top: 0; height: 2px; width: 0; background: var(--wine); z-index: 95; }
 .bar .brand { opacity: 0; } .ready .bar .brand { animation: brandin 1.6s var(--ease) .5s both; } @keyframes brandin { from { opacity: 0; transform: translateY(-8px); } to { opacity: 1; transform: none; } }
 @media (prefers-reduced-motion: reduce) { .hero .ph, .hero .flare { animation: none !important; } .hero .ph { transform: none; } .bar .brand { opacity: 1; animation: none; } .hero .cue { opacity: 1; } }
-.hero::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(10,9,8,.42), transparent 26%, transparent 46%, rgba(10,9,8,.66)); }
+.hero::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(10,9,8,.26), transparent 22%, transparent 54%, rgba(10,9,8,.46)); }
 .hero .clocks { position: absolute; z-index: 2; top: 104px; left: 0; right: 0; }
 .hero .clocks .wrap { display: flex; justify-content: space-between; gap: 18px; font: 500 12.5px var(--sans); letter-spacing: .04em; color: rgba(255,255,255,.9); }
 .hero .clocks b { font-weight: 500; opacity: .7; margin-right: 6px; } .hero .clocks .gc { font-size: 15px; } .hero .clocks .gc b { opacity: 1; letter-spacing: .02em; }
@@ -1249,7 +1249,7 @@ small { font-size: 11.5px; }
     var bh = +new Intl.DateTimeFormat("en-GB", { hour: "2-digit", hour12: false, timeZone: "Europe/Paris" }).format(new Date()) % 24;
     var bw = bh < 5 ? "the middle of the night" : bh < 8 ? "early morning" : bh < 12 ? "the morning" : bh < 14 ? "midday" : bh < 18 ? "the afternoon" : bh < 22 ? "the evening" : "night";
     $("#hello").textContent = g + ". In Bordeaux it is " + bw + ".";
-    var bg = h >= 21 || h < 5 ? "linear-gradient(180deg, rgba(8,14,40,.5), rgba(8,14,40,.18))" : h < 8 ? "linear-gradient(180deg, rgba(255,170,130,.18), rgba(255,200,150,.04))" : h >= 17 && h < 21 ? "linear-gradient(180deg, rgba(255,110,60,.2), rgba(120,40,40,.12))" : "none";
+    var bg = h >= 21 || h < 5 ? "linear-gradient(180deg, rgba(8,14,40,.26), rgba(8,14,40,.08))" : h < 8 ? "linear-gradient(180deg, rgba(255,170,130,.09), rgba(255,200,150,.02))" : h >= 17 && h < 21 ? "linear-gradient(180deg, rgba(255,110,60,.11), rgba(120,40,40,.06))" : "none";
     tod.style.background = bg;
   })();
   /* ---------- light that moves: the cursor, or the tilt of the phone, drags a highlight across the cloth ---------- */
