@@ -1,14 +1,14 @@
 <!doctype html><html lang="en-AU"><meta name="robots" content="noindex,nofollow"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta property="og:image" content="https://seq-group.github.io/texier-preview/img/og.jpg"><meta name="twitter:card" content="summary_large_image"><meta charset="utf-8">
 <title>Texier: numbered golf headcovers, made by hand in Bordeaux</title>
-<meta name="description" content="Golf headcovers made by hand in France, in Bordeaux, from Italian and French wool, each piece individually numbered. Born on the Gold Coast, stocked in Australia.">
-<meta property="og:title" content="Texier"><meta property="og:description" content="Numbered golf headcovers, made by hand in France. Born on the Gold Coast."><meta property="og:type" content="website"><meta name="theme-color" content="#141311">
+<meta name="description" content="Golf headcovers made by hand in France, in Bordeaux, from Italian and French wool, each piece individually numbered. Conceived on the Gold Coast, stocked in Australia.">
+<meta property="og:title" content="Texier"><meta property="og:description" content="Numbered golf headcovers, made by hand in France. Conceived on the Gold Coast."><meta property="og:type" content="website"><meta name="theme-color" content="#141311">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%235B1E2D'/%3E%3Cg fill='none' stroke='%23F4F1EB' stroke-width='3' stroke-linecap='round'%3E%3Cpath d='M16 52 L48 12'/%3E%3Cpath d='M48 52 L16 12'/%3E%3Cellipse cx='46' cy='15' rx='1.8' ry='3.8' transform='rotate(38 46 15)'/%3E%3Cellipse cx='18' cy='15' rx='1.8' ry='3.8' transform='rotate(-38 18 15)'/%3E%3C/g%3E%3C/svg%3E">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="claude:viewport-fit-sides" content="cover">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,400;6..96,500;6..96,600&family=Jost:wght@300;400;500&family=Herr+Von+Muellerhoff&family=Fraunces:opsz,wght@9..144,740&display=swap">
-<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","name":"Texier","description":"Numbered golf headcovers and accessories, made by hand in Bordeaux, France. Born on the Gold Coast.","areaServed":"AU","foundingLocation":"Gold Coast, Australia"},{"@type":"WebSite","name":"Texier","inLanguage":"en-AU"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","name":"Texier","description":"Numbered golf headcovers and accessories, made by hand in Bordeaux, France. Conceived on the Gold Coast.","areaServed":"AU","foundingLocation":"Gold Coast, Australia"},{"@type":"WebSite","name":"Texier","inLanguage":"en-AU"}]}</script>
 <style>
 /* A printed catalogue, not a template: paper, ink, one wine red (Bordeaux) used like a wax seal,
    and handwriting in blue-black fountain-pen ink. Garamond for reading, Caslon Display for numbers and the house name. */
@@ -332,7 +332,7 @@ footer .lock .sig { color: #C9CCDB; }
   .bar nav:not(.r) { display: none; } .bar nav.r a:first-child { display: none; } .bar .menu { display: block; }
   .hero .clocks { top: 80px; } .hero .clocks .wrap span:last-child { display: none; }
   .grid { grid-template-columns: repeat(2, 1fr); } .reg .g, .wool .head, .story .g, .closing .g, .pdp .g, .co .g { grid-template-columns: 1fr; }
-  .story .ph { position: static; aspect-ratio: 4 / 3; } .buy, .sumbox { position: static; }
+  .story .ph { position: relative; aspect-ratio: 4 / 3; } .buy, .sumbox { position: static; }
   .note { position: static; margin-top: 18px; } .nl { display: none; } .reg .g { gap: 70px; }
   footer .g { grid-template-columns: 1fr 1fr; } footer .g > div:first-child { grid-column: 1 / -1; }
   .co .g { display: flex; flex-direction: column; align-items: stretch; } .stp .body { padding-left: 0; }
@@ -952,7 +952,7 @@ footer .legal { margin-top: clamp(26px, 3.4vh, 40px); }
 @media (max-width: 700px) { .hs .sw { grid-template-columns: 1fr 1fr !important; } }
 /* the phone: only what is needed, nothing that repaints every frame */
 .closing::after { opacity: 1 !important; mix-blend-mode: normal !important; }
-@media (max-width: 900px), (pointer: coarse) {
+@media (pointer: coarse) {
   .hero .ph { animation: heroin 1.4s var(--ease) both !important; will-change: auto; } .hero .flare, .hglow, .hero .tod, .hero .cue { display: none !important; }
   .bar.solid { -webkit-backdrop-filter: none; backdrop-filter: none; background: rgba(244,241,235,.97); } .bar.solid.dk { background: rgba(20,19,17,.97); }
   .bar::before { height: 110px; }
@@ -1021,7 +1021,7 @@ footer .legal { align-items: center; } footer .fneedle { color: #A59E91; }
 /* ---------- real images, accessibility, phone ---------- */
 .hero .ph img, .bgph img, .mki i img, .im i img, .vi img, .cbg img, .gal .b i img { display: block; width: 100%; height: 100%; object-fit: cover; }
 .bgph, .cbg { overflow: hidden; } .bgph img, .cbg img { position: absolute; inset: 0; }
-.mki i img, .im i img { position: absolute; inset: 0; } .gal .b i { position: relative; overflow: hidden; }
+.mki i img, .im i img { position: absolute; inset: 0; } .gal .b i { position: relative; overflow: hidden; } .sw .im, .sw .im i { position: relative; }
 .skip { position: fixed; left: 12px; top: -60px; z-index: 200; background: var(--ink); color: var(--paper); padding: 12px 16px; font: 500 12px var(--body); letter-spacing: .14em; text-transform: uppercase; transition: top .2s; } .skip:focus { top: 12px; }
 .bar::before { height: 160px; }
 @media (max-width: 900px) {
@@ -1080,7 +1080,7 @@ footer .legal { align-items: center; } footer .fneedle { color: #A59E91; }
     <a style="--i:4" href="#register"><span>The register</span></a>
   </nav>
   <div class="sh-foot"><a style="--i:5" href="#account">Account</a><a style="--i:6" href="#bag">Bag</a></div>
-  <p class="sfoot">Born on the Gold Coast. Made in France.</p>
+  <p class="sfoot">Conceived on the Gold Coast. Crafted in Bordeaux.</p>
 </div>
 
 <main id="main"><div id="home" class="view">
@@ -1106,7 +1106,7 @@ footer .legal { align-items: center; } footer .fneedle { color: #A59E91; }
 <section class="making" id="craft" aria-label="The making, in four movements"><div class="wrap"><div class="mkh"><span class="label">The making, in four movements</span></div><div class="mkl"><article class="mkc rv"><div class="mki"><i><img src="img/o/loom-800.webp" srcset="img/o/loom-480.webp 480w, img/o/loom-800.webp 800w, img/o/loom-1200.webp 1200w" sizes="(max-width:900px) 100vw, 58vw" width="800" height="1200" alt="A loom strung with cream and brown warp, with olive silk cloth in the foreground" loading="lazy" decoding="async"></i></div><div class="mkt"><span class="no">I</span><h3>Chosen from the remnant.</h3><p>Italian and French mills cut cloth for fashion houses. What remains of the roll reaches the atelier in Bordeaux, in the south-west of France, where it is chosen for its hand and character.</p></div></article><article class="mkc rv"><div class="mki"><i><img src="img/o/hands-800.webp" srcset="img/o/hands-480.webp 480w, img/o/hands-800.webp 800w, img/o/hands-1200.webp 1200w" sizes="(max-width:900px) 100vw, 58vw" width="800" height="534" alt="Hands marking a pattern on leather with a pen" loading="lazy" decoding="async"></i></div><div class="mkt"><span class="no">II</span><h3>Cut and matched by hand.</h3><p>Each piece is cut from its own pattern by the hands that will stitch it, the weave aligned across every seam.</p></div></article><article class="mkc rv"><div class="mki"><i><img src="img/o/bench-800.webp" srcset="img/o/bench-480.webp 480w, img/o/bench-800.webp 800w, img/o/bench-1200.webp 1200w" sizes="(max-width:900px) 100vw, 58vw" width="800" height="1204" alt="A leather card holder on a workbench beside saddler's tools" loading="lazy" decoding="async"></i></div><div class="mkt"><span class="no">III</span><h3>Finished in leather.</h3><p>A leather collar, saddle-stitched. It deepens with every round and, in time, takes on its own patina.</p></div></article><article class="mkc rv"><div class="mki"><i><img src="img/o/wool2-1200.webp" srcset="img/o/wool2-480.webp 480w, img/o/wool2-800.webp 800w, img/o/wool2-1200.webp 1200w, img/o/wool2-1600.webp 1600w" sizes="(max-width:900px) 100vw, 58vw" width="1200" height="1600" alt="Navy plaid wool folded over grey cloth, with the numbered card resting on it" loading="lazy" decoding="async"></i><span class="bigstamp" id="stm4"></span></div><div class="mkt"><span class="no">IV</span><h3>Numbered as it is made.</h3><p>Camille numbers each piece by hand when she finishes it, and writes the number on the card in the box. The number is never chosen: it belongs to the piece.</p></div></article></div></div></section>
 
 <section class="route" id="route"><div class="wrap">
-  <div class="head"><h2 class="h2 rv">Born on the Gold Coast. Made in France.</h2><span class="label rv">From France to Australia</span></div>
+  <div class="head"><h2 class="h2 rv">Conceived on the Gold Coast. Crafted in Bordeaux.</h2><span class="label rv">From France to Australia</span></div>
   <div class="rmap" id="rmap">
     <svg viewBox="0 0 1200 636" role="img" aria-label="Map: the great-circle line from Bordeaux to the Gold Coast, about 17,000 kilometres">
       <path class="grat" d="M0 0 V636 M180 0 V636 M360 0 V636 M540 0 V636 M720 0 V636 M900 0 V636 M1080 0 V636 M0 564 H1200 M0 384 H1200 M0 204 H1200 M0 24 H1200"/>
@@ -1121,12 +1121,12 @@ footer .legal { align-items: center; } footer .fneedle { color: #A59E91; }
       <g id="knot" style="opacity:0"><path d="M0 0 q9 -9 20 -3 M0 0 q11 3 17 13" fill="none" stroke="#7A2438" stroke-width="1.5" stroke-linecap="round" transform="translate(1100 552)"/><circle cx="1100" cy="552" r="4.2" fill="#7A2438"/><circle cx="1098.6" cy="550.4" r="1.3" fill="rgba(255,255,255,.55)"/></g>
     </svg>
     <div class="rl a" data-ll="44.84,-0.58"><em>Made in France</em><b>Bordeaux</b>44.84° N, 0.58° W<span data-tz="Europe/Paris">--:--</span></div>
-    <div class="rl b" data-ll="-28.02,153.40"><em>Born here, and home</em><b>Gold Coast</b>28.02° S, 153.40° E<span data-tz="Australia/Brisbane">--:--</span></div>
+    <div class="rl b" data-ll="-28.02,153.40"><em>Conceived here, and home</em><b>Gold Coast</b>28.02° S, 153.40° E<span data-tz="Australia/Brisbane">--:--</span></div>
   </div>
   <p class="mcap">Each piece is made by hand in Bordeaux, France, and stocked in Australia, ready to send. The shortest line between the two is about 17,000 km. Everything is sent tracked.</p>
 </div></section>
 
-<section class="vista rv" id="vista2" aria-label="The Gold Coast, from the sea"><div class="vi"><img src="img/o/gc-burleigh-1200.webp" srcset="img/o/gc-burleigh-800.webp 800w, img/o/gc-burleigh-1200.webp 1200w, img/o/gc-burleigh-1800.webp 1800w" sizes="100vw" width="1200" height="898" alt="The headland at Burleigh Heads on the Gold Coast, seen from the sea in the evening light" loading="lazy" decoding="async" style="object-position:50% 55%"></div><div class="vc wrap"><span class="vl">Born on the Gold Coast</span></div></section>
+<section class="vista rv" id="vista2" aria-label="The Gold Coast, from the sea"><div class="vi"><img src="img/o/gc-burleigh-1200.webp" srcset="img/o/gc-burleigh-800.webp 800w, img/o/gc-burleigh-1200.webp 1200w, img/o/gc-burleigh-1800.webp 1800w" sizes="100vw" width="1200" height="898" alt="The headland at Burleigh Heads on the Gold Coast, seen from the sea in the evening light" loading="lazy" decoding="async" style="object-position:50% 55%"></div><div class="vc wrap"><span class="vl">Conceived on the Gold Coast</span></div></section>
 
 <section class="reg" id="register"><div class="wrap g">
   <div class="bigwrap" id="bw"><div class="big" id="count" aria-label="N°0034">N°0000</div></div>
@@ -1156,7 +1156,7 @@ footer .legal { align-items: center; } footer .fneedle { color: #A59E91; }
     <p class="rv">The Maison's first collection celebrates an often-overlooked object: the golf headcover. Each piece is individually made, with the same consideration given to its construction as to its appearance.</p>
     <p class="rv">With time, the leather acquires its own patina, the materials soften and each piece develops a character inseparable from its owner. Produced in limited quantities and individually numbered, Maison Texier creations are intended to be kept, used and appreciated for years to come.</p>
     <div class="lock lk stroke " id="sign2"><div class="sig"><svg class="sigsvg" viewBox="0 -10 266 116" aria-hidden="true"><g transform="skewX(-8) translate(12 0)"><path pathLength="1" d="M4,94 Q6,92 8,90 C18,70 28,22 40,6 C46,-3 51,6 47,22 C42,50 38,70 36,86 C42,62 53,32 63,22 C68,17 70,25 67,37 C64,53 61,70 61,83 C66,72 76,63 86,62 C78,60 69,68 69,77 C69,85 78,86 84,79 C86,76 88,70 89,63 C88,72 87,80 92,84 C98,80 102,68 104,62 C103,72 103,80 108,84 C112,78 116,70 120,64 C124,72 126,78 122,83 C119,86 113,85 112,83 C118,86 126,82 131,74 C134,66 138,63 141,63 C133,62 128,72 130,79 C132,86 142,84 144,76 C146,69 144,63 141,63 C146,63 151,64 156,62 C156,70 155,80 155,86 C159,72 167,60 173,62 C179,64 175,78 178,86 C194,92 226,86 248,70 C256,64 258,57 251,58"/><path class="dot" d="M110,46 c2,-1.5 4,-0.5 3,1.5 c-1,1.5 -3.5,1 -3,-1.5 z"/></g></svg></div><div class="caps">TEXIER</div></div>
-    <div class="hall"><span class="stm" id="stm2"></span><span class="label">Camille Texier<br>Atelier, Bordeaux, France</span></div><div class="sl">Born on the Gold Coast. Made in Bordeaux, France. Rooted in French tradition.</div>
+    <div class="hall"><span class="stm" id="stm2"></span><span class="label">Camille Texier<br>Atelier, Bordeaux, France</span></div><div class="sl">Conceived on the Gold Coast. Crafted in Bordeaux. Rooted in French tradition.</div>
   </div>
 </div></div></section>
 
@@ -1178,7 +1178,7 @@ footer .legal { align-items: center; } footer .fneedle { color: #A59E91; }
   <div><h4>Secure payment</h4><p>Cards, Apple Pay and Shop Pay.</p></div>
 </div></section>
 
-<section class="closing" id="closing"><div class="cbg"><img src="img/o/golf-coast-1200.webp" srcset="img/o/golf-coast-800.webp 800w, img/o/golf-coast-1200.webp 1200w, img/o/golf-coast-1800.webp 1800w" sizes="100vw" width="1200" height="800" alt="" loading="lazy" decoding="async"></div><div class="wrap g"><div><h2 class="h2">Be among the first to hear when new pieces leave the atelier.</h2></div><div><form id="news"><label class="sr" for="em">Email</label><input id="em" type="email" placeholder="Your email" required autocomplete="email"><button type="submit">Subscribe</button></form><p class="done" id="done" aria-live="polite"></p></div></div></section>
+<section class="closing" id="closing"><div class="cbg"><img src="img/o/golf-coast-1200.webp" srcset="img/o/golf-coast-800.webp 800w, img/o/golf-coast-1200.webp 1200w, img/o/golf-coast-1800.webp 1800w" sizes="100vw" width="1200" height="800" alt="" loading="lazy" decoding="async"></div><div class="wrap g"><div><h2 class="h2">Join the register. First sight of each new edition, before it is shown anywhere else.</h2></div><div><form id="news"><label class="sr" for="em">Email</label><input id="em" type="email" placeholder="Your email" required autocomplete="email"><button type="submit">Join</button></form><p class="done" id="done" aria-live="polite"></p></div></div></section>
 
 <footer id="foot"><div class="wrap"><div class="g">
   <div><div class="lock"><div class="sig"><svg class="sigsvg" viewBox="0 -10 266 116" aria-hidden="true"><use href="#sMaison"/></svg></div><div class="caps">TEXIER</div></div></div>
@@ -1186,7 +1186,7 @@ footer .legal { align-items: center; } footer .fneedle { color: #A59E91; }
   <div><h4>Orders</h4><ul><li><a class="ln" href="#shipping">Shipping</a></li><li><a class="ln" href="#returns">Returns and refunds</a></li><li><a class="ln" href="#account">Track an order</a></li></ul></div>
   <div><h4>The Maison</h4><ul><li><a class="ln" href="#shop">The collection</a></li><li><a class="ln" href="#story">Our story</a></li><li><a class="ln" href="#craft">The atelier</a></li><li><a class="ln" href="#wool">The cloth</a></li><li><a class="ln" href="#journal">Journal</a></li><li><a class="ln" href="#register">The register</a></li></ul></div>
   <div><h4>Legal</h4><ul><li><a class="ln" href="#terms">Terms and Conditions</a></li><li><a class="ln" href="#privacy">Privacy Policy</a></li></ul></div>
-</div><div class="legal"><span>© 2026 Texier</span><span class="fneedle"></span><span>Born on the Gold Coast. Made in France.</span><span>Australia · AUD</span><span class="bld">Concept build 29 Oct 2026 · v43</span></div><div class="bigmark" aria-hidden="true"><svg viewBox="0 0 1000 150" preserveAspectRatio="xMidYMax meet"><text x="0" y="149" textLength="1000" lengthAdjust="spacing" font-family="Fraunces, serif" font-weight="740" font-size="206" style="font-variation-settings:\'opsz\' 144,\'SOFT\' 0,\'WONK\' 0">TEXIER</text></svg></div></div></footer>
+</div><div class="legal"><span>© 2026 Texier</span><span class="fneedle"></span><span>Conceived on the Gold Coast. Crafted in Bordeaux.</span><span>Australia · AUD</span><span class="bld">Concept build 30 Oct 2026 · v45</span></div><div class="bigmark" aria-hidden="true"><svg viewBox="0 0 1000 150" preserveAspectRatio="xMidYMax meet"><text x="0" y="149" textLength="1000" lengthAdjust="spacing" font-family="Fraunces, serif" font-weight="740" font-size="206" style="font-variation-settings:\'opsz\' 144,\'SOFT\' 0,\'WONK\' 0">TEXIER</text></svg></div></div></footer>
 
 <div class="scrim" id="scrim"></div>
 <aside class="drawer" id="drawer" role="dialog" aria-modal="true" aria-label="Your bag"></aside>
@@ -1195,7 +1195,7 @@ footer .legal { align-items: center; } footer .fneedle { color: #A59E91; }
 (function () {
   var $ = function (s, r) { return (r || document).querySelector(s); }, $$ = function (s, r) { return Array.prototype.slice.call((r || document).querySelectorAll(s)); };
   var reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
-  var LITE = matchMedia("(max-width: 900px), (pointer: coarse)").matches;
+  var LITE = matchMedia("(pointer: coarse)").matches;
   /* delivery: set here. Complimentary at or above SHIP_FREE (AUD); otherwise a flat tracked rate. To confirm with the carrier. */
   var SHIP_FREE = 300, SHIP_RATE = 15, shipCost = function (sub) { return sub >= SHIP_FREE ? 0 : SHIP_RATE; };
   var money = function (n) { return "A$" + n.toLocaleString("en-AU"); }, pad = function (n) { return String(n).padStart(4, "0"); };
@@ -1374,7 +1374,7 @@ footer .legal { align-items: center; } footer .fneedle { color: #A59E91; }
       "The year letter is our own code, not an industry convention: A is 2026. The number is written by hand when the piece is finished, and it belongs to the piece, never to an order."] },
     { slug: "seventeen-thousand-kilometres", img: "j-km", alt: "The Pont de Pierre in Bordeaux, its arches and lamps along the Garonne", cap: "The Pont de Pierre, Bordeaux", title: "Seventeen thousand kilometres", date: "October 2026", deck: "From a workbench in Bordeaux to a hall table on the Gold Coast.", body: [
       "The shortest line between Bordeaux and the Gold Coast runs about seventeen thousand kilometres. It is the distance every piece travels before it reaches the shelf.",
-      "The brand was born on the Gold Coast, where it is based. The pieces are made by hand in Bordeaux, in the south-west of France, and then stocked in Australia, ready to send, so that the journey is already behind them when you order.",
+      "The Maison was conceived on the Gold Coast, where it is based. The pieces are made by hand in Bordeaux, in the south-west of France, and then stocked in Australia, ready to send, so that the journey is already behind them when you order.",
       "It is a long way for a headcover. We think the care that goes into it is a reasonable answer to the distance."] }
   ];
   var NOTES = [ { q: "The wool is lovely, and it sits on the driver like it was made for it.", by: "Sample note", sample: true } ]; /* real owner notes go here; the site shows them quietly. Samples are tagged and must be removed before launch. */
@@ -1850,7 +1850,7 @@ footer .legal { align-items: center; } footer .fneedle { color: #A59E91; }
   $("#menu").addEventListener("click", function () { $("#sheet").classList.add("is-open"); });
   $("#sheetx").addEventListener("click", function () { $("#sheet").classList.remove("is-open"); });
   $$("#sheet a").forEach(function (a) { a.addEventListener("click", function () { $("#sheet").classList.remove("is-open"); }); });
-  $("#news").addEventListener("submit", function (e) { e.preventDefault(); $("#done").textContent = "Thank you. The atelier will write when new pieces arrive. (Preview: nothing was sent.)"; });
+  $("#news").addEventListener("submit", function (e) { e.preventDefault(); $("#done").textContent = "Thank you. You are on the register: the atelier will write before each new edition is shown. (Preview: nothing was sent.)"; });
   persist(); route(true); frame();
 })();
 </script>
