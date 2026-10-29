@@ -905,6 +905,31 @@ footer { padding-bottom: 0; }
 .bigmark svg { display: block; width: 100%; height: auto; overflow: visible; } .bigmark text { fill: #292623; }
 footer .legal { margin-top: clamp(26px, 3.4vh, 40px); }
 @media (prefers-reduced-motion: reduce) { .bigmark { opacity: 1; transform: none; transition: none; } }
+
+/* ---------- more of the course: full-bleed bands in the welcome's light ---------- */
+.vista { position: relative; height: clamp(300px, 72vh, 760px); overflow: hidden; background: #1a1815; }
+.vista .vi { position: absolute; left: 0; right: 0; top: -14%; bottom: -14%; background-size: cover; transform: scale(1.1); transition: transform 2.6s var(--ease); will-change: transform; }
+.vista.in .vi { transform: none; }
+.vista::after { content: ""; position: absolute; inset: 0; pointer-events: none; background: linear-gradient(180deg, rgba(10,9,8,.18), transparent 30%, transparent 55%, rgba(10,9,8,.5)); }
+.vista .vc { position: absolute; z-index: 2; left: 0; right: 0; bottom: clamp(22px, 4vw, 48px); display: flex; } .vista .vl { font: 400 11px var(--body); letter-spacing: .3em; text-transform: uppercase; color: rgba(255,255,255,.9); padding-top: 14px; border-top: 1px solid rgba(255,255,255,.55); min-width: 120px; } .vista .vl:empty { display: none; }
+.vista.rv { transition: opacity 1.2s var(--ease); transform: none; }
+.closing { position: relative; overflow: hidden; } .closing .cbg { position: absolute; left: 0; right: 0; top: -12%; bottom: -12%; background-size: cover; background-position: 50% 60%; filter: saturate(.8) brightness(.38); z-index: 0; } .closing::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(20,19,17,.55), rgba(20,19,17,.82)); z-index: 0; pointer-events: none; } .closing .wrap { position: relative; z-index: 2; } .closing::before { z-index: 1; }
+@media (max-width: 700px) { .vista { height: clamp(240px, 52vh, 420px); } }
+@media (prefers-reduced-motion: reduce) { .vista .vi { transform: none; transition: none; top: 0; bottom: 0; } .vista.rv { opacity: 1; } }
+
+/* the register, said simply */
+.reg .g { align-items: center; grid-template-columns: 1.25fr 1fr; gap: clamp(36px, 6vw, 110px); }
+.reg .bigwrap { display: block; } .reg .regr { max-width: 470px; } .reg .regr h3 { font-size: clamp(26px, 2.6vw, 40px); margin: 0 0 16px; }
+.reg .regr > p { margin: 0 0 26px; color: #B9B2A5; max-width: 30em; } .reg .regr .go { font: 500 11.5px var(--body); letter-spacing: .2em; text-transform: uppercase; }
+.reg { padding-block: clamp(80px, 13vh, 170px); }
+@media (max-width: 900px) { .reg .g { grid-template-columns: 1fr; gap: 40px; } }
+
+/* the card glides: a quiet paper veil, one object in motion */
+.glideov { position: fixed; inset: 0; z-index: 85; background: var(--paper); opacity: 0; transition: opacity .42s var(--ease); pointer-events: all; }
+.glideclone { position: fixed; z-index: 90; margin: 0; transform-origin: 0 0; background: #E7E1D5; overflow: hidden; pointer-events: none; will-change: transform; box-shadow: 0 30px 60px -34px rgba(0,0,0,.35); } .glideclone .pl, .glideclone .pf { position: absolute; }
+.glideclone .pl { inset: 22px 18px 20px; } .glideclone svg { width: 100%; height: 100%; }
+.pdp.glide .buy > * { animation-delay: calc(var(--i, 0) * 80ms + 1.05s); }
+@media (prefers-reduced-motion: reduce) { .glideov, .glideclone { display: none; } }
 </style>
 
 <svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs><symbol id="sMaison" viewBox="0 -10 266 116">
@@ -963,6 +988,8 @@ footer .legal { margin-top: clamp(26px, 3.4vh, 40px); }
   <div class="grid" id="grid"></div><div class="gdots" id="gdots" aria-hidden="true"></div><div class="seeall"><a class="go ln on" id="seeall" href="#shop">See all pieces</a></div>
 </div></section>
 
+<section class="vista rv" id="vista1" aria-label="The sun low over a green"><div class="vi" style="background-image:url(img/golf-sun.jpg);background-position:50% 58%"></div><div class="vc wrap"><span class="vl">Golf, to begin with</span></div></section>
+
 <section class="make" id="craft" aria-label="The making, in four movements"><div class="makein">
   <div class="mk-img" aria-hidden="true"><i class="c on" style="background-image:url(img/loom.jpg)"></i><i class="c" style="background-image:url(img/hands.jpg)"></i><i class="c" style="background-image:url(img/bench.jpg)"></i><i class="c dim" style="background-image:url(img/wool4.jpg)"></i><span class="bigstamp" id="stm4"></span></div>
   <div class="mk-txt">
@@ -998,15 +1025,13 @@ footer .legal { margin-top: clamp(26px, 3.4vh, 40px); }
   <p class="mcap">Each piece is made by hand in Bordeaux, France, and stocked in Australia, ready to send. The shortest line between the two is about 17,000 km. Everything is sent tracked.</p>
 </div></section>
 
+<section class="vista rv" id="vista2" aria-label="A golf course above the sea"><div class="vi" style="background-image:url(img/golf-sea.jpg);background-position:50% 62%"></div><div class="vc wrap"><span class="vl">Born on the Gold Coast</span></div></section>
+
 <section class="reg" id="register"><div class="wrap g">
-  <div class="bigwrap" id="bw"><span class="label rgl">The most recent piece numbered</span><div class="big" id="count">N°0000</div>
-    <div class="regline"><span class="stm" id="stm5"></span><div><b>Bois N°1</b><span>Numbered by C.T. in Bordeaux, 27 October 2026</span></div></div></div>
+  <div class="bigwrap" id="bw"><div class="big" id="count" aria-label="N°0034">N°0000</div></div>
   <div class="regr"><h3>The register.</h3>
-    <p>Every piece is numbered by hand in Bordeaux, France, as it is made. The number belongs to the piece, never to an order. It is written on the card in the box, and appears in your account once your piece is dispatched.</p>
-    <table class="rtab" aria-label="Latest entries in the register"><caption class="label">Latest entries</caption><tbody id="ledger"></tbody></table>
-    <div class="rfoot"><span>34 pieces numbered since the Maison opened</span><a class="go ln on" href="#shop">Browse the collection</a></div>
-    <div class="rstamp" id="stm3"></div>
-  </div>
+    <p>Every piece is numbered by hand in Bordeaux, France, as it is made. The number belongs to the piece, never to an order, and is written on the card in the box.</p>
+    <a class="go ln on" href="#shop">Browse the collection</a></div>
 </div></section>
 
 <section class="wool" id="wool"><div class="wrap">
@@ -1019,6 +1044,8 @@ footer .legal { margin-top: clamp(26px, 3.4vh, 40px); }
   </div></div></div>
   
 </div></section>
+
+<section class="vista rv" id="vista3" aria-label="Late sun through the trees on a fairway"><div class="vi" style="background-image:url(img/golf-trees.jpg);background-position:50% 70%"></div><div class="vc wrap"><span class="vl"></span></div></section>
 
 <section class="story" id="story"><div class="wrap"><div class="g">
   <div class="ph rv"><i></i></div>
@@ -1047,7 +1074,7 @@ footer .legal { margin-top: clamp(26px, 3.4vh, 40px); }
   <div><h4>Secure payment</h4><p>Cards, Apple Pay and Shop Pay.</p></div>
 </div></section>
 
-<section class="closing" id="closing"><div class="wrap g"><div><h2 class="h2">Be among the first to hear when new pieces leave the atelier.</h2></div><div><form id="news"><label class="sr" for="em">Email</label><input id="em" type="email" placeholder="Your email" required autocomplete="email"><button type="submit">Subscribe</button></form><p class="done" id="done" aria-live="polite"></p></div></div></section>
+<section class="closing" id="closing"><div class="cbg" style="background-image:url(img/golf-dusk.jpg)"></div><div class="wrap g"><div><h2 class="h2">Be among the first to hear when new pieces leave the atelier.</h2></div><div><form id="news"><label class="sr" for="em">Email</label><input id="em" type="email" placeholder="Your email" required autocomplete="email"><button type="submit">Subscribe</button></form><p class="done" id="done" aria-live="polite"></p></div></div></section>
 
 <footer id="foot"><div class="wrap"><div class="g">
   <div><div class="lock"><div class="sig"><svg class="sigsvg" viewBox="0 -10 266 116" aria-hidden="true"><use href="#sMaison"/></svg></div><div class="caps">TEXIER</div></div></div>
@@ -1245,7 +1272,7 @@ footer .legal { margin-top: clamp(26px, 3.4vh, 40px); }
     var t; function open() { clearTimeout(t); bar.classList.add("mega-open"); } function close() { t = setTimeout(function () { bar.classList.remove("mega-open"); }, 140); }
     link.addEventListener("mouseenter", open); link.addEventListener("focus", open); bar.addEventListener("mouseleave", close); mg.addEventListener("mouseenter", open); mg.addEventListener("click", function () { bar.classList.remove("mega-open"); }); link.addEventListener("click", function () { bar.classList.remove("mega-open"); }); addEventListener("scroll", function () { bar.classList.remove("mega-open"); }, { passive: true });
   })();
-  $("#svc1").textContent = "On orders over " + money(SHIP_FREE) + ", tracked within Australia."; $("#stm4").innerHTML = makerCard({ num: "0034" });  $("#stm1").innerHTML = lozenge({ size: 58, rot: -6 }); $("#stm5").innerHTML = lozenge({ size: 46, rot: -4, tone: "#CDBB93" }); $("#stm2").innerHTML = lozenge({ size: 84, rot: -5 });
+  $("#svc1").textContent = "On orders over " + money(SHIP_FREE) + ", tracked within Australia."; $("#stm4").innerHTML = makerCard({ num: "0034" });  $("#stm1").innerHTML = lozenge({ size: 58, rot: -6 });  $("#stm2").innerHTML = lozenge({ size: 84, rot: -5 });
   var cat = "feat", FEATURED = ["bois-n1", "bois-n3", "hybride", "lame", "cadet"], CATS = [{ id: "headcover", label: "Headcovers" }, { id: "set", label: "Sets" }, { id: "accessory", label: "Accessories" }];
   function cardHtml(p) {
     return '<a class="card rv' + (left(p) ? "" : " is-out") + '" href="#p-' + p.id + '"><div class="f' + (PH[p.id] ? " photo" : "") + '">' + (PH[p.id] ? '<div class="pf"><i style="background-image:url(' + PH[p.id].a + ')"></i><i style="background-image:url(' + PH[p.id].b + ')"></i></div>' : '<div class="pl">' + plate(p, CUSTOM ? { text: "MT" } : { none: 1 }) + '</div>') + '<span class="view">Discover</span>' + stkBadge(p) + '</div><div class="t"><h3>' + p.name + '</h3><span class="pr">' + money(p.price) + '</span></div><div class="cl">' + p.club + '</div></a>';
@@ -1262,7 +1289,7 @@ footer .legal { margin-top: clamp(26px, 3.4vh, 40px); }
   var gd = $("#gdots"); gd.innerHTML = $$("#grid .card").map(function () { return "<i></i>"; }).join("");
   function gdots() { var g = $("#grid"), c = $(".card", g); if (!c) return; var n = $$(".card", g).length, i = Math.min(n - 1, Math.round(g.scrollLeft / (c.offsetWidth + 12))); $$("i", gd).forEach(function (d, k) { d.classList.toggle("on", k === i); }); }
   $("#grid").addEventListener("scroll", gdots, { passive: true }); gdots();
-  $("#ledger").innerHTML = LED.map(function (r, i) { return '<tr class="' + (i === 0 ? "cur" : "") + '"><td class="no">N°' + pad(r[0]) + '</td><td class="pc">' + r[1] + '</td><td class="dt">' + r[2] + '</td></tr>'; }).join("");
+  
 
   /* ---------- the words of the statement light up as you read ---------- */
   var st = $("#statement"), words = [];
@@ -1304,6 +1331,8 @@ footer .legal { margin-top: clamp(26px, 3.4vh, 40px); }
     var mk = $("#craft"); if (mk && !reduce) { var mr = mk.getBoundingClientRect(), mp = Math.min(.999, Math.max(0, -mr.top / Math.max(1, mr.height - vh))), mi = Math.floor(mp * 4);
       if (mi !== window.__mk) { window.__mk = mi; $(".mk-img").classList.toggle("last", mi === 3); $$(".mk-img .c").forEach(function (e, i) { e.classList.toggle("on", i === mi); }); $$(".ch").forEach(function (e, i) { e.classList.toggle("on", i === mi); }); $("#mkn").textContent = "0" + (mi + 1); }
       $("#mkbar").style.width = (mp * 100).toFixed(1) + "%"; }
+    $$(".vista .vi").forEach(function (v) { var r = v.parentNode.getBoundingClientRect(); if (r.bottom < -80 || r.top > vh + 80) return; v.style.translate = "0 " + ((r.top + r.height / 2 - vh / 2) * -.12).toFixed(1) + "px"; });
+    var cb = $(".closing .cbg"); if (cb) { var cr = cb.parentNode.getBoundingClientRect(); if (cr.bottom > 0 && cr.top < vh) cb.style.translate = "0 " + ((cr.top + cr.height / 2 - vh / 2) * -.1).toFixed(1) + "px"; }
     var hc = $(".hero .copy"), hk = $(".hero .clocks"); if (y < vh * 1.3) { var f = Math.min(1, y / (vh * .42)); hc.style.transform = "translateY(" + (-y * .22) + "px)"; hc.style.opacity = 1 - f; hk.style.opacity = 1 - f * 1.3; }
     $("#prog2").style.width = (y / Math.max(1, document.documentElement.scrollHeight - vh) * 100) + "%";
     var r = st.getBoundingClientRect(), p = Math.min(1, Math.max(0, (vh * .86 - r.top) / (r.height + vh * .3)));
@@ -1656,7 +1685,7 @@ footer .legal { margin-top: clamp(26px, 3.4vh, 40px); }
     var view = h.indexOf("#p-") === 0 ? "pdp" : (h === "#checkout" ? "co" : (h === "#thanks" ? "thanks" : (["shipping", "returns", "care", "terms", "privacy", "contact", "faq", "account"].indexOf(h.slice(1)) >= 0 || h.indexOf("#info-") === 0 ? "info" : "home")));
     if (h === "#shop" || h.indexOf("#shop-") === 0) view = "shop";
     var key = view === "home" ? "home" : h;
-    var vtOn = document.startViewTransition && !reduce && !first && current !== key;
+    var vtOn = false;
     var fromId = current.indexOf("#p-") === 0 ? current.slice(3) : null;
     var apply = function () {
       $("#home").hidden = view !== "home"; $("#pdp").hidden = view !== "pdp"; $("#co").hidden = !(view === "co" || view === "thanks"); $("#info").hidden = view !== "info"; $("#shop").hidden = view !== "shop";
@@ -1673,58 +1702,33 @@ footer .legal { margin-top: clamp(26px, 3.4vh, 40px); }
       watch(vis); $$(".rv", vis).forEach(function (e) { var r = e.getBoundingClientRect(); if (r.top < innerHeight) e.classList.add("in"); });
       frame();
     };
-    if (view === "pdp" && !first && !reduce && current !== key && !stitching) { stitchIn(h.slice(3), apply); current = key; return; }
+    if (view === "pdp" && !first && !reduce && current !== key && lastCard && lastCard.isConnected && !gliding) { var src = lastCard; lastCard = null; cardGlide(src, apply); current = key; return; }
     if (first || reduce || current === key || (view === "home" && current === "home")) { apply(); }
-    else if (vtOn) {
-      var from = null, to = null;
-      $$("[style*=view-transition-name]").forEach(function (e) { e.style.viewTransitionName = ""; });
-      if (view === "pdp" && lastCard && lastCard.isConnected) from = lastCard; else if (view === "home" && fromId) from = $("#pdp .gal .pl");
-      if (from) from.style.viewTransitionName = "plate";
-      var did = false, run = function () {
-        if (did) return; did = true; apply(); if (from) from.style.viewTransitionName = "";
-        to = view === "pdp" ? $("#pdp .gal .pl") : (view === "home" && fromId ? $('.card[href="#p-' + fromId + '"] .f') : null); if (to) to.style.viewTransitionName = "plate";
-      };
-      var tr = document.startViewTransition(run);
-      setTimeout(run, 700);
-      setTimeout(function () { if (to) to.style.viewTransitionName = ""; }, 2200);
-      tr.finished.then(function () { if (to) to.style.viewTransitionName = ""; }, function () {});
-    } else if (view === "pdp" && lastCard && lastCard.isConnected) {
-      var sr = lastCard.getBoundingClientRect(), ghost = lastCard.cloneNode(true); apply();
-      var tg = $("#pdp .gal .pl");
-      if (tg) {
-        var tr2 = tg.getBoundingClientRect(); tg.style.opacity = 0;
-        ghost.className = "flipghost"; ghost.style.cssText = "position:fixed;margin:0;z-index:80;background:#E7E1D5;left:" + sr.left + "px;top:" + sr.top + "px;width:" + sr.width + "px;height:" + sr.height + "px;transition:left 1.05s var(--ease),top 1.05s var(--ease),width 1.05s var(--ease),height 1.05s var(--ease),opacity .5s";
-        document.body.appendChild(ghost);
-        requestAnimationFrame(function () { requestAnimationFrame(function () { ghost.style.left = tr2.left + "px"; ghost.style.top = tr2.top + "px"; ghost.style.width = tr2.width + "px"; ghost.style.height = tr2.height + "px"; }); });
-        setTimeout(function () { tg.style.transition = "opacity .5s"; tg.style.opacity = 1; ghost.style.opacity = 0; setTimeout(function () { ghost.remove(); }, 520); }, 1080);
-      }
-    } else { var w = $("#wipe"); w.classList.add("on"); setTimeout(function () { apply(); w.classList.remove("on"); }, 420); }
+    else { var w = $("#wipe"); w.classList.add("on"); setTimeout(function () { apply(); w.classList.remove("on"); }, 420); }
     current = key;
   }
-  /* ---------- opening a piece: a needle saddle-stitches one thread across the page and writes the piece's name, then lifts ---------- */
-  var stitching = false;
-  function stitchIn(id, apply) {
-    stitching = true;
-    var piece = PIECES.filter(function (x) { return x.id === id; })[0], name = piece ? piece.name : "";
-    var w = document.createElement("div"); w.id = "stitchwall"; w.setAttribute("aria-hidden", "true");
-    w.innerHTML = '<svg viewBox="0 0 320 60" width="320" height="60"><path id="sthr" d="M10 34 H310" pathLength="1" fill="none" stroke="#7A2438" stroke-width="2.2" stroke-linecap="round" stroke-dasharray=".034 .026" stroke-dashoffset="1"/>' +
-      '<g id="sndl" opacity="0"><line x1="-22" y1="0" x2="20" y2="0" stroke="#15130F" stroke-width="1.7" stroke-linecap="round"/><ellipse cx="-16" cy="0" rx="4" ry="1.5" fill="#F4F1EB" stroke="#15130F" stroke-width="1"/></g></svg>' +
-      '<div class="stn">' + name + '</div>';
-    document.body.appendChild(w);
-    requestAnimationFrame(function () { w.classList.add("on"); });
-    var thr = w.querySelector("#sthr"), ndl = w.querySelector("#sndl"), t0 = null, T = 760, done = false;
-    setTimeout(function () { requestAnimationFrame(function step(t) {
-      if (t0 === null) t0 = t; var u = Math.min(1, (t - t0) / T), e = .5 - Math.cos(Math.PI * u) / 2, x = 10 + 300 * e, dip = Math.sin(e * 300 / 14 * Math.PI) * 5;
-      thr.setAttribute("stroke-dashoffset", String(1 - e)); ndl.setAttribute("opacity", u < .98 ? 1 : 0);
-      ndl.setAttribute("transform", "translate(" + x.toFixed(1) + " " + (34 + dip).toFixed(1) + ") rotate(" + (Math.cos(e * 300 / 14 * Math.PI) * 7).toFixed(1) + ")");
-      if (u < 1) requestAnimationFrame(step);
-    }); }, 220);
-    setTimeout(function () { if (done) return; done = true; apply(); }, 640);
-    setTimeout(function () { w.classList.remove("on"); setTimeout(function () { w.remove(); stitching = false; }, 420); }, 1180);
+  /* ---------- opening a piece: everything else falls quiet, the card you chose glides to its place ---------- */
+  var gliding = false;
+  function cardGlide(src, apply) {
+    gliding = true; var a = src.getBoundingClientRect();
+    var ov = document.createElement("div"); ov.className = "glideov"; ov.setAttribute("aria-hidden", "true");
+    var tmp = document.createElement("div"); tmp.innerHTML = src.outerHTML.replace(/(id="|url\(#|href="#)(pl\d+)/g, "$1g$2"); var g = tmp.firstElementChild; $$(".view, .stk, .pn, .pk", g).forEach(function (e) { e.remove(); });
+    g.className = "glideclone"; g.removeAttribute("style"); g.style.cssText = "left:" + a.left + "px;top:" + a.top + "px;width:" + a.width + "px;height:" + a.height + "px";
+    document.body.appendChild(ov); document.body.appendChild(g); void ov.offsetWidth; ov.style.opacity = 1;
+    var pd = $("#pdp"), clean = function () { ov.remove(); g.remove(); pd.classList.remove("glide"); gliding = false; };
+    setTimeout(function () {
+      pd.classList.add("glide"); apply();
+      var tg = $("#pdp .gal .pl"); if (!tg) { clean(); return; }
+      tg.style.opacity = 0; var b = tg.getBoundingClientRect(), sx = b.width / a.width;
+      g.style.transition = "transform 1s cubic-bezier(.7, 0, .2, 1)"; g.style.transform = "translate(" + (b.left - a.left) + "px," + (b.top - a.top) + "px) scale(" + sx + ")";
+      setTimeout(function () { ov.style.transition = "opacity .7s var(--ease)"; ov.style.opacity = 0; }, 260);
+      setTimeout(function () { tg.style.transition = "opacity .6s var(--ease)"; tg.style.opacity = 1; g.style.transition = "opacity .6s var(--ease)"; g.style.opacity = 0; }, 980);
+      setTimeout(clean, 1700);
+    }, 420);
   }
   var wipe = document.createElement("div"); wipe.id = "wipe"; wipe.setAttribute("aria-hidden", "true"); document.body.appendChild(wipe);
   var css = document.createElement("style"); css.textContent = "#wipe{position:fixed;inset:0;background:var(--paper);z-index:70;opacity:0;pointer-events:none;transition:opacity .4s var(--ease)}#wipe.on{opacity:1}.fade{animation:fadein .7s var(--ease)}@keyframes fadein{from{opacity:0}}"; document.head.appendChild(css);
-  $("#grid").addEventListener("click", function (e) { var a = e.target.closest(".card"); if (a) lastCard = $(".f", a); });
+  document.addEventListener("click", function (e) { var a = e.target.closest && e.target.closest("#grid .card, #shg .card"); lastCard = a ? $(".f", a) : null; }, true);
   addEventListener("hashchange", function () { route(false); });
 
   /* ---------- menu, newsletter ---------- */
