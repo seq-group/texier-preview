@@ -799,6 +799,20 @@ small { font-size: 11.5px; }
   footer a, a.go, .ln, .seeall, .tabs button, .chips button, .cats button { padding-block: 13px; margin-block: -13px; }
   .tabs button, .cats button { min-height: 44px; }
 }
+
+/* ---------- finishing touches ---------- */
+.od-n { display: inline-block; vertical-align: top; } .od { display: inline-block; height: 1em; overflow: hidden; vertical-align: top; line-height: 1; } .od .odc { display: block; transition: transform 1.5s cubic-bezier(.16, .8, .1, 1); } .od .odc i { display: block; height: 1em; line-height: 1; font-style: normal; }
+.reg .big { line-height: .92; } .reg .big .od, .reg .big .od-n { height: .92em; line-height: .92; } .reg .big .od .odc i { height: .92em; line-height: .92; }
+.flyer { position: fixed; z-index: 95; pointer-events: none; background: #E7E1D5; padding: 8px; transform-origin: center; transition: transform .78s cubic-bezier(.5, 0, .2, 1), opacity .78s ease-in; box-shadow: 0 24px 50px -20px rgba(0,0,0,.5); } .flyer svg { width: 100%; height: 100%; }
+#bagbtn.pulse { animation: bpulse .7s var(--ease); } @keyframes bpulse { 30% { transform: scale(1.18); } 100% { transform: none; } }
+.h2, .shh h1 { position: relative; } .h2 .hl, .shh h1 .hl { display: block; height: 1px; width: 0; background: currentColor; opacity: .55; margin-top: .22em; transition: width 1.4s var(--ease) .5s; } .h2.in .hl, .shh h1 .hl { width: 64px; } .h2.in .hl { width: 64px; }
+.state .h2 .hl, .closing .h2 .hl, .more .h2 .hl { opacity: .5; }
+.press { opacity: 0; transform: scale(1.16) rotate(-3deg); filter: blur(1.5px); transition: opacity .5s var(--ease), transform .7s cubic-bezier(.2, 1.3, .3, 1), filter .5s; } .press.pressed { opacity: 1; transform: none; filter: none; }
+.bigmark .bl { display: inline-block; transform: translateY(46%); opacity: 0; transition: transform 1.3s var(--ease), opacity 1.3s var(--ease); } .bigmark.in .bl { transform: none; opacity: 1; }
+.cta, .btn { will-change: transform; transition: background .4s, transform .35s var(--ease); }
+.hglow { position: absolute; left: 0; top: 0; width: 520px; height: 520px; border-radius: 50%; pointer-events: none; z-index: 1; opacity: 0; background: radial-gradient(circle, rgba(255,226,180,.16), transparent 62%); mix-blend-mode: screen; transition: opacity .8s, transform .55s cubic-bezier(.2, .7, .1, 1); }
+.card .f { overflow: hidden; } .card .f .pl { transition: transform 1.1s var(--ease); } .card:hover .f .pl { transform: scale(1.03); }
+@media (prefers-reduced-motion: reduce) { .press, .bigmark .bl { opacity: 1; transform: none; filter: none; transition: none; } .h2 .hl { width: 64px; } .od .odc { transition: none; } }
 </style>
 
 <svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs><symbol id="sMaison" viewBox="0 -10 266 116">
@@ -1163,7 +1177,7 @@ small { font-size: 11.5px; }
     var n = Math.round(p * words.length * 1.15); words.forEach(function (w, i) { w.classList.toggle("lit", i < n); });
     var c = $("#count"); if (c && !counted && c.getBoundingClientRect().top < vh * .85) {
       counted = true; $("#bw").classList.add("drawn"); $("#meter").style.width = "34%";
-      var to = 34, k = 20; if (reduce) c.textContent = "N°" + pad(to); else (function tk() { c.textContent = "N°" + pad(Math.min(k, to)); k += Math.max(1, Math.round((to - k) * .16)); if (k <= to) requestAnimationFrame(tk); else c.textContent = "N°" + pad(to); })();
+      if (reduce) c.textContent = "N\u00B0" + pad(34); else rollNumber(c, 34);
     }
   }
   addEventListener("scroll", frame, { passive: true }); addEventListener("resize", frame);
@@ -1283,11 +1297,47 @@ small { font-size: 11.5px; }
     }, { passive: true });
     document.addEventListener("pointerdown", function () { $$(".card .f").forEach(function (x) { x.style.transform = ""; }); on = false; });
   }
+
+  /* ---------- finishing touches ---------- */
+  function rollNumber(el, to) {
+    var d = pad(to).split(""), h = '<span class="od-n">N\u00B0</span>';
+    d.forEach(function (ch, i) { var col = ""; for (var n = 0; n < 10; n++) col += "<i>" + n + "</i>"; h += '<span class="od"><span class="odc" data-d="' + ch + '" style="transition-delay:' + (i * 140) + 'ms">' + col + "</span></span>"; });
+    el.innerHTML = h; el.setAttribute("aria-label", "N\u00B0" + pad(to)); void el.offsetWidth;
+    $$(".odc", el).forEach(function (c) { c.style.transform = "translateY(" + (-Number(c.dataset.d) * 10) + "%)"; });
+  }
+  function flyToBag(done) {
+    var src = $("#plwrap") || $("#pdp .gal .pl"), tgt = $("#bagbtn"); if (reduce || !src || !tgt) { done(); return; }
+    var a = src.getBoundingClientRect(), b = tgt.getBoundingClientRect(), g = document.createElement("div");
+    var w = Math.min(a.width, 220), h = a.height * (w / a.width);
+    g.className = "flyer"; g.innerHTML = src.innerHTML; g.style.cssText = "left:" + (a.left + a.width / 2 - w / 2) + "px;top:" + (a.top + a.height / 2 - h / 2) + "px;width:" + w + "px;height:" + h + "px";
+    document.body.appendChild(g); void g.offsetWidth;
+    var dx = b.left + b.width / 2 - (a.left + a.width / 2), dy = b.top + b.height / 2 - (a.top + a.height / 2);
+    g.style.transform = "translate(" + dx + "px," + dy + "px) scale(.06)"; g.style.opacity = ".15";
+    setTimeout(function () { g.remove(); tgt.classList.remove("pulse"); void tgt.offsetWidth; tgt.classList.add("pulse"); done(); }, 780);
+  }
+  function moreFx() {
+    if (reduce) return;
+    /* headings draw a hairline beneath them as they arrive */
+    $$("#home .h2, .shh h1, .more .h2").forEach(function (h) { if (!h.querySelector(".hl")) { var l = document.createElement("i"); l.className = "hl"; h.appendChild(l); } });
+    /* the stamps press into the page when they arrive */
+    var pio = new IntersectionObserver(function (es) { es.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add("pressed"); pio.unobserve(e.target); } }); }, { threshold: .4 });
+    $$(".stm, .rstamp, .tstamp, .mine2 .mset").forEach(function (e) { e.classList.add("press"); pio.observe(e); });
+    /* the large wordmark in the footer rises letter by letter */
+    var bm = $(".bigmark"); if (bm && !bm.dataset.fx) { bm.dataset.fx = 1; var t = bm.textContent; bm.setAttribute("aria-label", t); bm.innerHTML = t.split("").map(function (c, i) { return '<span class="bl" style="transition-delay:' + (i * 70) + 'ms">' + c + "</span>"; }).join(""); var bo = new IntersectionObserver(function (es) { if (es[0].isIntersecting) { bm.classList.add("in"); bo.disconnect(); } }, { threshold: .25 }); bo.observe(bm); }
+    if (!matchMedia("(pointer: fine)").matches) return;
+    /* buttons lean a little toward the pointer */
+    document.addEventListener("pointermove", function (e) {
+      var b = e.target.closest && e.target.closest(".cta, .btn"); $$(".cta.mag, .btn.mag").forEach(function (x) { if (x !== b) { x.style.transform = ""; x.classList.remove("mag"); } });
+      if (b && !b.disabled) { var r = b.getBoundingClientRect(), mx = (e.clientX - (r.left + r.width / 2)) / r.width, my = (e.clientY - (r.top + r.height / 2)) / r.height; b.classList.add("mag"); b.style.transform = "translate(" + (mx * 8).toFixed(1) + "px," + (my * 6).toFixed(1) + "px)"; }
+    }, { passive: true });
+    /* a quiet light follows the pointer across the welcome photograph */
+    var hero = $(".hero"); if (hero) { var gl = document.createElement("div"); gl.className = "hglow"; hero.appendChild(gl); hero.addEventListener("pointermove", function (e) { var r = hero.getBoundingClientRect(); gl.style.opacity = 1; gl.style.transform = "translate(" + (e.clientX - r.left - 260) + "px," + (e.clientY - r.top - 260) + "px)"; }, { passive: true }); hero.addEventListener("pointerleave", function () { gl.style.opacity = 0; }); }
+  }
   /* ---------- reveal on arrival ---------- */
   var io = new IntersectionObserver(function (es) { es.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add("in"); if (e.target.classList.contains("stroke")) e.target.classList.add("go"); io.unobserve(e.target); } }); }, { threshold: .18 });
   function watch(root) { $$(".rv, .stroke:not(#csig):not(#hsig)", root).forEach(function (e) { io.observe(e); }); }
   watch();
-  effects();
+  effects(); moreFx();
 
   /* ---------- the initials, stitched ---------- */
   if ($("#inin")) $("#inin").addEventListener("input", function (e) { var v = e.target.value.toUpperCase().replace(/[^A-Z]/g, ""); e.target.value = v; $("#initxt").textContent = v || "MT"; });
@@ -1333,7 +1383,7 @@ small { font-size: 11.5px; }
     $("#pc").addEventListener("input", function (e) { cur.collar = clean(e.target.value); if (cur.collar !== e.target.value) e.target.value = cur.collar; repaint(); });
     $$("[data-th]").forEach(function (b) { b.addEventListener("click", function () { cur.thread = b.dataset.th; $$("[data-th]").forEach(function (x) { x.setAttribute("aria-pressed", x === b); }); repaint(); }); });
     $$("[data-sty]").forEach(function (b) { b.addEventListener("click", function () { cur.style = b.dataset.sty; $$("[data-sty]").forEach(function (x) { x.setAttribute("aria-pressed", x === b); }); repaint(); }); }); }
-    if (left(p)) $("#add").addEventListener("click", function () { if (inBag(p.id) >= left(p)) { toast(left(p) === 1 ? "The last piece is already in your bag." : "Only " + left(p) + " available."); return; } bag.push({ id: p.id, name: p.name, price: p.price, text: cur.text.trim(), collar: cur.collar.trim().toUpperCase(), style: cur.style, thread: cur.thread, no: 0, on: p.on, kind: p.kind, wool: p.wool, size: cur.size, sizeLabel: sizeOf(p).label }); persist(); openBag(); });
+    if (left(p)) $("#add").addEventListener("click", function () { if (inBag(p.id) >= left(p)) { toast(left(p) === 1 ? "The last piece is already in your bag." : "Only " + left(p) + " available."); return; } bag.push({ id: p.id, name: p.name, price: p.price, text: cur.text.trim(), collar: cur.collar.trim().toUpperCase(), style: cur.style, thread: cur.thread, no: 0, on: p.on, kind: p.kind, wool: p.wool, size: cur.size, sizeLabel: sizeOf(p).label }); persist(); flyToBag(function () { openBag(); }); });
     if (left(p) && $("#add")) {
       $("#pdp").insertAdjacentHTML("beforeend", '<div class="mbar" id="mbar"><div class="mi"><b>' + p.name + '</b><span>' + money(p.price) + '</span></div><button class="cta" id="add2" type="button">Add to bag</button></div>');
       $("#add2").addEventListener("click", function () { $("#add").click(); });
