@@ -931,6 +931,39 @@ footer .legal { margin-top: clamp(26px, 3.4vh, 40px); }
 .pdp.glide .buy > * { animation-delay: calc(var(--i, 0) * 80ms + 1.05s); }
 @media (prefers-reduced-motion: reduce) { .glideov, .glideclone { display: none; } }
 .closing .cbg { filter: saturate(.6) brightness(.26); } .closing::after { background: linear-gradient(180deg, rgba(20,19,17,.7), rgba(20,19,17,.9)); }
+
+/* ---------- the making: plain chapters that scroll like everything else ---------- */
+.making { padding-block: clamp(70px, 11vh, 140px); background: var(--paper); }
+.mkh { margin-bottom: clamp(30px, 5vw, 70px); }
+.mkl { display: grid; gap: clamp(56px, 9vw, 130px); }
+.mkc { display: grid; grid-template-columns: 7fr 5fr; gap: clamp(26px, 6vw, 100px); align-items: center; }
+.mkc:nth-child(even) { grid-template-columns: 5fr 7fr; } .mkc:nth-child(even) .mki { order: 2; }
+.mki { position: relative; aspect-ratio: 4 / 3; overflow: hidden; background: #d9d3c6; } .mki i { position: absolute; inset: 0; display: block; background-size: cover; background-position: center; }
+.mkt { max-width: 29em; } .mkt .no { display: block; font: 400 clamp(56px, 6.4vw, 104px)/.85 var(--num); color: transparent; -webkit-text-stroke: 1.2px var(--wine); margin-bottom: 18px; letter-spacing: -.03em; }
+.mkt h3 { font: 500 clamp(26px, 2.8vw, 42px)/1.06 var(--serif); letter-spacing: -.025em; margin: 0 0 14px; font-optical-sizing: none; font-variation-settings: "opsz" 24; }
+.mkt p { margin: 0; color: var(--mute); line-height: 1.75; font-size: clamp(16px, 1.15vw, 18.5px); }
+.mki .bigstamp { position: absolute; inset: 0; display: grid; place-items: center; padding: 0 7%; opacity: 1; transform: none; transition: none; }
+.mki .mcard { width: min(400px, 100%); }
+@media (max-width: 900px) { .mkc, .mkc:nth-child(even) { grid-template-columns: 1fr; gap: 22px; } .mkc:nth-child(even) .mki { order: 0; } .mki .mcard { width: min(290px, 100%); } .mkl { gap: 52px; } }
+/* the cloth strip no longer pins */
+.hs { height: auto !important; width: auto !important; margin-left: 0 !important; position: static !important; } .hsin { position: static !important; height: auto !important; display: block !important; overflow: visible !important; }
+.hs .sw { display: grid !important; grid-template-columns: repeat(4, 1fr) !important; width: auto !important; padding-inline: 0 !important; transform: none !important; } .hs .sw figure, .hs .sw figure:first-child, .hs .sw figure:last-child { flex: none !important; margin: 0 !important; } .hs .sw .im { height: auto !important; aspect-ratio: 4 / 5 !important; }
+@media (max-width: 700px) { .hs .sw { grid-template-columns: 1fr 1fr !important; } }
+/* the phone: only what is needed, nothing that repaints every frame */
+.closing::after { opacity: 1 !important; mix-blend-mode: normal !important; }
+@media (max-width: 900px), (pointer: coarse) {
+  .hero .ph { animation: heroin 1.4s var(--ease) both !important; will-change: auto; } .hero .flare, .hglow, .hero .tod, .hero .cue { display: none !important; }
+  .bar.solid { -webkit-backdrop-filter: none; backdrop-filter: none; background: rgba(244,241,235,.97); } .bar.solid.dk { background: rgba(20,19,17,.97); }
+  .bar::before { height: 110px; }
+  .reg::after, .closing::before, .state.dark .bgph::after, .reg::before { display: none !important; }
+  .state.dark .bgph { filter: brightness(.4) saturate(.7); transform: none; inset: 0; will-change: auto; }
+  .card .f, .card .f .pl { will-change: auto; transform-style: flat; } .card .f { box-shadow: none; }
+  .vista .vi, .closing .cbg { top: 0; bottom: 0; transform: none; will-change: auto; }
+  .tabs, .mega { }
+  .split .w > span { transition-duration: .8s; }
+  .mcard { box-shadow: 0 10px 20px -10px rgba(0,0,0,.5); } .mcard::before { display: none; }
+  .rv { transition-duration: .7s; }
+}
 </style>
 
 <svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs><symbol id="sMaison" viewBox="0 -10 266 116">
@@ -989,21 +1022,7 @@ footer .legal { margin-top: clamp(26px, 3.4vh, 40px); }
   <div class="grid" id="grid"></div><div class="gdots" id="gdots" aria-hidden="true"></div><div class="seeall"><a class="go ln on" id="seeall" href="#shop">See all pieces</a></div>
 </div></section>
 
-<section class="vista rv" id="vista1" aria-label="A course seen from above"><div class="vi" style="background-image:url(img/golf-aerial.jpg);background-position:50% 50%"></div><div class="vc wrap"><span class="vl">Golf, to begin with</span></div></section>
-
-<section class="make" id="craft" aria-label="The making, in four movements"><div class="makein">
-  <div class="mk-img" aria-hidden="true"><i class="c on" style="background-image:url(img/loom.jpg)"></i><i class="c" style="background-image:url(img/hands.jpg)"></i><i class="c" style="background-image:url(img/bench.jpg)"></i><i class="c dim" style="background-image:url(img/wool4.jpg)"></i><span class="bigstamp" id="stm4"></span></div>
-  <div class="mk-txt">
-    <div class="mk-top"><span class="label">The making, in four movements</span><a class="mk-skip ln" href="#route">Skip</a><span class="mk-count"><b id="mkn">01</b>/ 04</span></div>
-    <div class="mk-stack">
-      <article class="ch on"><span class="no">I</span><h3>Chosen from the remnant.</h3><p>Italian and French mills cut cloth for fashion houses. What remains of the roll reaches the atelier in Bordeaux, in the south-west of France, where it is chosen for its hand and character.</p></article>
-      <article class="ch"><span class="no">II</span><h3>Cut and matched by hand.</h3><p>Each piece is cut from its own pattern by the hands that will stitch it, the weave aligned across every seam.</p></article>
-      <article class="ch"><span class="no">III</span><h3>Finished in leather.</h3><p>A leather collar, saddle-stitched. It deepens with every round and, in time, takes on its own patina.</p></article>
-      <article class="ch"><span class="no">IV</span><h3>Numbered as it is made.</h3><p>Camille numbers each piece by hand when she finishes it, and writes the number on the card in the box. The number is never chosen: it belongs to the piece.</p></article>
-    </div>
-    <div class="mk-bar"><i id="mkbar"></i></div>
-  </div>
-</div></section>
+<section class="making" id="craft" aria-label="The making, in four movements"><div class="wrap"><div class="mkh"><span class="label">The making, in four movements</span></div><div class="mkl"><article class="mkc rv"><div class="mki"><i style="background-image:url(img/loom.jpg)"></i></div><div class="mkt"><span class="no">I</span><h3>Chosen from the remnant.</h3><p>Italian and French mills cut cloth for fashion houses. What remains of the roll reaches the atelier in Bordeaux, in the south-west of France, where it is chosen for its hand and character.</p></div></article><article class="mkc rv"><div class="mki"><i style="background-image:url(img/hands.jpg)"></i></div><div class="mkt"><span class="no">II</span><h3>Cut and matched by hand.</h3><p>Each piece is cut from its own pattern by the hands that will stitch it, the weave aligned across every seam.</p></div></article><article class="mkc rv"><div class="mki"><i style="background-image:url(img/bench.jpg)"></i></div><div class="mkt"><span class="no">III</span><h3>Finished in leather.</h3><p>A leather collar, saddle-stitched. It deepens with every round and, in time, takes on its own patina.</p></div></article><article class="mkc rv"><div class="mki"><i style="background-image:url(img/wool4.jpg)"></i><span class="bigstamp" id="stm4"></span></div><div class="mkt"><span class="no">IV</span><h3>Numbered as it is made.</h3><p>Camille numbers each piece by hand when she finishes it, and writes the number on the card in the box. The number is never chosen: it belongs to the piece.</p></div></article></div></div></section>
 
 <section class="route" id="route"><div class="wrap">
   <div class="head"><h2 class="h2 rv">Born on the Gold Coast. Made in France.</h2><span class="label rv">From France to Australia</span></div>
@@ -1092,6 +1111,7 @@ footer .legal { margin-top: clamp(26px, 3.4vh, 40px); }
 (function () {
   var $ = function (s, r) { return (r || document).querySelector(s); }, $$ = function (s, r) { return Array.prototype.slice.call((r || document).querySelectorAll(s)); };
   var reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
+  var LITE = matchMedia("(max-width: 900px), (pointer: coarse)").matches;
   /* delivery: set here. Complimentary at or above SHIP_FREE (AUD); otherwise a flat tracked rate. To confirm with the carrier. */
   var SHIP_FREE = 300, SHIP_RATE = 15, shipCost = function (sub) { return sub >= SHIP_FREE ? 0 : SHIP_RATE; };
   var money = function (n) { return "A$" + n.toLocaleString("en-AU"); }, pad = function (n) { return String(n).padStart(4, "0"); };
@@ -1228,7 +1248,7 @@ footer .legal { margin-top: clamp(26px, 3.4vh, 40px); }
     if (k.n) s += '<g class="nk"><path d="' + k.n + '" fill="url(#' + id + 'n)"/><path d="' + k.n + '" fill="url(#' + id + 'r)"/><path d="' + k.n + '" fill="url(#' + id + 'g)"/></g>';
     s += '<path d="' + k.b + '" fill="url(#' + id + 'w)"/><path d="' + k.b + '" fill="url(#' + id + 's)"/>';
     s += '<filter id="' + id + 'f" x="0" y="0" width="100%" height="100%"><feTurbulence type="fractalNoise" baseFrequency=".9" numOctaves="2" seed="4" result="n"/><feColorMatrix in="n" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 .9 -.28"/><feComposite in2="SourceGraphic" operator="in"/></filter>';
-    s += '<path d="' + k.c + '" fill="url(#' + id + 'l)"/><path d="' + k.c + '" fill="#000" opacity=".55" filter="url(#' + id + 'f)"/><path d="' + k.c + '" fill="url(#' + id + 'g)"/><path d="' + k.c + '" fill="none" stroke="rgba(255,230,200,.22)" stroke-width="1.1"/>';
+    s += '<path d="' + k.c + '" fill="url(#' + id + 'l)"/>' + (LITE ? '' : '<path d="' + k.c + '" fill="#000" opacity=".55" filter="url(#' + id + 'f)"/>') + '<path d="' + k.c + '" fill="url(#' + id + 'g)"/><path d="' + k.c + '" fill="none" stroke="rgba(255,230,200,.22)" stroke-width="1.1"/>';
     s += k.s.map(function (d) { return stitch(d); }).join("");
     if (k.cord) s += '<path d="' + k.cord + '" fill="none" stroke="#E8D9BC" stroke-width="4.2" stroke-linecap="round"/><path d="' + k.cord + '" fill="none" stroke="rgba(0,0,0,.25)" stroke-width="1" transform="translate(.8 1.4)"/>';
     s += '<circle class="sheen" cx="150" cy="150" r="210" fill="url(#' + id + 'h)" clip-path="url(#' + id + 'c)"/>';
@@ -1325,16 +1345,12 @@ footer .legal { margin-top: clamp(26px, 3.4vh, 40px); }
     bar.classList.toggle("away", onHome && y > lastY + 4 && y > vh && !$("#sheet").classList.contains("is-open")); if (y < lastY - 4 || y < vh) bar.classList.remove("away"); lastY = y;
     if (!onHome) return;
     route2();
-    var par = $("#par"); if (par && y < vh * 1.3) { par.style.translate = "0 " + (y * .2) + "px"; par.style.scale = 1 + Math.min(1, y / vh) * .1; }
-    $$(".craft .im i").forEach(function (i) { var r = i.parentNode.getBoundingClientRect(); if (r.bottom < -100 || r.top > vh + 100) return; i.style.translate = "0 " + ((r.top + r.height / 2 - vh / 2) * -.06).toFixed(1) + "px"; });
-    var sb = $(".state .bgph"); if (sb) { var sr = sb.parentNode.getBoundingClientRect(); if (sr.bottom > 0 && sr.top < vh) sb.style.translate = "0 " + ((sr.top + sr.height / 2 - vh / 2) * -.08).toFixed(1) + "px"; }
-    var hs = $("#hs"); if (hs && innerWidth > 900) { var q = hs.getBoundingClientRect(), pr2 = Math.min(1, Math.max(0, -q.top / (q.height - vh))), sw = $(".sw", hs); sw.style.transform = "translateX(" + (-pr2 * Math.max(0, sw.scrollWidth - innerWidth)).toFixed(1) + "px)"; } else if (hs) { var sw2 = $(".sw", hs); sw2.style.transform = ""; }
-    var mk = $("#craft"); if (mk && !reduce) { var mr = mk.getBoundingClientRect(), mp = Math.min(.999, Math.max(0, -mr.top / Math.max(1, mr.height - vh))), mi = Math.floor(mp * 4);
-      if (mi !== window.__mk) { window.__mk = mi; $(".mk-img").classList.toggle("last", mi === 3); $$(".mk-img .c").forEach(function (e, i) { e.classList.toggle("on", i === mi); }); $$(".ch").forEach(function (e, i) { e.classList.toggle("on", i === mi); }); $("#mkn").textContent = "0" + (mi + 1); }
-      $("#mkbar").style.width = (mp * 100).toFixed(1) + "%"; }
-    $$(".vista .vi").forEach(function (v) { var r = v.parentNode.getBoundingClientRect(); if (r.bottom < -80 || r.top > vh + 80) return; v.style.translate = "0 " + ((r.top + r.height / 2 - vh / 2) * -.12).toFixed(1) + "px"; });
-    var cb = $(".closing .cbg"); if (cb) { var cr = cb.parentNode.getBoundingClientRect(); if (cr.bottom > 0 && cr.top < vh) cb.style.translate = "0 " + ((cr.top + cr.height / 2 - vh / 2) * -.1).toFixed(1) + "px"; }
-    var hc = $(".hero .copy"), hk = $(".hero .clocks"); if (y < vh * 1.3) { var f = Math.min(1, y / (vh * .42)); hc.style.transform = "translateY(" + (-y * .22) + "px)"; hc.style.opacity = 1 - f; hk.style.opacity = 1 - f * 1.3; }
+    var par = $("#par"); if (par && !LITE && y < vh * 1.3) { par.style.translate = "0 " + (y * .2) + "px"; par.style.scale = 1 + Math.min(1, y / vh) * .1; }
+    if (!LITE) $$(".craft .im i").forEach(function (i) { var r = i.parentNode.getBoundingClientRect(); if (r.bottom < -100 || r.top > vh + 100) return; i.style.translate = "0 " + ((r.top + r.height / 2 - vh / 2) * -.06).toFixed(1) + "px"; });
+    var sb = $(".state .bgph"); if (sb && !LITE) { var sr = sb.parentNode.getBoundingClientRect(); if (sr.bottom > 0 && sr.top < vh) sb.style.translate = "0 " + ((sr.top + sr.height / 2 - vh / 2) * -.08).toFixed(1) + "px"; }
+    if (!LITE) $$(".vista .vi").forEach(function (v) { var r = v.parentNode.getBoundingClientRect(); if (r.bottom < -80 || r.top > vh + 80) return; v.style.translate = "0 " + ((r.top + r.height / 2 - vh / 2) * -.12).toFixed(1) + "px"; });
+    var cb = $(".closing .cbg"); if (cb && !LITE) { var cr = cb.parentNode.getBoundingClientRect(); if (cr.bottom > 0 && cr.top < vh) cb.style.translate = "0 " + ((cr.top + cr.height / 2 - vh / 2) * -.1).toFixed(1) + "px"; }
+    var hc = $(".hero .copy"), hk = $(".hero .clocks"); if (y < vh * 1.3) { var f = Math.min(1, y / (vh * .42)); if (!LITE) hc.style.transform = "translateY(" + (-y * .22) + "px)"; hc.style.opacity = 1 - f; hk.style.opacity = 1 - f * 1.3; }
     $("#prog2").style.width = (y / Math.max(1, document.documentElement.scrollHeight - vh) * 100) + "%";
     var r = st.getBoundingClientRect(), p = Math.min(1, Math.max(0, (vh * .86 - r.top) / (r.height + vh * .3)));
     var n = Math.round(p * words.length * 1.15); words.forEach(function (w, i) { w.classList.toggle("lit", i < n); });
@@ -1343,7 +1359,7 @@ footer .legal { margin-top: clamp(26px, 3.4vh, 40px); }
       if (reduce) c.textContent = "N°" + pad(34); else rollNumber(c, 34);
     }
   }
-  addEventListener("scroll", frame, { passive: true }); addEventListener("resize", frame);
+  var ticking = false; addEventListener("scroll", function () { if (ticking) return; ticking = true; requestAnimationFrame(function () { ticking = false; frame(); }); }, { passive: true }); addEventListener("resize", frame);
 
   /* ---------- the route is sewn as you scroll: a needle carries the thread, dipping in and out of the cloth ---------- */
   var rbase = $("#rbase"), needle = $("#needle"), PER = 20, SEG = 12, OFF = 4;
