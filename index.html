@@ -880,6 +880,23 @@ footer .legal { margin-top: clamp(30px, 4vh, 48px); padding-top: 14px; font: 300
 .sheet .sh-foot { margin-top: auto; padding-top: 20px; display: flex; gap: 28px; } .sheet .sh-foot a { font: 400 11px var(--body); letter-spacing: .24em; text-transform: uppercase; color: #F4F1EB; border-bottom: 1px solid rgba(255,255,255,.35); padding: 4px 0 5px; opacity: 1; transform: none; }
 .sheet .sfoot { margin: 18px 0 0; font: 300 11px/1.7 var(--body); letter-spacing: .16em; text-transform: uppercase; color: #7D766A; }
 @media (max-height: 640px) { .sheet .sh-nav > a { padding: 8px 0; font-size: 28px; } .sheet .subs a { padding: 8px 0; } }
+
+/* chapter four: the numbered card lies on the wool */
+.mk-img .bigstamp { place-items: center; padding: 0 8%; }
+.mcard { position: relative; width: min(470px, 100%); padding: clamp(22px, 2.4vw, 32px) clamp(24px, 2.8vw, 36px) clamp(18px, 2vw, 24px); background-color: #F7F2E7; color: #5B1E2D; transform: rotate(-3.2deg); box-shadow: 0 1px 0 rgba(255,255,255,.7) inset, 0 2px 3px rgba(0,0,0,.28), 0 18px 34px -10px rgba(0,0,0,.55), 0 38px 60px -30px rgba(0,0,0,.6); border-radius: 2px; }
+.mcard::before { content: ""; position: absolute; inset: 0; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='260' height='260'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .45  0 0 0 0 .38  0 0 0 0 .28  0 0 0 .5 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E"); opacity: .28; mix-blend-mode: multiply; pointer-events: none; border-radius: 2px; }
+.mcard::after { content: ""; position: absolute; inset: 9px; border: 1px solid rgba(91,30,45,.22); pointer-events: none; }
+.mc-top { display: flex; align-items: center; justify-content: space-between; gap: 14px; } .mc-top .mark { flex: none; }
+.mc-txt { display: grid; gap: 4px; text-align: center; font: 500 9.5px var(--body); letter-spacing: .28em; text-transform: uppercase; color: rgba(91,30,45,.78); }
+.mc-rule { height: 1px; background: rgba(91,30,45,.28); margin: 16px 0 14px; }
+.mc-num { display: flex; justify-content: center; } .mc-num .mark { max-width: 100%; height: auto; }
+.mc-foot { display: flex; justify-content: space-between; margin-top: 14px; font: 400 9.5px var(--body); letter-spacing: .24em; text-transform: uppercase; color: rgba(91,30,45,.6); }
+.mk-img .c.dim { filter: saturate(.72) contrast(1.04) brightness(.7); }
+@media (max-width: 900px) { .mcard { width: min(340px, 100%); } .mc-top .mark:first-child { width: 58px; height: 58px; } .mc-top .mark:last-child { width: 44px; height: 44px; } .mc-num .mark { width: 200px; } }
+
+.mk-img .bigstamp { position: absolute; inset: 0; z-index: 2; display: grid; place-items: center; pointer-events: none; opacity: 0; transform: translateY(24px); transition: opacity 1.1s var(--ease) .5s, transform 1.3s var(--ease) .5s; }
+.mk-img.last .bigstamp { opacity: 1; transform: none; }
+@media (prefers-reduced-motion: reduce) { .mk-img .bigstamp { display: none; } }
 </style>
 
 <svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs><symbol id="sMaison" viewBox="0 -10 266 116">
@@ -939,7 +956,7 @@ footer .legal { margin-top: clamp(30px, 4vh, 48px); padding-top: 14px; font: 300
 </div></section>
 
 <section class="make" id="craft" aria-label="The making, in four movements"><div class="makein">
-  <div class="mk-img" aria-hidden="true"><i class="c on" style="background-image:url(img/loom.jpg)"></i><i class="c" style="background-image:url(img/hands.jpg)"></i><i class="c" style="background-image:url(img/bench.jpg)"></i><i class="c dim" style="background-image:url(img/wool4.jpg)"><span class="bigstamp" id="stm4"></span></i></div>
+  <div class="mk-img" aria-hidden="true"><i class="c on" style="background-image:url(img/loom.jpg)"></i><i class="c" style="background-image:url(img/hands.jpg)"></i><i class="c" style="background-image:url(img/bench.jpg)"></i><i class="c dim" style="background-image:url(img/wool4.jpg)"></i><span class="bigstamp" id="stm4"></span></div>
   <div class="mk-txt">
     <div class="mk-top"><span class="label">The making, in four movements</span><a class="mk-skip ln" href="#route">Skip</a><span class="mk-count"><b id="mkn">01</b>/ 04</span></div>
     <div class="mk-stack">
@@ -1143,6 +1160,13 @@ footer .legal { margin-top: clamp(30px, 4vh, 48px); padding-top: 14px; font: 300
       stitch("M38 36 H602 Q612 36 612 46 V180 Q612 190 602 190 H38 Q28 190 28 180 V46 Q28 36 38 36 Z", "#EADBBA") +
       '<g filter="url(#' + id + 'd)" fill="#000" stroke="#000"><g transform="translate(52 56) scale(.98)">' + loz + '</g><g transform="translate(236 62) scale(.9)">' + yr + '</g><g transform="translate(372 62) scale(.9)">' + pl + "</g></g></svg>";
   }
+  /* the numbered card from the box, inked with the maker's marks */
+  function makerCard(o) {
+    o = o || {}; var num = o.num || "0034";
+    return '<div class="mcard"><div class="mc-top">' + lozenge({ size: 78, rot: -4 }) + '<div class="mc-txt"><span>Atelier Texier</span><span>Bordeaux, France</span></div>' + yearMark({ size: 58, rot: 3 }) + '</div>' +
+      '<div class="mc-rule"></div><div class="mc-num">' + numPlate({ w: 250, num: num, rot: -1.5 }) + '</div>' +
+      '<div class="mc-foot"><span>Numbered by hand</span><span>Camille Texier</span></div></div>';
+  }
   /* the set, as it is struck on a piece: maker, year, number */
   function markSet(o) {
     o = o || {}; var z = o.size || 90, base = { style: o.style, tone: o.tone }, cap = function (t) { return o.captions ? '<small>' + t + '</small>' : ""; };
@@ -1213,7 +1237,7 @@ footer .legal { margin-top: clamp(30px, 4vh, 48px); padding-top: 14px; font: 300
     var t; function open() { clearTimeout(t); bar.classList.add("mega-open"); } function close() { t = setTimeout(function () { bar.classList.remove("mega-open"); }, 140); }
     link.addEventListener("mouseenter", open); link.addEventListener("focus", open); bar.addEventListener("mouseleave", close); mg.addEventListener("mouseenter", open); mg.addEventListener("click", function () { bar.classList.remove("mega-open"); }); link.addEventListener("click", function () { bar.classList.remove("mega-open"); }); addEventListener("scroll", function () { bar.classList.remove("mega-open"); }, { passive: true });
   })();
-  $("#svc1").textContent = "On orders over " + money(SHIP_FREE) + ", tracked within Australia."; $("#stm4").innerHTML = makerTab({ num: "0034" });  $("#stm1").innerHTML = lozenge({ size: 58, rot: -6 }); $("#stm5").innerHTML = lozenge({ size: 46, rot: -4, tone: "#CDBB93" }); $("#stm2").innerHTML = lozenge({ size: 84, rot: -5 });
+  $("#svc1").textContent = "On orders over " + money(SHIP_FREE) + ", tracked within Australia."; $("#stm4").innerHTML = makerCard({ num: "0034" });  $("#stm1").innerHTML = lozenge({ size: 58, rot: -6 }); $("#stm5").innerHTML = lozenge({ size: 46, rot: -4, tone: "#CDBB93" }); $("#stm2").innerHTML = lozenge({ size: 84, rot: -5 });
   var cat = "feat", FEATURED = ["bois-n1", "bois-n3", "hybride", "lame", "cadet"], CATS = [{ id: "headcover", label: "Headcovers" }, { id: "set", label: "Sets" }, { id: "accessory", label: "Accessories" }];
   function cardHtml(p) {
     return '<a class="card rv' + (left(p) ? "" : " is-out") + '" href="#p-' + p.id + '"><div class="f' + (PH[p.id] ? " photo" : "") + '">' + (PH[p.id] ? '<div class="pf"><i style="background-image:url(' + PH[p.id].a + ')"></i><i style="background-image:url(' + PH[p.id].b + ')"></i></div>' : '<div class="pl">' + plate(p, CUSTOM ? { text: "MT" } : { none: 1 }) + '</div>') + '<span class="view">Discover</span>' + stkBadge(p) + '</div><div class="t"><h3>' + p.name + '</h3><span class="pr">' + money(p.price) + '</span></div><div class="cl">' + p.club + '</div></a>';
@@ -1270,7 +1294,7 @@ footer .legal { margin-top: clamp(30px, 4vh, 48px); padding-top: 14px; font: 300
     var sb = $(".state .bgph"); if (sb) { var sr = sb.parentNode.getBoundingClientRect(); if (sr.bottom > 0 && sr.top < vh) sb.style.translate = "0 " + ((sr.top + sr.height / 2 - vh / 2) * -.08).toFixed(1) + "px"; }
     var hs = $("#hs"); if (hs && innerWidth > 900) { var q = hs.getBoundingClientRect(), pr2 = Math.min(1, Math.max(0, -q.top / (q.height - vh))), sw = $(".sw", hs); sw.style.transform = "translateX(" + (-pr2 * Math.max(0, sw.scrollWidth - innerWidth)).toFixed(1) + "px)"; } else if (hs) { var sw2 = $(".sw", hs); sw2.style.transform = ""; }
     var mk = $("#craft"); if (mk && !reduce) { var mr = mk.getBoundingClientRect(), mp = Math.min(.999, Math.max(0, -mr.top / Math.max(1, mr.height - vh))), mi = Math.floor(mp * 4);
-      if (mi !== window.__mk) { window.__mk = mi; $$(".mk-img .c").forEach(function (e, i) { e.classList.toggle("on", i === mi); }); $$(".ch").forEach(function (e, i) { e.classList.toggle("on", i === mi); }); $("#mkn").textContent = "0" + (mi + 1); }
+      if (mi !== window.__mk) { window.__mk = mi; $(".mk-img").classList.toggle("last", mi === 3); $$(".mk-img .c").forEach(function (e, i) { e.classList.toggle("on", i === mi); }); $$(".ch").forEach(function (e, i) { e.classList.toggle("on", i === mi); }); $("#mkn").textContent = "0" + (mi + 1); }
       $("#mkbar").style.width = (mp * 100).toFixed(1) + "%"; }
     var hc = $(".hero .copy"), hk = $(".hero .clocks"); if (y < vh * 1.3) { var f = Math.min(1, y / (vh * .42)); hc.style.transform = "translateY(" + (-y * .22) + "px)"; hc.style.opacity = 1 - f; hk.style.opacity = 1 - f * 1.3; }
     $("#prog2").style.width = (y / Math.max(1, document.documentElement.scrollHeight - vh) * 100) + "%";
