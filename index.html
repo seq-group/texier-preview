@@ -682,7 +682,7 @@ footer .g { grid-template-columns: 1.5fr repeat(4, 1fr); } footer .legal { justi
 .closing { padding-block: clamp(70px, 11vh, 140px) clamp(50px, 8vh, 100px); } .covers { padding-block: clamp(56px, 8vh, 100px) clamp(60px, 9vh, 110px); }
 
 /* ---------- the making: a single pinned piece ---------- */
-.make { height: 430vh; position: relative; background: var(--paper); }
+.make { height: 270vh; position: relative; background: var(--paper); }
 .makein { position: sticky; top: 0; height: 100vh; display: grid; grid-template-columns: 7fr 5fr; overflow: hidden; }
 .mk-img { position: relative; overflow: hidden; background: #1a1815; }
 .mk-img .c { position: absolute; inset: 0; background-size: cover; background-position: center; opacity: 0; transform: scale(1.1); transition: opacity 1.3s var(--ease), transform 2.8s var(--ease); filter: saturate(.9) contrast(1.04); }
@@ -700,7 +700,7 @@ footer .g { grid-template-columns: 1.5fr repeat(4, 1fr); } footer .legal { justi
 .mk-bar { height: 1px; background: var(--rule); position: relative; } .mk-bar i { position: absolute; left: 0; top: 0; height: 1px; width: 0; background: var(--wine); }
 .rstamp { top: -78% !important; right: -2% !important; }
 @media (max-width: 900px) {
-  .make { height: 380vh; } .makein { grid-template-columns: 1fr; grid-template-rows: 48svh 1fr; }
+  .make { height: 250vh; } .makein { grid-template-columns: 1fr; grid-template-rows: 48svh 1fr; }
   .mk-txt { padding: 22px var(--pad) 26px; } .ch .no { font-size: clamp(48px, 15vw, 80px); margin-bottom: 12px; } .mk-img .bigstamp .stamp { width: 180px; height: 180px; }
 }
 @media (prefers-reduced-motion: reduce) { .make { height: auto; } .makein { position: static; height: auto; grid-template-columns: 1fr; } .mk-img { height: 60vh; } .mk-stack { display: block; } .ch { opacity: 1; visibility: visible; transform: none; margin: 28px 0; } .mk-bar, .mk-count { display: none; } }
@@ -828,6 +828,28 @@ small { font-size: 11.5px; }
 .regline { display: flex; align-items: center; gap: 18px; margin-top: clamp(22px, 2.6vw, 34px); padding-top: clamp(18px, 2vw, 26px); border-top: 1px solid #34312C; max-width: 640px; }
 .regline b { display: block; font: 500 clamp(18px, 1.5vw, 22px) var(--serif); letter-spacing: -.01em; color: #F4F1EB; font-optical-sizing: none; font-variation-settings: "opsz" 24; } .regline span:not(.stm) { display: block; margin-top: 3px; font: 300 14px/1.5 var(--body); color: #A59E91; letter-spacing: .02em; }
 .reg .note, .reg .loopbox { display: none; }
+
+/* ---------- the register page ---------- */
+.reg .g { align-items: center; grid-template-columns: 1.1fr 1fr; gap: clamp(40px, 6vw, 110px); }
+.reg .regr { max-width: 560px; } .reg .regr h3 { margin-bottom: 14px; } .reg .regr > p { margin: 0 0 clamp(22px, 2.6vw, 34px); max-width: 34em; }
+.rtab { width: 100%; border-collapse: collapse; font-variant-numeric: tabular-nums; } .rtab caption { text-align: left; padding-bottom: 12px; color: #8F887C; border-bottom: 1px solid #5A554D; }
+.rtab td { padding: 13px 10px 13px 0; border-bottom: 1px solid #2E2B27; vertical-align: baseline; } .rtab .no { font: 400 22px var(--num); width: 98px; color: #F4F1EB; font-optical-sizing: none; font-variation-settings: "opsz" 8; font-weight: 500; }
+.rtab .pc { font: 300 15.5px var(--body); color: #D8D1C3; } .rtab .dt { text-align: right; font: 400 11.5px var(--body); letter-spacing: .18em; text-transform: uppercase; color: #8F887C; padding-right: 0; }
+.rtab tr.cur .no { color: #D9C8A5; } .rtab tr.cur .pc { color: #F4F1EB; } .rtab tr { transition: background .4s; } .rtab tr:hover td { background: rgba(255,255,255,.03); }
+.rfoot { display: flex; justify-content: space-between; align-items: baseline; gap: 16px; flex-wrap: wrap; margin-top: 20px; font: 300 13.5px var(--body); color: #8F887C; } .rfoot a { color: #F4F1EB; font: 500 11.5px var(--body); letter-spacing: .18em; text-transform: uppercase; }
+.reg .rstamp, .reg .meter { display: none; }
+.regline .stm { opacity: .9; }
+@media (max-width: 900px) { .reg .g { grid-template-columns: 1fr; gap: 56px; } .rtab .no { font-size: 19px; width: 84px; } }
+
+/* chapter four: the maker's tab lies on the wool */
+.bigstamp, .bigstamp * { font-style: normal; }
+.mk-img .bigstamp { place-items: center; padding: 0 9%; }
+.mtab { display: block; width: min(560px, 100%); height: auto; transform: rotate(-3.5deg); filter: drop-shadow(0 26px 22px rgba(0,0,0,.55)) drop-shadow(0 3px 4px rgba(0,0,0,.4)); }
+.mk-img .c.dim { filter: saturate(.7) contrast(1.04) brightness(.62); }
+@media (max-width: 900px) { .mtab { width: min(380px, 100%); } }
+
+.mk-skip { margin-left: auto; margin-right: 22px; font: 400 11px var(--body); letter-spacing: .2em; text-transform: uppercase; color: var(--mute); white-space: nowrap; }
+.mk-top .label { flex: 0 1 auto; }
 </style>
 
 <svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs><symbol id="sMaison" viewBox="0 -10 266 116">
@@ -878,7 +900,7 @@ small { font-size: 11.5px; }
 <section class="make" id="craft" aria-label="The making, in four movements"><div class="makein">
   <div class="mk-img" aria-hidden="true"><i class="c on" style="background-image:url(img/loom.jpg)"></i><i class="c" style="background-image:url(img/hands.jpg)"></i><i class="c" style="background-image:url(img/bench.jpg)"></i><i class="c dim" style="background-image:url(img/wool4.jpg)"><span class="bigstamp" id="stm4"></span></i></div>
   <div class="mk-txt">
-    <div class="mk-top"><span class="label">The making, in four movements</span><span class="mk-count"><b id="mkn">01</b>/ 04</span></div>
+    <div class="mk-top"><span class="label">The making, in four movements</span><a class="mk-skip ln" href="#route">Skip</a><span class="mk-count"><b id="mkn">01</b>/ 04</span></div>
     <div class="mk-stack">
       <article class="ch on"><span class="no">I</span><h3>Chosen from the remnant.</h3><p>Italian and French mills cut cloth for fashion houses. What remains of the roll reaches the atelier in Bordeaux, in the south-west of France, where it is chosen for its hand and character.</p></article>
       <article class="ch"><span class="no">II</span><h3>Cut and matched by hand.</h3><p>Each piece is cut from its own pattern by the hands that will stitch it, the weave aligned across every seam.</p></article>
@@ -913,19 +935,23 @@ small { font-size: 11.5px; }
 <section class="reg" id="register"><div class="wrap g">
   <div class="bigwrap" id="bw"><span class="label rgl">The most recent piece numbered</span><div class="big" id="count">N°0000</div>
     <div class="regline"><span class="stm" id="stm5"></span><div><b>Bois N°1</b><span>Numbered by C.T. in Bordeaux, 27 October 2026</span></div></div></div>
-  <div><h3>The register.</h3><p>Every piece is numbered by hand in Bordeaux, France, as it is made, in one continuous register. A number is never chosen or assigned to an order: it belongs to the piece, is written on the card in the box, and appears in your account when your piece is dispatched.</p><a class="go ln on" href="#pieces">Browse the collection</a>
-    <div class="rstamp" id="stm3"></div><div class="meter"><div class="bar2"><b id="meter"></b></div><small>34 pieces numbered since the Maison opened.</small></div></div>
+  <div class="regr"><h3>The register.</h3>
+    <p>Every piece is numbered by hand in Bordeaux, France, as it is made. The number belongs to the piece, never to an order. It is written on the card in the box, and appears in your account once your piece is dispatched.</p>
+    <table class="rtab" aria-label="Latest entries in the register"><caption class="label">Latest entries</caption><tbody id="ledger"></tbody></table>
+    <div class="rfoot"><span>34 pieces numbered since the Maison opened</span><a class="go ln on" href="#shop">Browse the collection</a></div>
+    <div class="rstamp" id="stm3"></div>
+  </div>
 </div></section>
 
 <section class="wool" id="wool"><div class="wrap">
-  <div class="head"><h2 class="h2 rv">Cloth that may never be woven again.</h2><p class="rv">The wool varies from piece to piece, so there are no named fabrics. Here is some of the cloth in the atelier in Bordeaux, France, and the most recent entries in the register.</p></div>
+  <div class="head"><h2 class="h2 rv">Cloth that may never be woven again.</h2><p class="rv">The wool varies from piece to piece, so there are no named fabrics. Here is some of the cloth in the atelier in Bordeaux, France.</p></div>
   <div class="hs" id="hs"><div class="hsin"><div class="sw">
     <figure class="rv"><div class="im"><i style="background-image:url(img/wool1.jpg)"></i></div><figcaption>Italian wool, woven</figcaption></figure>
     <figure class="rv" style="transition-delay:.08s"><div class="im"><i style="background-image:url(img/wool2.jpg)"></i></div><figcaption>Italian wool, plaid</figcaption></figure>
     <figure class="rv" style="transition-delay:.16s"><div class="im"><i style="background-image:url(img/wool3.jpg)"></i></div><figcaption>French wool</figcaption></figure>
     <figure class="rv" style="transition-delay:.24s"><div class="im"><i style="background-image:url(img/wool4.jpg)"></i></div><figcaption>Italian wool, houndstooth</figcaption></figure>
   </div></div></div>
-  <table class="led"><caption><span class="label">The register, latest entries</span></caption><tbody id="ledger"></tbody></table>
+  
 </div></section>
 
 <section class="story" id="story"><div class="wrap"><div class="g">
@@ -1059,6 +1085,23 @@ small { font-size: 11.5px; }
     o = o || {}; var inner = '<rect x="3" y="3" width="234" height="84" rx="5" fill="none" stroke-width="2.4"/><rect x="10" y="10" width="220" height="70" rx="3" fill="none" stroke-width=".9"/><text x="120" y="63" text-anchor="middle" font-family="Bodoni Moda, serif" style="font-optical-sizing:none;font-variation-settings:\'opsz\' 6" font-weight="500" font-size="44" stroke="none" letter-spacing="2">N° ' + (o.num || "0000") + '</text>';
     return press(inner, o, 240, 90);
   }
+  /* the maker's tab: one piece of leather, saddle-stitched, with the three marks blind-debossed into it */
+  function makerTab(o) {
+    o = o || {}; var id = "tb" + (++SN), num = o.num || "0034", a = ARTISANS[0];
+    var loz = '<path d="M60 4 L116 60 L60 116 L4 60 Z" fill="none" stroke-width="3"/><path d="M60 14 L106 60 L60 106 L14 60 Z" fill="none" stroke-width="1.1"/><text x="60" y="58" text-anchor="middle" font-family="Bodoni Moda, serif" font-style="normal" font-weight="500" font-size="25" letter-spacing="3" stroke="none">' + a.ini[0] + "&#8201;" + a.ini[1] + "</text>" + emblem(a.emblem);
+    var yr = '<circle cx="60" cy="60" r="55" fill="none" stroke-width="3"/><circle cx="60" cy="60" r="48.5" fill="none" stroke-width="1.1"/><text x="60" y="80" text-anchor="middle" font-family="Bodoni Moda, serif" font-style="normal" font-weight="500" font-size="58" stroke="none">' + YEAR_LETTER + "</text>";
+    var pl = '<rect x="3" y="3" width="234" height="84" rx="5" fill="none" stroke-width="3"/><rect x="11" y="11" width="218" height="68" rx="3" fill="none" stroke-width="1.1"/><text x="120" y="62" text-anchor="middle" font-family="Bodoni Moda, serif" font-style="normal" font-weight="500" font-size="42" letter-spacing="2" stroke="none">N\u00B0 ' + num + "</text>";
+    return '<svg class="mtab" viewBox="0 0 640 230" overflow="visible" role="img" aria-label="Maker\u2019s tab: C. T., year A, number ' + num + '"><defs>' +
+      '<linearGradient id="' + id + 'g" x1="0" y1="0" x2=".15" y2="1"><stop offset="0" stop-color="#7B4A28"/><stop offset=".5" stop-color="#5B3219"/><stop offset="1" stop-color="#3F2210"/></linearGradient>' +
+      '<filter id="' + id + 'n" x="0" y="0" width="100%" height="100%"><feTurbulence type="fractalNoise" baseFrequency=".85" numOctaves="3" seed="11" result="t"/><feColorMatrix in="t" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 .85 -.3"/><feComposite in2="SourceGraphic" operator="in"/></filter>' +
+      '<filter id="' + id + 'd" x="-5%" y="-5%" width="110%" height="110%"><feOffset in="SourceAlpha" dx="1.2" dy="1.4" result="o1"/><feGaussianBlur in="o1" stdDeviation=".5" result="b1"/><feFlood flood-color="#F0D3A6" flood-opacity=".5"/><feComposite in2="b1" operator="in" result="lip"/>' +
+      '<feOffset in="SourceAlpha" dx="-1" dy="-1.1" result="o2"/><feGaussianBlur in="o2" stdDeviation=".6" result="b2"/><feFlood flood-color="#120802" flood-opacity=".85"/><feComposite in2="b2" operator="in" result="sh"/>' +
+      '<feFlood flood-color="#2B1507" flood-opacity=".75"/><feComposite in2="SourceAlpha" operator="in" result="fill"/><feMerge><feMergeNode in="lip"/><feMergeNode in="fill"/><feMergeNode in="sh"/></feMerge></filter></defs>' +
+      '<rect x="8" y="10" width="624" height="210" rx="16" fill="rgba(0,0,0,.35)" transform="translate(0 10)" filter="blur(6px)"/>' +
+      '<rect x="8" y="8" width="624" height="210" rx="16" fill="url(#' + id + 'g)"/><rect x="8" y="8" width="624" height="210" rx="16" fill="#000" opacity=".5" filter="url(#' + id + 'n)"/><rect x="9" y="9" width="622" height="208" rx="15.5" fill="none" stroke="rgba(255,225,190,.28)" stroke-width="1.2"/>' +
+      stitch("M38 36 H602 Q612 36 612 46 V180 Q612 190 602 190 H38 Q28 190 28 180 V46 Q28 36 38 36 Z", "#EADBBA") +
+      '<g filter="url(#' + id + 'd)" fill="#000" stroke="#000"><g transform="translate(52 56) scale(.98)">' + loz + '</g><g transform="translate(236 62) scale(.9)">' + yr + '</g><g transform="translate(372 62) scale(.9)">' + pl + "</g></g></svg>";
+  }
   /* the set, as it is struck on a piece: maker, year, number */
   function markSet(o) {
     o = o || {}; var z = o.size || 90, base = { style: o.style, tone: o.tone }, cap = function (t) { return o.captions ? '<small>' + t + '</small>' : ""; };
@@ -1099,7 +1142,7 @@ small { font-size: 11.5px; }
     return s;
   }
   var WOOL = "img/wool2.jpg", WOOLS2 = ["img/wool1.jpg", "img/wool2.jpg", "img/wool3.jpg", "img/wool4.jpg"];
-  var LED = [[34, "Bois N°1", "img/wool2.jpg"], [33, "La Lame", "img/wool2.jpg"], [32, "Bois N°3", "img/wool3.jpg"], [31, "L'Hybride", "img/wool3.jpg"], [30, "Bois N°1", "img/wool4.jpg"]];
+  var LED = [[34, "Bois N°1", "27 Oct"], [33, "La Lame", "24 Oct"], [32, "Bois N°3", "21 Oct"], [31, "L'Hybride", "17 Oct"], [30, "Bois N°1", "14 Oct"]];
   var nextNo = function () { return 35 + ordered() + bag.length; };
   var bag = []; try { bag = JSON.parse(localStorage.getItem("mt-bag") || "[]"); } catch (e) {}
   var ls = function (k, d) { try { var v = localStorage.getItem(k); return v ? JSON.parse(v) : d; } catch (e) { return d; } };
@@ -1129,7 +1172,7 @@ small { font-size: 11.5px; }
     var t; function open() { clearTimeout(t); bar.classList.add("mega-open"); } function close() { t = setTimeout(function () { bar.classList.remove("mega-open"); }, 140); }
     link.addEventListener("mouseenter", open); link.addEventListener("focus", open); bar.addEventListener("mouseleave", close); mg.addEventListener("mouseenter", open); mg.addEventListener("click", function () { bar.classList.remove("mega-open"); }); link.addEventListener("click", function () { bar.classList.remove("mega-open"); }); addEventListener("scroll", function () { bar.classList.remove("mega-open"); }, { passive: true });
   })();
-  $("#svc1").textContent = "On orders over " + money(SHIP_FREE) + ", tracked within Australia."; $("#stm4").innerHTML = markSet({ size: 190, style: "blind", tone: "#F2EAD8", vertical: true, num: "0034" }); $("#stm3").innerHTML = markSet({ size: 74, style: "blind", tone: "#CDBB93", plate: false, captions: true }); $("#stm1").innerHTML = lozenge({ size: 58, rot: -6 }); $("#stm5").innerHTML = lozenge({ size: 46, rot: -4, tone: "#CDBB93" }); $("#stm2").innerHTML = lozenge({ size: 84, rot: -5 });
+  $("#svc1").textContent = "On orders over " + money(SHIP_FREE) + ", tracked within Australia."; $("#stm4").innerHTML = makerTab({ num: "0034" });  $("#stm1").innerHTML = lozenge({ size: 58, rot: -6 }); $("#stm5").innerHTML = lozenge({ size: 46, rot: -4, tone: "#CDBB93" }); $("#stm2").innerHTML = lozenge({ size: 84, rot: -5 });
   var cat = "feat", FEATURED = ["bois-n1", "bois-n3", "hybride", "lame", "cadet"], CATS = [{ id: "headcover", label: "Headcovers" }, { id: "set", label: "Sets" }, { id: "accessory", label: "Accessories" }];
   function cardHtml(p) {
     return '<a class="card rv' + (left(p) ? "" : " is-out") + '" href="#p-' + p.id + '"><div class="f' + (PH[p.id] ? " photo" : "") + '">' + (PH[p.id] ? '<div class="pf"><i style="background-image:url(' + PH[p.id].a + ')"></i><i style="background-image:url(' + PH[p.id].b + ')"></i></div>' : '<div class="pl">' + plate(p, CUSTOM ? { text: "MT" } : { none: 1 }) + '</div>') + '<span class="view">Discover</span>' + stkBadge(p) + '</div><div class="t"><h3>' + p.name + '</h3><span class="pr">' + money(p.price) + '</span></div><div class="cl">' + p.club + '</div></a>';
@@ -1146,7 +1189,7 @@ small { font-size: 11.5px; }
   var gd = $("#gdots"); gd.innerHTML = $$("#grid .card").map(function () { return "<i></i>"; }).join("");
   function gdots() { var g = $("#grid"), c = $(".card", g); if (!c) return; var n = $$(".card", g).length, i = Math.min(n - 1, Math.round(g.scrollLeft / (c.offsetWidth + 12))); $$("i", gd).forEach(function (d, k) { d.classList.toggle("on", k === i); }); }
   $("#grid").addEventListener("scroll", gdots, { passive: true }); gdots();
-  $("#ledger").innerHTML = LED.map(function (r) { return '<tr><td class="no">N°' + pad(r[0]) + '</td><td>' + r[1] + '</td><td class="by"><span class="stm sm">' + lozenge({ size: 30, rot: -4 }) + '</span></td></tr>'; }).join("");
+  $("#ledger").innerHTML = LED.map(function (r, i) { return '<tr class="' + (i === 0 ? "cur" : "") + '"><td class="no">N°' + pad(r[0]) + '</td><td class="pc">' + r[1] + '</td><td class="dt">' + r[2] + '</td></tr>'; }).join("");
 
   /* ---------- the words of the statement light up as you read ---------- */
   var st = $("#statement"), words = [];
@@ -1193,7 +1236,7 @@ small { font-size: 11.5px; }
     var r = st.getBoundingClientRect(), p = Math.min(1, Math.max(0, (vh * .86 - r.top) / (r.height + vh * .3)));
     var n = Math.round(p * words.length * 1.15); words.forEach(function (w, i) { w.classList.toggle("lit", i < n); });
     var c = $("#count"); if (c && !counted && c.getBoundingClientRect().top < vh * .85) {
-      counted = true; $("#bw").classList.add("drawn"); $("#meter").style.width = "34%";
+      counted = true; $("#bw").classList.add("drawn"); if ($("#meter")) $("#meter").style.width = "34%";
       if (reduce) c.textContent = "N°" + pad(34); else rollNumber(c, 34);
     }
   }
