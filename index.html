@@ -850,6 +850,36 @@ small { font-size: 11.5px; }
 
 .mk-skip { margin-left: auto; margin-right: 22px; font: 400 11px var(--body); letter-spacing: .2em; text-transform: uppercase; color: var(--mute); white-space: nowrap; }
 .mk-top .label { flex: 0 1 auto; }
+
+/* ---------- the closing and the footer, refined: quieter, smaller, better set ---------- */
+.closing { padding-block: clamp(46px, 7vh, 84px) clamp(40px, 6vh, 70px); }
+.closing .g { align-items: center; gap: clamp(24px, 5vw, 90px); grid-template-columns: 1fr 1fr; }
+.closing .h2 { font-size: clamp(26px, 2.7vw, 42px); line-height: 1.12; max-width: 18ch; letter-spacing: -.02em; }
+.closing .h2 .hl { display: none; }
+.closing form { border-bottom: 1px solid #5A554D; transition: border-color .4s; } .closing form:focus-within { border-bottom-color: #D9C8A5; }
+.closing input { font: 300 17px var(--body); padding: 12px 0; } .closing form button { font: 500 11px var(--body); letter-spacing: .22em; text-transform: uppercase; padding-left: 20px; }
+footer { padding-block: clamp(36px, 5vh, 56px) 18px; }
+footer .g { grid-template-columns: 1.3fr repeat(4, minmax(0, 1fr)); gap: clamp(20px, 3vw, 56px); align-items: start; }
+footer .lock { font-size: 26px; }
+footer h4 { font: 500 10.5px var(--body); letter-spacing: .24em; margin: 4px 0 16px; color: #8A8377; }
+footer ul { gap: 11px; font-size: 14px; } footer ul li, footer ul a { font: 300 14px/1.35 var(--body); color: #C9C2B4; white-space: nowrap; letter-spacing: .01em; } footer ul a:hover { color: #F4F1EB; }
+footer .legal { margin-top: clamp(30px, 4vh, 48px); padding-top: 14px; font: 300 11.5px var(--body); letter-spacing: .06em; color: #7D766A; border-top-color: #2A2723; }
+.bigmark { font-size: clamp(44px, 12.5vw, 220px); margin-top: clamp(14px, 2.4vw, 34px); color: #1F1D1A; line-height: .8; letter-spacing: .12em; padding-left: .12em; height: .62em; overflow: hidden; -webkit-mask-image: linear-gradient(180deg, #000 20%, transparent 100%); mask-image: linear-gradient(180deg, #000 20%, transparent 100%); }
+@media (max-width: 900px) { footer .g { grid-template-columns: 1fr 1fr; gap: 28px 20px; } footer .g > div:first-child { grid-column: 1 / -1; } .closing .g { grid-template-columns: 1fr; } .closing .h2 { max-width: 20ch; } footer ul a, footer ul li { white-space: normal; } }
+
+/* ---------- the phone menu: composed, not shouted ---------- */
+.sheet { padding: calc(14px + env(safe-area-inset-top, 0px)) var(--pad) calc(22px + env(safe-area-inset-bottom, 0px)); gap: 0; }
+.sheet .sh-top { display: flex; justify-content: space-between; align-items: center; min-height: 48px; padding-bottom: 14px; border-bottom: 1px solid rgba(255,255,255,.1); }
+.sheet .sh-lock { display: block; line-height: 0; } .sheet .sh-lock .lock { font-size: 22px; align-items: flex-start; padding-left: 1.4em; color: #F4F1EB; }
+.sheet button { align-self: auto; margin: 0; font: 400 11px var(--body); letter-spacing: .24em; text-transform: uppercase; padding: 12px 0 12px 16px; min-height: 44px; }
+.sheet .sh-nav { margin-top: clamp(10px, 3vh, 28px); display: grid; align-content: start; }
+.sheet .sh-nav > a { display: flex; justify-content: space-between; align-items: baseline; font: 400 clamp(30px, 8.6vw, 40px)/1.15 var(--serif); letter-spacing: -.02em; padding: 14px 0; border-bottom: 1px solid rgba(255,255,255,.1); font-optical-sizing: none; font-variation-settings: "opsz" 24; color: #F4F1EB; }
+.sheet .sh-nav > a em { font: 400 10.5px var(--body); font-style: normal; letter-spacing: .22em; text-transform: uppercase; color: #8F887C; }
+.sheet .subs { display: grid; grid-template-columns: 1fr 1fr; gap: 0 18px; padding: 10px 0 16px; border-bottom: 1px solid rgba(255,255,255,.1); }
+.sheet .subs a { font: 300 15.5px/1 var(--body); letter-spacing: .01em; color: #BDB6A8; padding: 11px 0; opacity: 1; transform: none; } .sheet .subs a.all { grid-column: 1 / -1; margin-top: 4px; font: 500 10.5px var(--body); letter-spacing: .24em; text-transform: uppercase; color: #D9C8A5; }
+.sheet .sh-foot { margin-top: auto; padding-top: 20px; display: flex; gap: 28px; } .sheet .sh-foot a { font: 400 11px var(--body); letter-spacing: .24em; text-transform: uppercase; color: #F4F1EB; border-bottom: 1px solid rgba(255,255,255,.35); padding: 4px 0 5px; opacity: 1; transform: none; }
+.sheet .sfoot { margin: 18px 0 0; font: 300 11px/1.7 var(--body); letter-spacing: .16em; text-transform: uppercase; color: #7D766A; }
+@media (max-height: 640px) { .sheet .sh-nav > a { padding: 8px 0; font-size: 28px; } .sheet .subs a { padding: 8px 0; } }
 </style>
 
 <svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs><symbol id="sMaison" viewBox="0 -10 266 116">
@@ -875,7 +905,18 @@ small { font-size: 11.5px; }
   <a class="brand" href="#top" aria-label="Texier"><div class="lock"><div class="sig"><svg class="sigsvg" viewBox="0 -10 266 116" aria-hidden="true"><use href="#sMaison"/></svg></div><div class="caps">TEXIER</div></div></a>
   <nav class="r"><a class="ln" href="#register">The register</a><a class="ln" href="#account" id="acct">Account</a><a class="ln" href="#bag" id="bagbtn">Bag (<span id="cnt">0</span>)</a></nav>
 </div><div class="mega" id="mega" role="navigation" aria-label="The collection"></div></header>
-<div class="sheet" id="sheet" role="dialog" aria-modal="true" aria-label="Menu"><button type="button" id="sheetx">Close</button><a style="--i:0" href="#pieces">Collection</a><div class="subs" style="--i:0"><a href="#p-bois-n1">Bois N°1</a><a href="#p-bois-n3">Bois N°3</a><a href="#p-hybride">L'Hybride</a><a href="#p-lame">La Lame</a><a href="#p-maillet">Le Maillet</a><a href="#p-cadet">Le Cadet</a><a href="#p-pochette">La Pochette</a><a href="#p-fourreau">Le Fourreau</a><a href="#shop">All pieces</a></div><a style="--i:1" href="#wool">The cloth</a><a style="--i:2" href="#story">The Maison</a><a style="--i:3" href="#register">The register</a><a style="--i:4" href="#account">Account</a><a style="--i:5" href="#bag">Bag</a><p class="sfoot">Born on the Gold Coast. Made in France.</p></div>
+<div class="sheet" id="sheet" role="dialog" aria-modal="true" aria-label="Menu">
+  <div class="sh-top"><span class="sh-lock"><div class="lock"><div class="sig"><svg class="sigsvg" viewBox="0 -10 266 116" aria-hidden="true"><use href="#sMaison"/></svg></div><div class="caps">TEXIER</div></div></span><button type="button" id="sheetx">Close</button></div>
+  <nav class="sh-nav" aria-label="Main">
+    <a style="--i:0" href="#pieces"><span>Collection</span><em>8 pieces</em></a>
+    <div class="subs" style="--i:1"><a href="#p-bois-n1">Bois N°1</a><a href="#p-bois-n3">Bois N°3</a><a href="#p-hybride">L'Hybride</a><a href="#p-lame">La Lame</a><a href="#p-maillet">Le Maillet</a><a href="#p-cadet">Le Cadet</a><a href="#p-pochette">La Pochette</a><a href="#p-fourreau">Le Fourreau</a><a class="all" href="#shop">All pieces</a></div>
+    <a style="--i:2" href="#wool"><span>The cloth</span></a>
+    <a style="--i:3" href="#story"><span>The Maison</span></a>
+    <a style="--i:4" href="#register"><span>The register</span></a>
+  </nav>
+  <div class="sh-foot"><a style="--i:5" href="#account">Account</a><a style="--i:6" href="#bag">Bag</a></div>
+  <p class="sfoot">Born on the Gold Coast. Made in France.</p>
+</div>
 
 <main id="home" class="view">
 <section class="hero" id="top">
