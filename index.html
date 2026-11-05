@@ -1106,6 +1106,14 @@ footer .legal { align-items: center; } footer .fneedle { color: #A59E91; }
 }
 
 @media (max-width: 900px) { .sheet .sh-foot a, .rl .dn, .go, .closing form button, .reg .regr .go, .hero a.go { font-size: 12px; } .jh { flex-direction: column; align-items: flex-start; gap: 8px; } }
+@media (max-width: 900px) {
+  .closing .g { grid-template-columns: 1fr; align-items: start; }
+  .closing .h2 { max-width: 22em; margin: 0 0 18px; }
+  .closing form { flex-direction: column; align-items: stretch; border-bottom: 0; gap: 0; }
+  .closing input { width: 100%; flex: none; border-bottom: 1px solid #5A554D; }
+  .closing form .note2 { margin: 14px 0 0; max-width: 100%; }
+  .closing form button { width: 100%; max-width: 100%; min-width: 0; box-sizing: border-box; white-space: normal; text-align: left; line-height: 1.35; letter-spacing: .12em; padding: 14px 0 0; height: auto; }
+}
 </style>
 
 <svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs><symbol id="sMaison" viewBox="0 -10 266 116">
@@ -1200,7 +1208,7 @@ footer .legal { align-items: center; } footer .fneedle { color: #A59E91; }
 </div></section>
 
 <section class="wool" id="wool"><div class="wrap">
-  <div class="head"><h2 class="h2 rv">Cloth that may never be woven again.</h2><p class="rv">The wool varies from piece to piece, so there are no named fabrics. Here is some of the cloth in the atelier in Bordeaux, France.</p></div>
+  <div class="head"><h2 class="h2 rv">Cloth from limited remnant runs.</h2><p class="rv">The wool varies from piece to piece, so there are no named fabrics. Here is some of the cloth in the atelier in Bordeaux, France.</p></div>
   <div class="hs" id="hs"><div class="hsin"><div class="sw">
     <figure class="rv"><div class="im"><i><img src="img/o/wool1-800.webp" srcset="img/o/wool1-480.webp 480w, img/o/wool1-800.webp 800w, img/o/wool1-1200.webp 1200w" sizes="(max-width:700px) 50vw, 30vw" width="800" height="1067" alt="Cream and sage woven wool, folded" loading="lazy" decoding="async"></i></div><figcaption>Italian wool, woven</figcaption></figure>
     <figure class="rv" style="transition-delay:.08s"><div class="im"><i><img src="img/o/wool3-800.webp" srcset="img/o/wool3-480.webp 480w, img/o/wool3-800.webp 800w, img/o/wool3-1200.webp 1200w" sizes="(max-width:700px) 50vw, 30vw" width="800" height="1067" alt="Terracotta wool, folded" loading="lazy" decoding="async"></i></div><figcaption>Italian wool, terracotta</figcaption></figure>
@@ -1411,13 +1419,13 @@ footer .legal { align-items: center; } footer .fneedle { color: #A59E91; }
 
   /* ---------- the journal (drafts, written from the master story and facts we hold; review before publishing) ---------- */
   var JOURNAL = [
-    { slug: "the-overlooked-object", img: "j-object", alt: "Diamond-quilted tan leather with rows of fine hand stitching", cap: "Stitching, in tan leather", title: "The overlooked object", date: "October 2026", deck: "Why the first edition is cut with the same care as the cloth.", body: [
+    { slug: "the-overlooked-detail", img: "j-object", alt: "Diamond-quilted tan leather with rows of fine hand stitching", cap: "Stitching, in tan leather", title: "The overlooked detail", date: "October 2026", deck: "Why the first edition is cut with the same care as the cloth.", body: [
       "Edition A begins with a single idea: a piece people keep. The cloth, the cut, the collar and the stitch are the work.",
       "Maison Texier began with that thought. If a piece is going to be kept for years, it deserves the same consideration in its construction as in its appearance.",
       "So the first edition (Edition A) is made that way. Each piece is individually made, in Bordeaux, France, and individually numbered. It is meant to be kept, used and appreciated for years to come."] },
-    { slug: "cloth-that-remains", img: "j-cloth", alt: "Cones of undyed wool yarn stacked on a trolley inside an old mill", cap: "Undyed wool, waiting at the mill", title: "Cloth that may never be woven again", date: "October 2026", deck: "On working with remnants of mill cloth.", body: [
+    { slug: "cloth-that-remains", img: "j-cloth", alt: "Cones of undyed wool yarn stacked on a trolley inside an old mill", cap: "Undyed wool, waiting at the mill", title: "Cloth from limited remnant runs", date: "October 2026", deck: "On working with remnants of mill cloth.", body: [
       "Italian and French mills weave cloth to order. When the order is cut, a length of the roll is often left over. Many of the wools we use come from those remnants.",
-      "It means the cloth varies from piece to piece, and that we do not sell named fabrics: a particular weave may simply not exist again once the roll is gone. We choose each length for its hand, its texture and its character, and it is paired with carefully finished leather.",
+      "It means the cloth varies from piece to piece, and that we do not sell named fabrics. Many lengths are limited remnants of mill cloth. We choose each length for its hand, its texture and its character, and it is paired with carefully finished leather.",
       "The leather will acquire its own patina. The wool will soften. Each piece develops a character that belongs to its owner."] },
     { slug: "reading-a-makers-mark", img: "j-mark", alt: "A dark red leather case closed with a small engraved metal tab", cap: "The small mark, at the clasp", title: "Reading a maker’s mark", date: "October 2026", deck: "The three small marks on every Texier card, and where the idea comes from.", body: [
       "In France, a maker has long struck a mark of their own: traditionally a lozenge holding the maker’s initials and a small emblem, so that two makers with the same initials could never be confused. It is called a poinçon de maître.",
