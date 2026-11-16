@@ -51,6 +51,28 @@ html.js .rv.in{opacity:1;transform:none}
 .unlock li::before{content:"\2713";margin-right:.5rem}
 .door{box-shadow:0 30px 80px rgba(0,0,0,.45)}
 .gate-ov .price .v{font-size:clamp(2.2rem,4.4vw,3.4rem)}
+
+.gline{display:none}
+@media (max-width:40rem){
+  .gate-ov .kick,.gate-ov .sub,.gate-ov .gstats,.gate-ov .unlock{display:none!important}
+  .gate-ov .body{padding-top:.9rem;gap:.8rem}
+  .gate-ov h1{font-size:clamp(2.6rem,13vw,3.4rem)!important;line-height:.92;margin:0}
+  .gate-ov h1 .l{font-size:.5em!important;display:block;margin-bottom:.15em}
+  .gate-ov .price{margin:.8rem 0 0;padding:.6rem .9rem .65rem;display:inline-block}
+  .gate-ov .price .t{display:block;margin-bottom:.15rem}
+  .gate-ov .price .v{font-size:1.8rem!important}
+  .gate-ov .price .v small{font-size:.62rem!important}
+  .gline{display:block;margin:.7rem 0 0;font-family:var(--display);font-weight:600;font-size:.6rem;letter-spacing:.16em;text-transform:uppercase;color:rgba(245,244,241,.8);line-height:1.8}
+  .gate-ov .door{padding:1.3rem 1.2rem 1.2rem;margin:0}
+  .gate-ov .door h2{font-size:1.5rem;margin:.2rem 0 .3rem}
+  .gate-ov .door .why{font-size:.9rem;margin:0 0 1rem;line-height:1.45}
+  .gate-ov .door .f{margin-bottom:.8rem}
+  .gate-ov .door .f input{min-height:50px;font-size:16px}
+  .gate-ov .door .chk{margin:.2rem 0 1rem}
+  .gate-ov .door .btn.go{min-height:54px;width:100%}
+}
+@media (max-width:40rem) and (max-height:760px){.gate-ov .door .why{display:none}}
+@supports(padding:max(0px)){@media (max-width:40rem){.gate-ov .door{padding-bottom:max(1.2rem,env(safe-area-inset-bottom))}}}
 </style>
 <script>(function(){var c='gated';try{var p=JSON.parse(sessionStorage.getItem('l33208.pass')||'null');if(p&&p.name)c='passed';}catch(e){}document.documentElement.classList.add(c);})();</script>
 </head>
@@ -75,6 +97,7 @@ html.js .rv.in{opacity:1;transform:none}
       <h1><span class="l">Southport Central</span>Level&nbsp;32</h1>
       <p class="sub">One bedroom, a separate office and a 21.7&nbsp;m&sup2; north-west balcony, thirty-two floors above the Southport CBD.</p>
       <div class="price"><span class="t">For sale</span><span class="v"><small>Offers over</small>$685,000</span></div>
+      <p class="gline">1 bed + office &middot; 86 m&sup2; &middot; 21.7 m&sup2; balcony</p>
       <dl class="gstats">
         <div><dt>Total</dt><dd>86 m&sup2;</dd></div>
         <div><dt>Balcony</dt><dd>21.7 m&sup2;</dd></div>
