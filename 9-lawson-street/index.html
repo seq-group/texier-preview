@@ -638,7 +638,7 @@ html.js .rv.in{opacity:1;transform:none}
     o._subject = subject || ('33208 Lawson Street — ' + (form.getAttribute('name') || 'form'));
     o._template = 'table'; o._captcha = 'false';
     o._autoresponse = (/offer/i.test(form.getAttribute('name') || '') ? 'Thank you. Your offer on 33208/9 Lawson Street, Southport has reached me. I will call you shortly to confirm it and talk through the next step. This email is not a contract; nothing is binding until a contract of sale is signed by both parties.' : 'Thank you for your interest in 33208/9 Lawson Street, Southport (Level 32, Southport Central). I have your details and will be in touch shortly. Inspections are by appointment: call or text me on 0402 293 358 any time.') + '\n\nCyril Texier\nNGU Real Estate Gold Coast\n0402 293 358 | cyril@ngurealestate.com.au';
-    var ctl = window.AbortController ? new AbortController() : null, t = setTimeout(function(){ if (ctl) ctl.abort(); }, 12000);
+    var ctl = window.AbortController ? new AbortController() : null, t = setTimeout(function(){ if (ctl) ctl.abort(); }, 6000);
     return fetch('https://formsubmit.co/ajax/' + TO, {method:'POST', headers:{'Content-Type':'application/json','Accept':'application/json'}, body: JSON.stringify(o), keepalive: true, signal: ctl ? ctl.signal : undefined})
       .then(function(r){ return r.json(); }).then(function(j){ clearTimeout(t); return j && (j.success === true || j.success === 'true'); })
       .catch(function(){ clearTimeout(t); return false; });
@@ -846,7 +846,7 @@ html.js .rv.in{opacity:1;transform:none}
     o._subject = subject || ('33208 Lawson Street — ' + (form.getAttribute('name') || 'form'));
     o._template = 'table'; o._captcha = 'false';
     o._autoresponse = (/offer/i.test(form.getAttribute('name') || '') ? 'Thank you. Your offer on 33208/9 Lawson Street, Southport has reached me. I will call you shortly to confirm it and talk through the next step. This email is not a contract; nothing is binding until a contract of sale is signed by both parties.' : 'Thank you for your interest in 33208/9 Lawson Street, Southport (Level 32, Southport Central). I have your details and will be in touch shortly. Inspections are by appointment: call or text me on 0402 293 358 any time.') + '\n\nCyril Texier\nNGU Real Estate Gold Coast\n0402 293 358 | cyril@ngurealestate.com.au';
-    var ctl = window.AbortController ? new AbortController() : null, t = setTimeout(function(){ if (ctl) ctl.abort(); }, 12000);
+    var ctl = window.AbortController ? new AbortController() : null, t = setTimeout(function(){ if (ctl) ctl.abort(); }, 6000);
     return fetch('https://formsubmit.co/ajax/' + TO, {method:'POST', headers:{'Content-Type':'application/json','Accept':'application/json'}, body: JSON.stringify(o), keepalive: true, signal: ctl ? ctl.signal : undefined})
       .then(function(r){ return r.json(); }).then(function(j){ clearTimeout(t); return j && (j.success === true || j.success === 'true'); })
       .catch(function(){ clearTimeout(t); return false; });
