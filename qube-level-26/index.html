@@ -646,6 +646,17 @@ h1,h2,h3{margin:0;font-family:var(--display);font-weight:700;text-wrap:balance}
 .axis .sc span{font-weight:600;color:var(--ink-3)}
 .lrow .ad{font-size:clamp(.98rem,1.3vw,1.08rem)}
 .chart .key i.b{background:rgba(22,41,63,.09);border-color:var(--hair-2)}
+
+/* ═══ v11: real-font fit fixes ═══ */
+.stats .v{font-size:clamp(1.5rem,2.6vw,2.5rem);font-stretch:104%;white-space:nowrap}
+.rec .fig{font-size:clamp(2.4rem,5vw,4.6rem);white-space:nowrap}
+.est .band .v{font-size:clamp(2.4rem,5.4vw,4.8rem)}
+.est .side .v,.reads .v{white-space:nowrap}
+.nov .big b{font-size:clamp(4rem,10vw,8rem)}
+.sum .tot{font-size:clamp(2.6rem,5vw,4rem);white-space:nowrap}
+.fee .ends b{font-size:clamp(2.6rem,7vw,5.6rem)}
+.cal .dn{font-size:1.4rem}
+@media (max-width:60rem) and (min-width:30rem){.stats .v{font-size:clamp(1.6rem,4.6vw,2.4rem)}}
 </style>
 
 </head>
