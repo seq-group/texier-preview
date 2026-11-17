@@ -800,7 +800,7 @@ html.gated,html.gated body{overflow:hidden}
 </div>
     <div class="mkt">
       <div class="hd">
-        <h3>On the market this week</h3>
+        <h3>On the market now</h3>
         <p>Asking prices, not sale prices. These are the four-bedroom homes a buyer would weigh yours against today.</p>
       </div>
       <table>
@@ -875,7 +875,7 @@ html.gated,html.gated body{overflow:hidden}
   <div class="wrap">
     <div class="head">
       <div><p class="lab"><i>05</i>The numbers</p><h2 class="h2">Sell or rent, <span>side by side</span></h2></div>
-      <p class="lede">Move the sliders and the figures update. The running costs are an example only, so swap in your own.</p>
+      <p class="lede">Move the sliders and the figures update. The running costs and renovation spend are examples only, so swap in your own.</p>
     </div>
     <div class="calc">
       <div class="ins">
@@ -889,6 +889,10 @@ html.gated,html.gated body{overflow:hidden}
           <input type="range" id="i-c" min="4000" max="16000" step="500" value="10000" aria-label="Running costs per year">
           <span class="rs"><i>$4,000</i><i>$16,000</i></span>
           <small>An example: management and letting fees, council rates, landlord insurance and upkeep. Replace it with your own figure.</small></label>
+        <label class="rg"><span class="rl">Spent on the renovation<b id="o-w">$50,000</b></span>
+          <input type="range" id="i-w" min="0" max="120000" step="5000" value="50000" aria-label="Renovation spend">
+          <span class="rs"><i>$0</i><i>$120K</i></span>
+          <small>An example. Replace it with what you actually spent, and the result below adjusts.</small></label>
       </div>
       <div class="res" aria-live="polite">
         <div class="col">
@@ -897,9 +901,10 @@ html.gated,html.gated body{overflow:hidden}
           <span class="u">paid at settlement</span>
           <ul>
             <li>Above the November 2025 sale<b class="s" id="s-g">+$160,000</b></li>
+            <li>After the renovation spend<b class="s" id="s-n">+$110,000</b></li>
             <li>Ongoing costs after settlement<b>None</b></li>
           </ul>
-          <p class="fn">Before selling costs, and before what you spent on the renovation.</p>
+          <p class="fn">Before selling costs. The renovation spend is the figure set above.</p>
         </div>
         <div class="col">
           <p class="lab">If you rent</p>
@@ -1032,7 +1037,7 @@ html.gated,html.gated body{overflow:hidden}
       <p><b>Sales.</b> Domain sold listings for Beenleigh QLD 4207, houses with four or more bedrooms, retrieved 17 November 2026. Floor area and renovation of 50 Lehmans Road: RateMyAgent listing. 23 Viewbank Court and 2 Viewbank Court sold by Cyril Texier, NGU Real Estate.</p>
       <p><b>Suburb figures.</b> Microburbs Beenleigh report, market data updated September 2026: house median $850,000, up 19.7% over 12 months; four-bedroom house median $878,000; median house rent $600 a week, up 4.3%.</p>
       <p><b>Rents.</b> Advertised weekly rents from Domain and OnTheHouse rental listings in Beenleigh, November 2025 to August 2026, dated by availability. Advertised figures, not all confirmed as the final agreed rent.</p>
-      <p><b>On the market.</b> Domain listings for four-bedroom houses in Beenleigh, 17 November 2026. Asking prices only.</p>
+      <p><b>On the market.</b> Domain listings for four-bedroom houses in Beenleigh, as at 17 November 2026. Asking prices only.</p>
       <p><b>NGU.</b> Domain agency profiles: NGU Real Estate &ndash; Logan, 12 months to 17 November 2026; NGU Real Estate &ndash; Springwood, 12 months to 24 September 2026. Office count: ngurealestate.com.au. Rating: RateMyAgent profile for Cyril Texier.</p>
       <p><b>Rules.</b> Residential Tenancies Authority (smoke alarms; rent increases once every 12 months, attached to the property); Queensland Government (minimum housing standards for all tenancies from 1 September 2024); Australian Taxation Office (treating a former home as your main residence, the 6-year rule).</p>
       <p><b>Photographs.</b> 5 Yan Yean Street: the November 2025 sale campaign, from the November 2025 sale campaign. Viewbank Court: my NGU Real Estate campaigns in 2026.</p>
@@ -1101,17 +1106,18 @@ html.gated,html.gated body{overflow:hidden}
   }
 
   /* ---------- sell or rent ---------- */
-  var ip = $('i-p'), ir = $('i-r'), ic = $('i-c');
+  var ip = $('i-p'), ir = $('i-r'), ic = $('i-c'), iw = $('i-w');
   function fill(i){ i.style.setProperty('--p', ((i.value - i.min) / (i.max - i.min) * 100) + '%'); }
   function set(id, t){ $(id).textContent = t; }
   function calc(){
-    var p = +ip.value, r = +ir.value, c = +ic.value, y = r * 52, n = y - c, g = p - LAST_SALE;
-    [ip, ir, ic].forEach(fill);
+    var p = +ip.value, r = +ir.value, c = +ic.value, w = +iw.value, y = r * 52, n = y - c, g = p - LAST_SALE, gw = g - w;
+    [ip, ir, ic, iw].forEach(fill);
+    set('o-w', fmt(w)); set('s-n', (gw >= 0 ? '+' : '−') + fmt(Math.abs(gw)));
     set('o-p', fmt(p)); set('o-r', fmt(r)); set('o-c', fmt(c));
     set('s-p', fmt(p)); set('s-g', (g >= 0 ? '+' : '−') + fmt(Math.abs(g)));
     set('r-y', fmt(y)); set('r-gy', pc(y / p * 100)); set('r-n', fmt(n)); set('r-ny', pc(n / p * 100)); set('r-w', fmt(n / 52));
   }
-  [ip, ir, ic].forEach(function(i){ i.addEventListener('input', calc); });
+  [ip, ir, ic, iw].forEach(function(i){ i.addEventListener('input', calc); });
   calc();
 
   /* ---------- photo strip + lightbox ---------- */
