@@ -456,8 +456,7 @@ h1,h2,h3{margin:0;font-family:var(--display);font-weight:700;text-wrap:balance}
 /* the work */
 #work{border-top:1px solid var(--line)}
 .works{display:grid;grid-template-columns:1fr;gap:1px;background:var(--line);border:1px solid var(--line)}
-@media (min-width:40rem){.works{grid-template-columns:repeat(2,minmax(0,1fr))}}
-@media (min-width:72rem){.works{grid-template-columns:repeat(4,minmax(0,1fr))}}
+@media (min-width:48rem){.works{grid-template-columns:repeat(3,minmax(0,1fr))}}
 .wk{background:var(--noir-2);padding:clamp(1.3rem,2.4vw,1.8rem);display:flex;flex-direction:column;gap:.6rem;min-width:0}
 .wk .no{font-family:var(--display);font-weight:200;font-stretch:115%;font-size:2rem;line-height:1;color:var(--steel);letter-spacing:-.04em}
 .wk h3{font-size:clamp(1.12rem,1.6vw,1.3rem);letter-spacing:-.02em;line-height:1.15;font-stretch:104%}
@@ -663,7 +662,7 @@ html.gated,html.gated body{overflow:hidden}
   <div class="wrap">
     <span class="t">5 Yan Yean St <span>&nbsp;for Claudia &amp; Tristan</span></span>
     <nav aria-label="Sections">
-      <a href="#read">The read</a><a href="#photos">Photos</a><a href="#work">The work</a><a href="#sale">Sale</a><a href="#rent">Rent</a><a href="#numbers">The numbers</a><a href="#record">Track record</a>
+      <a href="#read">The read</a><a href="#photos">Photos</a><a href="#sale">Sale</a><a href="#rent">Rent</a><a href="#numbers">The numbers</a><a href="#record">Track record</a>
     </nav>
     <a class="btn" href="#contact">Contact</a>
   </div>
@@ -704,7 +703,7 @@ html.gated,html.gated body{overflow:hidden}
       <p class="lab"><i>01</i>The read</p>
       <div>
         <div class="note"><p>Claudia and Tristan, thank you for taking the time to list everything you have done. As promised, here are both directions side by side: what the home could sell for, and what it could rent for.</p><span>Cyril</span></div>
-        <p class="say">The renovation is <b>what sets your home apart in the evidence.</b> Here is where it lands, for both sale and rent.</p>
+        <p class="say">Here is where the evidence lands, for both sale and rent.</p>
       </div>
     </div>
     <div class="kpis">
@@ -719,7 +718,7 @@ html.gated,html.gated body{overflow:hidden}
 
 <section class="film" id="photos" aria-label="Photographs">
   <div class="wrap hd">
-    <p>Your home, from the outside.</p>
+    <p>5 Yan Yean Street.</p>
     <div class="ctl">
       <span class="n" id="sn">01 / 05</span>
       <button class="arrow" type="button" id="sp" aria-label="Previous photograph"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M10 3 5 8l5 5"/></svg></button>
@@ -733,24 +732,19 @@ html.gated,html.gated body{overflow:hidden}
     <button type="button" data-cap="The back of the house"><img src="https://bucket-api.domain.com.au/v1/bucket/image/2020344610_3_1_251015_013103-w1800-h1200" referrerpolicy="no-referrer" alt="The back of the two-storey house, the covered patio and the lawn" width="1800" height="1200" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='photos/yy-rear.jpg'" ><span class="c">The back of the house<i>04</i></span></button>
     <button type="button" data-cap="The patio, before the clearing"><img src="https://bucket-api.domain.com.au/v1/bucket/image/2020344610_4_1_251015_013103-w1800-h1200" referrerpolicy="no-referrer" alt="The covered back patio looking over the yard" width="1800" height="1200" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='photos/yy-patio.jpg'" ><span class="c">The patio, before the clearing<i>05</i></span></button>
   </div>
-  <div class="wrap"><p class="note">These photos were taken in November 2025, before your renovation and the garden clearing. Tap any photo to open it full size.</p></div>
+  <div class="wrap"><p class="note">Photographs from the November 2025 campaign. Tap any photo to open it full size.</p></div>
 </section>
 
 <section class="sec" id="work">
   <div class="wrap">
     <div class="head">
-      <div><p class="lab"><i>02</i>The work</p><h2 class="h2">Built to stay. <span>It shows.</span></h2></div>
-      <p class="lede">You renovated for yourselves rather than for a sale, and buyers can usually tell. Here is each piece, and where it counts most.</p>
+      <div><p class="lab"><i>02</i>Overview</p><h2 class="h2">Two directions. <span>One page.</span></h2></div>
+      <p class="lede">A desktop appraisal for both, so you can set the numbers side by side.</p>
     </div>
     <div class="works">
-<article class="wk"><span class="no">01</span><h3>The kitchen</h3><p>A 90&nbsp;cm gas cooktop, 90&nbsp;cm oven and 90&nbsp;cm canopy rangehood under stone benchtops. The room buyers judge a renovation by.</p><span class="tg2"><i>Sale</i><i>Rent</i></span></article>
-<article class="wk"><span class="no">02</span><h3>Kitchen to living</h3><p>The timber feature wall plastered and square set, so the kitchen and living read as one modern space.</p><span class="tg2"><i>Sale</i></span></article>
-<article class="wk"><span class="no">03</span><h3>Paint</h3><p>Fresh paint through the entire interior. Every photograph and every inspection starts here.</p><span class="tg2"><i>Sale</i><i>Rent</i></span></article>
-<article class="wk"><span class="no">04</span><h3>Carpet</h3><p>Premium carpet and underlay in the master bedroom and right through the upstairs.</p><span class="tg2"><i>Sale</i><i>Rent</i></span></article>
-<article class="wk"><span class="no">05</span><h3>Upstairs bathroom</h3><p>Upgraded finishes, keeping the small square 1980s tile that is back in fashion.</p><span class="tg2"><i>Sale</i><i>Rent</i></span></article>
-<article class="wk"><span class="no">06</span><h3>Shutters</h3><p>Plantation shutters downstairs and in the master. Quietly expensive, and buyers notice.</p><span class="tg2"><i>Sale</i></span></article>
-<article class="wk"><span class="no">07</span><h3>Cooling</h3><p>A new split system in the master bedroom. One of the first things a tenant asks about.</p><span class="tg2"><i>Sale</i><i>Rent</i></span></article>
-<article class="wk"><span class="no">08</span><h3>The outlook</h3><p>Trees and overgrown scrub cleared front and back to open the views from the patio and kitchen, with the front trees kept for privacy. On an elevated 785&nbsp;m&sup2; block, it is the one thing a buyer cannot add later.</p><span class="tg2"><i>Sale</i></span></article>
+      <div class="wk"><h3>Sell</h3><p>A comparative market analysis from recent Beenleigh sales and what is on the market now.</p></div>
+      <div class="wk"><h3>Rent</h3><p>A rental appraisal from current Beenleigh four-bedroom leases.</p></div>
+      <div class="wk"><h3>Compare</h3><p>A calculator to test both against your own figures, plus my recent sales and listings.</p></div>
     </div>
   </div>
 </section>
@@ -759,7 +753,7 @@ html.gated,html.gated body{overflow:hidden}
   <img src="https://bucket-api.domain.com.au/v1/bucket/image/2020344610_15_1_251015_013103-w1800-h1348" referrerpolicy="no-referrer" alt="Aerial view of the house and its elevated block, with jacarandas along the street" width="1800" height="1348" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='photos/yy-oblique.jpg'" data-par>
   <div class="over"><div class="wrap">
     <p class="lab">The short version</p>
-    <p class="q">Buyers and tenants both pay for the kitchen, the cooling and the parking. <b>Only a buyer pays in full for the stone, the shutters and the view.</b></p>
+    <p class="q">Sell or rent, <b>the numbers should lead the decision.</b> Here they are side by side.</p>
   </div></div>
 </section>
 
@@ -773,7 +767,7 @@ html.gated,html.gated body{overflow:hidden}
       <div class="band">
         <span class="t">Comparative market analysis &middot; sale</span>
         <span class="v">$960K<small>to <b>$1.02M</b></small></span>
-        <span class="k">Where the evidence sits for a renovated four-bedroom, two-bathroom home on 785&nbsp;m&sup2; with an outlook. I would narrow it after a walk-through.</span>
+        <span class="k">Where the recent evidence sits for a home like yours. I would narrow it after a walk-through.</span>
       </div>
       <div class="side">
         <div><span class="v">$1.0M</span><span class="k">50 Lehmans Road, June 2026: renovated, four bedrooms, two bathrooms, the same 213&nbsp;m&sup2; of house</span></div>
@@ -835,7 +829,7 @@ html.gated,html.gated body{overflow:hidden}
       <div class="band">
         <span class="t">Rental appraisal &middot; 12-month lease</span>
         <span class="v">$780<small>to <b>$820</b> a week</small></span>
-        <span class="k">The new kitchen, the air-conditioning and parking for four put it at the top of the Beenleigh rental market, alongside the best four-bedroom homes advertised this year.</span>
+        <span class="k">Where current four-bedroom rentals in Beenleigh are being advertised and leased. I would narrow it after a walk-through.</span>
       </div>
       <div class="side">
         <div><span class="v" data-count="600" data-pre="$">$600</span><span class="k">Beenleigh median house rent a week, up 4.3% in 12 months to September 2026</span></div>
@@ -870,7 +864,7 @@ html.gated,html.gated body{overflow:hidden}
         <li><span><b>Minimum housing standards</b>Apply to every tenancy since 1 September 2024.</span></li>
         <li><span><b>Rent reviews</b>Once every 12 months, and the limit stays with the property, not the tenant.</span></li>
         <li><span><b>Landlord insurance</b>In place before the lease starts.</span></li>
-        <li><span><b>Entry condition report</b>The new kitchen, carpet and shutters photographed and on record from day one.</span></li>
+        <li><span><b>Entry condition report</b>The home photographed and on record from day one.</span></li>
         <li><span><b>The six-year rule</b>Worth your accountant&rsquo;s view before you move out.</span></li>
       </ul>
     </div>
@@ -928,7 +922,7 @@ html.gated,html.gated body{overflow:hidden}
           <thead><tr><th></th><th>Sell</th><th>Rent</th></tr></thead>
           <tbody>
             <tr><th>What you receive</th><td data-l="Sell">A price, likely between $960K and $1.02M, at settlement</td><td data-l="Rent">Rent, likely $780 to $820 a week, for as long as you hold it</td></tr>
-            <tr><th>The renovation</th><td data-l="Sell">Priced in at once: buyers pay for the kitchen, the finish and the outlook</td><td data-l="Rent">Partly priced in: tenants pay for condition, and the rest stays in the value</td></tr>
+            <tr><th>The renovation</th><td data-l="Sell">Priced in at once, through the sale price</td><td data-l="Rent">Partly priced in: tenants pay for condition, and the rest stays in the value</td></tr>
             <tr><th>The market</th><td data-l="Sell">Locks in today&rsquo;s level, after a strong twelve months</td><td data-l="Rent">Stays exposed to what Beenleigh does next, either way</td></tr>
             <tr><th>Your time</th><td data-l="Sell">Finished at settlement</td><td data-l="Rent">Ongoing: a property manager, inspections and compliance</td></tr>
             <tr><th>Tax</th><td data-l="Sell">Worth confirming how the main residence exemption applies with your accountant</td><td data-l="Rent">The ATO&rsquo;s six-year rule may let it stay your main residence for tax while it is rented. Ask your accountant</td></tr>
@@ -945,9 +939,9 @@ html.gated,html.gated body{overflow:hidden}
     <div class="qa" style="margin-top:0">
       <h3>Questions you might have</h3>
       <div class="faq">
-        <details><summary>Why a range rather than one number?<i aria-hidden="true"></i></summary><p>A desktop appraisal is built from records, not from walking through the home. Seeing the finish, the light and the outlook in person usually narrows it.</p></details>
-        <details><summary>What could push the sale price up?<i aria-hidden="true"></i></summary><p>Presentation, photography that sells the outlook, and timing a launch so the home is not one of several similar ones at once. Most of the four-bedroom homes asking around $1 million this week sit on blocks over 1,000&nbsp;m&sup2;, so a renovated home with a view would stand apart.</p></details>
-        <details><summary>What could hold it back?<i aria-hidden="true"></i></summary><p>A softer market, or several renovated homes launching in the same weeks. And buyers who want everything brand new will price in the bathrooms; buyers who like the retro tile won&rsquo;t.</p></details>
+        <details><summary>Why a range rather than one number?<i aria-hidden="true"></i></summary><p>A desktop appraisal is built from records, not from walking through the home. Seeing the home in person usually narrows it.</p></details>
+        <details><summary>What could push the sale price up?<i aria-hidden="true"></i></summary><p>Presentation, photography, and timing a launch so the home is not one of several similar ones at once.</p></details>
+        <details><summary>What could hold it back?<i aria-hidden="true"></i></summary><p>A softer market, or several similar homes launching in the same weeks.</p></details>
         <details><summary>Can we rent it now and sell later?<i aria-hidden="true"></i></summary><p>Yes. A lease in place stays with the property if it sells, and inspections are arranged around the tenant. If a sale within a year is likely, a shorter lease keeps your options open.</p></details>
         <details><summary>Does this commit us to anything?<i aria-hidden="true"></i></summary><p>No. It is an appraisal, not an agreement. When you have decided which way you are leaning, we talk through that direction properly.</p></details>
       </div>
@@ -1041,7 +1035,7 @@ html.gated,html.gated body{overflow:hidden}
       <p><b>On the market.</b> Domain listings for four-bedroom houses in Beenleigh, 17 November 2026. Asking prices only.</p>
       <p><b>NGU.</b> Domain agency profiles: NGU Real Estate &ndash; Logan, 12 months to 17 November 2026; NGU Real Estate &ndash; Springwood, 12 months to 24 September 2026. Office count: ngurealestate.com.au. Rating: RateMyAgent profile for Cyril Texier.</p>
       <p><b>Rules.</b> Residential Tenancies Authority (smoke alarms; rent increases once every 12 months, attached to the property); Queensland Government (minimum housing standards for all tenancies from 1 September 2024); Australian Taxation Office (treating a former home as your main residence, the 6-year rule).</p>
-      <p><b>Photographs.</b> 5 Yan Yean Street: the November 2025 sale campaign, shown before your renovation and garden clearing; interiors left out because they have since changed. Viewbank Court: my NGU Real Estate campaigns in 2026.</p>
+      <p><b>Photographs.</b> 5 Yan Yean Street: the November 2025 sale campaign, from the November 2025 sale campaign. Viewbank Court: my NGU Real Estate campaigns in 2026.</p>
       <p><b>Terms.</b> A desktop appraisal prepared without an inspection, from public records and the improvements you described. It is not a valuation, and it is not financial or tax advice. Running costs in section 05 are an example only. Prepared by Cyril Texier, Licensed Real Estate Agent, NGU Real Estate.</p>
       <p class="ng">Never give up.</p>
     </div>
