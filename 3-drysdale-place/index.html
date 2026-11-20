@@ -854,6 +854,9 @@ html:not(.gated) .gate{opacity:0;visibility:hidden;pointer-events:none}
 <noscript><style>html.gated,html.gated body{overflow:auto;height:auto}.gate{display:none}</style></noscript>
 <script>try{if(sessionStorage.getItem('d3.pass'))document.documentElement.classList.remove('gated')}catch(e){}</script>
 <style>.next .steps{margin:.2rem 0 0;padding:0;list-style:none;counter-reset:s;display:grid;gap:.7rem}.next .steps li{counter-increment:s;display:grid;grid-template-columns:1.6rem minmax(0,1fr);font-family:var(--display);font-weight:700;font-size:1rem;letter-spacing:-.01em;line-height:1.4}.next .steps li::before{content:counter(s);color:var(--steel);font-weight:300}</style>
+<style>.stats .v small{font-size:.5em;font-weight:600;letter-spacing:0;margin-left:.2em;color:var(--mute)}</style>
+<style>.loc2 .facts span{-webkit-hyphens:auto;hyphens:auto;overflow-wrap:break-word}.spec .big b{font-size:clamp(1.6rem,3vw,2.6rem)}@media (max-width:26rem){.loc2 .facts span{font-size:.78rem}}</style>
+<style>@media (min-width:56rem){.opt3.two{grid-template-columns:repeat(2,minmax(0,1fr))}}</style>
 </head><body>
 <div class="gate" id="gate" role="dialog" aria-modal="true" aria-labelledby="g-title">
   <div class="gbg" aria-hidden="true"><img src="img/d-front.jpg" alt=""></div>
@@ -927,8 +930,8 @@ html:not(.gated) .gate{opacity:0;visibility:hidden;pointer-events:none}
         <p class="say">Votre voisin du 2/7 a vendu 710&nbsp;000&nbsp;$ en septembre. <b>Le bon r&eacute;sultat d&eacute;pend surtout d&rsquo;un prix bien plac&eacute; d&egrave;s le d&eacute;part.</b></p>
         <div class="stats">
           <div><span class="v s">705&ndash;735k</span><span class="k">Fourchette de prix r&eacute;aliste aujourd&rsquo;hui</span></div>
-          <div><span class="v">4&ndash;6 sem.</span><span class="k">D&eacute;lai prudent pour une maison lou&eacute;e, de la mise en ligne au contrat. Parfois plus rapide.</span></div>
-          <div><span class="v">10&ndash;12 sem.</span><span class="k">De la signature du mandat au r&egrave;glement, f&ecirc;tes de fin d&rsquo;ann&eacute;e comprises</span></div>
+          <div><span class="v">4&ndash;6<small>sem.</small></span><span class="k">D&eacute;lai prudent pour une maison lou&eacute;e, de la mise en ligne au contrat. Parfois plus rapide.</span></div>
+          <div><span class="v">10&ndash;12<small>sem.</small></span><span class="k">De la signature du mandat au r&egrave;glement, f&ecirc;tes de fin d&rsquo;ann&eacute;e comprises</span></div>
           <div><span class="v s">6&times;</span><span class="k">NGU Ipswich, agence laur&eacute;ate de Brassall sur RateMyAgent, 2021&ndash;2026</span></div>
         </div>
       </div>
@@ -1140,8 +1143,8 @@ html:not(.gated) .gate{opacity:0;visibility:hidden;pointer-events:none}
       <div class="monday"><b>Si l&rsquo;on attend janvier</b><span>Lancement mi-janvier, contrat vers f&eacute;vrier, r&egrave;glement vers mars ou avril 2027.</span></div>
     </div>
     <div class="panel" role="tabpanel" id="p3" aria-labelledby="t3" hidden>
-      <p class="pl">La maison est lou&eacute;e jusqu&rsquo;en avril 2027. Le bail continue apr&egrave;s une vente, donc d&rsquo;ici l&agrave; elle se vend lou&eacute;e. Trois options&nbsp;:</p>
-      <div class="opt3"><article class="opt rec"><div class="oh"><h3>Vendre lou&eacute;, maintenant</h3><span>Recommand&eacute;</span></div><dl><div><dt>Acheteurs</dt><dd>Investisseurs</dd></div><div><dt>Fonds</dt><dd>F&eacute;vrier 2027, parfois plus t&ocirc;t</dd></div><div><dt>Loyer</dt><dd>Encaiss&eacute; jusqu&rsquo;au r&egrave;glement</dd></div><div><dt>Pour votre achat</dt><dd>Colle au calendrier</dd></div></dl></article><article class="opt"><div class="oh"><h3>Vendre maintenant, r&eacute;gler en avril</h3></div><dl><div><dt>Acheteurs</dt><dd>Investisseurs et occupants pr&ecirc;ts &agrave; attendre</dd></div><div><dt>Fonds</dt><dd>Vers avril 2027</dd></div><div><dt>Loyer</dt><dd>Encaiss&eacute; jusqu&rsquo;au r&egrave;glement</dd></div><div><dt>Pour votre achat</dt><dd>Prix connu t&ocirc;t, fonds tardifs</dd></div></dl></article><article class="opt"><div class="oh"><h3>Attendre avril</h3></div><dl><div><dt>Acheteurs</dt><dd>Investisseurs et occupants</dd></div><div><dt>Fonds</dt><dd>Vers juin 2027</dd></div><div><dt>Loyer</dt><dd>Perdu pendant la vente</dd></div><div><dt>Pour votre achat</dt><dd>Trop tard</dd></div></dl></article></div>
+      <p class="pl">La maison est lou&eacute;e jusqu&rsquo;en avril 2027 et le bail continue apr&egrave;s une vente. Deux choix simples&nbsp;:</p>
+      <div class="opt3 two"><article class="opt rec"><div class="oh"><h3>Vendre maintenant, lou&eacute;e</h3><span>Recommand&eacute;</span></div><dl><div><dt>Acheteurs</dt><dd>Investisseurs</dd></div><div><dt>Fonds</dt><dd>Vers f&eacute;vrier 2027</dd></div><div><dt>Loyer</dt><dd>Encaiss&eacute; jusqu&rsquo;au r&egrave;glement</dd></div></dl></article><article class="opt"><div class="oh"><h3>Attendre la fin du bail</h3></div><dl><div><dt>Acheteurs</dt><dd>Investisseurs et occupants</dd></div><div><dt>Fonds</dt><dd>Vers juin 2027</dd></div><div><dt>Loyer</dt><dd>Perdu pendant la vente</dd></div></dl></article></div>
       <p class="calnote">Visites avec pr&eacute;avis au locataire et photos avec son accord tant que la maison est lou&eacute;e.</p>
     </div>
     <div class="panel" role="tabpanel" id="p4" aria-labelledby="t4" hidden>
@@ -1256,7 +1259,7 @@ html:not(.gated) .gate{opacity:0;visibility:hidden;pointer-events:none}
           <li><i style="background:#83817C"></i>Obligatoire<b data-sum="print"></b></li>
         </ul>
         <div class="nv"><span>Pris en charge par Team Cyril</span><b>1&nbsp;300&nbsp;$</b></div>
-        <p class="pay">Le marketing est r&eacute;gl&eacute; avant le lancement&nbsp;; la commission seulement en cas de vente. Vendue en pr&eacute;-march&eacute;&nbsp;: seul le pack photo est d&ucirc;.</p>
+        <p class="pay">Le marketing se r&egrave;gle avant le lancement ou, si vous pr&eacute;f&eacute;rez, au r&egrave;glement de la vente. La commission seulement en cas de vente. Vendue en pr&eacute;-march&eacute;&nbsp;: seul le pack photo est d&ucirc;.</p>
       </aside>
     </div>
   </div>
@@ -1266,17 +1269,17 @@ html:not(.gated) .gate{opacity:0;visibility:hidden;pointer-events:none}
   <div class="wrap">
     <div class="head">
       <div><p class="lab"><i>07</i>Conditions</p><h2 class="h2">Vous d&eacute;cidez o&ugrave; <span>tombe la commission</span></h2></div>
-      <p class="lede">Une fourchette, GST comprise. Vous fixez le taux avant le r&egrave;glement, une fois la campagne et le prix obtenu connus.</p>
+      <p class="lede">Une fourchette de 2,5&nbsp;% &agrave; 3&nbsp;% + GST. Vous fixez le taux avant le r&egrave;glement, une fois la campagne et le prix obtenu connus.</p>
     </div>
-    <div class="fee" role="img" aria-label="Commission entre 2,75 et 3,3 pour cent, GST comprise">
-      <div class="ends"><b>2,75%</b><b>3,3%</b></div>
+    <div class="fee" role="img" aria-label="Commission entre 2,5 et 3 pour cent plus GST, soit 2,75 a 3,3 pour cent GST comprise">
+      <div class="ends"><b>2,5&nbsp;%</b><b>3&nbsp;%</b></div>
       <div class="rail"></div>
-      <div class="cap"><span>GST comprise</span><span>GST comprise</span></div>
-      <p class="mid">Votre d&eacute;cision, avant le r&egrave;glement</p>
+      <div class="cap"><span>+ GST</span><span>+ GST</span></div>
+      <p class="mid">Soit 2,75&nbsp;% &agrave; 3,3&nbsp;% GST comprise. Votre d&eacute;cision, avant le r&egrave;glement.</p>
     </div>
     <div class="tg">
       <div><span class="h">Pas de vente, pas de commission</span><p>La commission n&rsquo;est due que si la maison est vendue.</p></div>
-      <div><span class="h">Marketing r&eacute;gl&eacute; d&rsquo;avance</span><p>La campagne compos&eacute;e en section 06, d&eacute;taill&eacute;e au dollar pr&egrave;s.</p></div>
+      <div><span class="h">Marketing&nbsp;: d&rsquo;avance ou au r&egrave;glement</span><p>La campagne compos&eacute;e en section 06, au dollar pr&egrave;s. Vous choisissez de la r&eacute;gler avant le lancement ou au r&egrave;glement de la vente.</p></div>
       <div><span class="h">Transparence totale</span><p>Un compte rendu chaque semaine, et chaque offre transmise d&egrave;s r&eacute;ception.</p></div>
     </div>
     <div class="qa" id="faq">
@@ -1335,7 +1338,7 @@ html:not(.gated) .gate{opacity:0;visibility:hidden;pointer-events:none}
       <p><b>Photos.</b> 3 Drysdale Place&nbsp;: annonce publique iThink Property, 2024. Ventes Team Cyril&nbsp;: photos des annonces publi&eacute;es sur Domain.</p>
       <p><b>Ventes et avis Team Cyril.</b> Ventes et avis 5 &eacute;toiles du profil RateMyAgent de Cyril Texier, consult&eacute; le 20 novembre 2026&nbsp;; prix non publi&eacute;s pour certaines ventes.</p>
       <p><b>R&eacute;f&eacute;rence.</b> Appartement 147 de la Qube, 2&nbsp;480&nbsp;000&nbsp;$, vendu par Cyril Texier, NGU Real Estate. Obligation de d&eacute;claration vendeur&nbsp;: Property Law Act 2023 (Qld), en vigueur depuis le 1er ao&ucirc;t 2025.</p>
-      <p><b>Conditions.</b> Cette proposition n&rsquo;est pas une &eacute;valuation&nbsp;; le prix affich&eacute; est d&eacute;cid&eacute; avec le vendeur &agrave; la signature du mandat (Form 6). Les d&eacute;lais sont indicatifs. Tarifs marketing NGU pour Brassall, novembre 2026, GST comprise. Les visuels pris en charge s&rsquo;appliquent aux mandats sign&eacute;s en novembre 2026. Commission de 2,75&nbsp;% &agrave; 3,3&nbsp;% GST comprise, fix&eacute;e par le vendeur avant le r&egrave;glement et due uniquement en cas de vente. Ni conseil juridique, ni conseil fiscal. Pr&eacute;par&eacute; par Cyril Texier, agent immobilier licenci&eacute;, NGU Real Estate.</p>
+      <p><b>Conditions.</b> Cette proposition n&rsquo;est pas une &eacute;valuation&nbsp;; le prix affich&eacute; est d&eacute;cid&eacute; avec le vendeur &agrave; la signature du mandat (Form 6). Les d&eacute;lais sont indicatifs. Tarifs marketing NGU pour Brassall, novembre 2026, GST comprise. Les visuels pris en charge s&rsquo;appliquent aux mandats sign&eacute;s en novembre 2026. Commission de 2,5&nbsp;% &agrave; 3&nbsp;% + GST (2,75&nbsp;% &agrave; 3,3&nbsp;% GST comprise), fix&eacute;e par le vendeur avant le r&egrave;glement et due uniquement en cas de vente. Ni conseil juridique, ni conseil fiscal. Pr&eacute;par&eacute; par Cyril Texier, agent immobilier licenci&eacute;, NGU Real Estate.</p>
       <p class="ng">Never give up.</p>
     </div>
   </div>
@@ -1359,7 +1362,7 @@ html:not(.gated) .gate{opacity:0;visibility:hidden;pointer-events:none}
     });
     mkt = t;
     document.getElementById('tot').textContent = fmt(t); document.getElementById('mtot').textContent = fmt(t);
-    document.getElementById('cnt').textContent = n + ' postes, réglés avant le lancement';
+    document.getElementById('cnt').textContent = n + ' postes, payables avant le lancement ou au règlement';
     [].forEach.call(document.querySelectorAll('#stack i'), function(i){ i.style.flexGrow = g[i.dataset.g]; i.style.flexBasis = '0'; });
     [].forEach.call(document.querySelectorAll('[data-sum]'), function(b){ b.textContent = fmt(g[b.dataset.sum]); });
   }
