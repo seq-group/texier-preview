@@ -836,7 +836,7 @@ html:not(.gated) .gate{opacity:0;visibility:hidden;pointer-events:none}
 .gcard h1{margin-top:.9rem;font-size:clamp(2.4rem,9vw,3.4rem);line-height:.9;letter-spacing:-.045em;font-weight:850;font-stretch:112%}
 .gcard h1 span{display:block;font-weight:200;color:var(--steel-2)}
 .gcard .why{margin-top:1.1rem;color:rgba(245,244,241,.82);font-size:1rem;line-height:1.6}
-.gform{margin-top:1.6rem;display:grid;gap:.85rem}
+.gform{margin-top:1.8rem;display:grid;gap:.85rem}
 .gform label{display:block;font-family:var(--display);font-weight:600;font-size:.58rem;letter-spacing:.2em;text-transform:uppercase;color:var(--mute);margin-bottom:.4rem}
 .gform label i{font-style:normal;text-transform:none;letter-spacing:0;font-weight:400;color:var(--mute-2)}
 .gform input{width:100%;font-family:var(--text);font-size:16px;font-weight:400;color:var(--white);background:rgba(245,244,241,.06);border:1px solid rgba(245,244,241,.22);border-radius:0;padding:.85rem .9rem;min-height:50px;-webkit-appearance:none;appearance:none}
@@ -865,15 +865,8 @@ html:not(.gated) .gate{opacity:0;visibility:hidden;pointer-events:none}
     </div>
     <p class="k">Proposition priv&eacute;e</p>
     <h1 id="g-title"><span>3 Drysdale</span>Place</h1>
-    <p class="why" id="g-why">Cette proposition a &eacute;t&eacute; pr&eacute;par&eacute;e pour vous. Indiquez votre nom et votre e-mail pour l&rsquo;ouvrir.</p>
-    <form class="gform" id="g-form" novalidate>
-      <div><label for="g-name">Nom</label><input id="g-name" name="name" autocomplete="name" autocapitalize="words" required><span class="err" id="g-name-e" hidden>Indiquez votre nom.</span></div>
-      <div><label for="g-email">E-mail</label><input id="g-email" name="email" type="email" inputmode="email" autocomplete="email" autocapitalize="off" spellcheck="false" required><span class="err" id="g-email-e" hidden>Indiquez une adresse e-mail valide.</span></div>
-      <div><label for="g-phone">T&eacute;l&eacute;phone <i>(facultatif)</i></label><input id="g-phone" name="phone" type="tel" inputmode="tel" autocomplete="tel"></div>
-      <div class="hp" aria-hidden="true"><label for="g-hp">Ne pas remplir</label><input id="g-hp" name="_honey" tabindex="-1" autocomplete="off"></div>
-      <button class="btn" type="submit" id="g-btn">Ouvrir la proposition</button>
-    </form>
-    <p class="priv">Vos coordonn&eacute;es servent uniquement &agrave; Cyril pour vous recontacter au sujet de cette proposition.</p>
+    <p class="why">Une proposition de vente pr&eacute;par&eacute;e pour vous par Cyril Texier, NGU Real Estate.</p>
+    <form class="gform" id="g-form"><button class="btn" type="submit" id="g-btn">Ouvrir la proposition</button></form>
     <p class="tel">Une question&nbsp;? Cyril Texier, <a href="tel:+61402293358">0402 293 358</a></p>
   </div>
 </div>
@@ -1423,35 +1416,22 @@ html:not(.gated) .gate{opacity:0;visibility:hidden;pointer-events:none}
 (function(){
   "use strict";
   var TO='cyril@ngurealestate.com.au', root=document.documentElement;
-  function $(id){return document.getElementById(id);}
   if(!root.classList.contains('gated')) return;
-  var who=null; try{who=JSON.parse(localStorage.getItem('d3.who')||'null');}catch(e){}
-  if(who&&who.name){
-    $('g-name').value=who.name; $('g-email').value=who.email||''; $('g-phone').value=who.phone||'';
-    $('g-why').textContent='Bon retour, '+who.name.split(' ')[0]+'. Vos coordonn\u00e9es sont d\u00e9j\u00e0 l\u00e0.';
-  }
-  function okEmail(v){return /^[^\s@]+@[^\s@]+\.[a-z]{2,}$/i.test(v);}
-  function flag(id,bad){var el=$(id),er=$(id+'-e');el.classList.toggle('bad',bad);el.setAttribute('aria-invalid',bad?'true':'false');if(er)er.hidden=!bad;return !bad;}
-  ['g-name','g-email'].forEach(function(id){$(id).addEventListener('input',function(){if(this.classList.contains('bad'))flag(id,false);});});
+  var btn=document.getElementById('g-btn');
   function enter(){
     try{sessionStorage.setItem('d3.pass','1');}catch(e){}
     root.classList.remove('gated');
     window.scrollTo(0,0); window.dispatchEvent(new Event('scroll'));
-    var m=document.querySelector('main'); if(m){m.setAttribute('tabindex','-1');m.focus({preventScroll:true});}
   }
-  $('g-form').addEventListener('submit',function(e){
+  document.getElementById('g-form').addEventListener('submit',function(e){
     e.preventDefault();
-    if($('g-hp').value){enter();return;}
-    var name=$('g-name').value.trim(), mail=$('g-email').value.trim(), phone=$('g-phone').value.trim();
-    var ok=flag('g-name',name.length<2); ok=flag('g-email',!okEmail(mail))&&ok;
-    if(!ok){var b=document.querySelector('.gform .bad'); if(b)b.focus(); return;}
-    var n=1; try{n=(+(localStorage.getItem('d3.n')||0))+1; localStorage.setItem('d3.n',n); localStorage.setItem('d3.who',JSON.stringify({name:name,email:mail,phone:phone}));}catch(err){}
+    var n=1; try{n=(+(localStorage.getItem('d3.n')||0))+1; localStorage.setItem('d3.n',n);}catch(err){}
     var when=new Date().toLocaleString('fr-FR',{dateStyle:'full',timeStyle:'short',timeZone:'Australia/Brisbane'})+' (heure de Brisbane)';
     var ua=navigator.userAgent, dev=/iPhone/.test(ua)?'iPhone':/iPad/.test(ua)?'iPad':/Android/.test(ua)?'Android':/Mac/.test(ua)?'Mac':/Windows/.test(ua)?'Windows':'Autre';
-    var data={_subject:'3 Drysdale Place : proposition ouverte par '+name+(n>1?' ('+n+'e ouverture)':''),_template:'table',_captcha:'false',
-      'Nom':name,'E-mail':mail,'T\u00e9l\u00e9phone':phone||'\u2014','Ouverture':n===1?'Premi\u00e8re ouverture':n+'e ouverture sur cet appareil','Date':when,'Appareil':dev,'Page':location.href};
-    $('g-btn').disabled=true; $('g-btn').textContent='Ouverture\u2026';
-    var go=setTimeout(enter,1500);
+    var data={_subject:'3 Drysdale Place : proposition ouverte'+(n>1?' ('+n+'e fois sur cet appareil)':''),_template:'table',_captcha:'false',
+      'Ouverture':n===1?'Premi\u00e8re ouverture sur cet appareil':n+'e ouverture sur cet appareil','Date':when,'Appareil':dev,'Page':location.href};
+    btn.disabled=true; btn.textContent='Ouverture\u2026';
+    var go=setTimeout(enter,1200);
     try{
       fetch('https://formsubmit.co/ajax/'+TO,{method:'POST',keepalive:true,headers:{'Content-Type':'application/json','Accept':'application/json'},body:JSON.stringify(data)})
         .then(function(){clearTimeout(go);enter();},function(){clearTimeout(go);enter();});
