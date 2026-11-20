@@ -864,6 +864,16 @@ html:not(.gated) .gate{opacity:0;visibility:hidden;pointer-events:none}
 <style>.stats .v small{font-size:.5em;font-weight:600;letter-spacing:0;margin-left:.2em;color:var(--mute)}</style>
 <style>.loc2 .facts span{-webkit-hyphens:auto;hyphens:auto;overflow-wrap:break-word}.spec .big b{font-size:clamp(1.6rem,3vw,2.6rem)}@media (max-width:26rem){.loc2 .facts span{font-size:.78rem}}</style>
 <style>@media (min-width:56rem){.opt3.two{grid-template-columns:repeat(2,minmax(0,1fr))}}</style>
+<style>
+@media (max-width:47.99rem){
+  .tabs{display:grid!important;grid-template-columns:1fr 1fr;overflow:visible!important;gap:0}
+  .tabs button{width:100%;justify-content:flex-start;text-align:left;padding-inline:.2rem}
+  .phases{display:grid!important;grid-template-columns:1fr!important;overflow:visible!important;grid-auto-flow:row!important;scroll-snap-type:none!important}
+  .phases>*{width:auto!important;min-width:0!important}
+  .ml .gh span{display:none}
+  .need{gap:1.4rem}
+}
+</style>
 </head><body>
 <div class="gate" id="gate" role="dialog" aria-modal="true" aria-labelledby="g-title">
   <div class="gbg" aria-hidden="true"><img src="img/d-front.jpg" alt=""></div>
