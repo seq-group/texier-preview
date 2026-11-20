@@ -893,6 +893,39 @@ html:not(.gated) .gate{opacity:0;visibility:hidden;pointer-events:none}
 .pcc thead th:first-child{width:24%}
 @media (max-width:30rem){.pcc table{font-size:.82rem}.pcc tbody th{font-size:.76rem}}
 </style>
+<style>
+/* ── mobile layout + motion ── */
+@media (max-width:39.99rem){
+  .car{display:flex!important;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;-webkit-overflow-scrolling:touch;gap:.75rem!important;background:none!important;border:0!important;
+    margin-left:calc(-1 * max(var(--gut),env(safe-area-inset-left,0px)));margin-right:calc(-1 * max(var(--gut),env(safe-area-inset-right,0px)));
+    padding-inline:max(var(--gut),env(safe-area-inset-left,0px));scroll-padding-inline:max(var(--gut),env(safe-area-inset-left,0px))}
+  .car::-webkit-scrollbar{display:none}
+  .car>*{flex:0 0 84%;min-width:0;scroll-snap-align:start;border:1px solid var(--line)}
+  .opts.car>*{border-color:var(--hair);background:var(--paper-2)}
+  .nw.car>.nwt{flex-basis:84%}
+  .dots{display:flex;align-items:center;gap:.45rem;margin-top:1.1rem}
+  .dots i{width:6px;height:6px;border-radius:50%;background:var(--line-2);transition:width .35s var(--ease),background .35s,border-radius .35s}
+  .dots i.on{width:22px;border-radius:3px;background:var(--steel)}
+  .paper .dots i,.white .dots i{background:var(--hair-2)}.paper .dots i.on,.white .dots i.on{background:var(--navy)}
+  .dots span{margin-left:auto;font-family:var(--display);font-weight:600;font-size:.54rem;letter-spacing:.2em;text-transform:uppercase;color:var(--mute-2)}
+  .tabs{grid-template-columns:repeat(3,minmax(0,1fr))!important}
+  .tabs button{flex-direction:column;gap:.25rem!important;margin-right:0!important;padding:.8rem .3rem .9rem 0!important;font-size:.54rem!important;line-height:1.35;white-space:normal}
+  .tabs button i{font-size:.95rem!important}
+  .pcc table,.pcc thead,.pcc tbody,.pcc tr,.pcc th,.pcc td{display:block;width:auto!important}
+  .pcc thead{display:none}
+  .pcc tr{border-top:1px solid var(--hair);padding:.9rem 0 .4rem}
+  .pcc tbody th{border:0;padding:0 0 .5rem;font-family:var(--display);font-weight:700;font-size:.58rem!important;letter-spacing:.18em;text-transform:uppercase;color:var(--navy)}
+  .pcc td{border:0;padding:.35rem 0;display:grid;grid-template-columns:6.4rem minmax(0,1fr);gap:.7rem;font-size:.88rem}
+  .pcc td.up{padding:.55rem .6rem;margin:0 -.6rem}
+  .pcc td::before{content:attr(data-l);font-family:var(--display);font-weight:600;font-size:.52rem;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-3);padding-top:.25rem}
+  .pcc td.up::before{color:var(--navy)}
+}
+@media (min-width:40rem){.dots{display:none}}
+html.fx .fxi{opacity:0;transform:translateY(22px);transition:opacity .8s var(--ease),transform .8s var(--ease)}
+html.fx .fxi.seen{opacity:1;transform:none}
+html.fx .h2.fxi{transform:translateY(14px)}
+@media (prefers-reduced-motion:reduce){html.fx .fxi{opacity:1!important;transform:none!important;transition:none!important}}
+</style>
 </head><body>
 <div class="gate" id="gate" role="dialog" aria-modal="true" aria-labelledby="g-title">
   <div class="gbg" aria-hidden="true"><img src="img/d-front.jpg" alt=""></div>
@@ -1098,12 +1131,12 @@ html:not(.gated) .gate{opacity:0;visibility:hidden;pointer-events:none}
       <div><p class="lab"><i>★</i>Ventes récentes</p><h2 class="h2">Quelques ventes <span>de Team Cyril</span></h2></div>
       
     </div>
-    <div class="sl">
+    <div class="sl car">
       <div><figure class="sp"><img src="img/s-bridle.jpg" alt="14 Bridle Lane"></figure><span class="st">Vendu</span><p class="ad">14 Bridle Lane</p><p class="sb">Maison · 6 ch · 3 sdb</p><p class="pz">1 420 000 $</p><p class="nt">Maison à double habitation sur 1 265 m², record de la rue.</p></div>
       <div><figure class="sp"><img src="img/s-view.jpg" alt="23 Viewbank Court, vue aérienne"></figure><span class="st">Vendu</span><p class="ad">23 Viewbank Court</p><p class="sb">Maison · 4 ch · 661 m²</p><p class="pz">30 jours</p><p class="nt">De la mise en ligne à la vente.</p></div>
       <div><figure class="sp"><img src="img/s-batch.jpg" alt="5 Batchworth Road"></figure><span class="st">Vendu</span><p class="ad">5 Batchworth Road</p><p class="sb">Maison · 4 ch · 1 582 m²</p><p class="pz">Record de rue</p><p class="nt">Vendeurs à l’étranger pendant toute la vente.</p></div>
     </div>
-    <div class="rv">
+    <div class="rv car">
       <figure><span class="stars">★★★★★</span><blockquote>« Cyril went above and beyond to sell our house, smashing a record price at auction… »</blockquote><figcaption><b>Vendeurs à l’étranger</b>Avis RateMyAgent</figcaption></figure>
       <figure><span class="stars">★★★★★</span><blockquote>« Cyril was an absolute professional from start to finish. »</blockquote><figcaption><b>Vendeur</b>Avis RateMyAgent</figcaption></figure>
       <figure><span class="stars">★★★★★</span><blockquote>« Cyril is one of the finest sales agents we had the pleasure of working with. »</blockquote><figcaption><b>Vendeur</b>Avis RateMyAgent</figcaption></figure>
@@ -1118,7 +1151,7 @@ html:not(.gated) .gate{opacity:0;visibility:hidden;pointer-events:none}
       <div><p class="lab"><i>★</i>Le réseau NGU</p><h2 class="h2">Toute l’équipe NGU <span>sur votre vente</span></h2></div>
       <p class="lede">Chez NGU, les agents ne sont pas en concurrence entre eux : on travaille ensemble. Votre maison est présentée aux acheteurs de tous les bureaux, et l’équipe d’Ipswich, installée à Brassall, connaît chaque rue.</p>
     </div>
-    <div class="nw">
+    <div class="nw car">
       <div><p class="o">NGU Ipswich · Brassall</p><b>181</b><span>ventes en 12 mois</span><ul><li>4,8 ★ sur 636 avis</li><li>Agence lauréate de Brassall sur RateMyAgent, 2021–2026</li></ul></div>
       <div><p class="o">NGU Ripley &amp; Surrounds</p><b>173</b><span>ventes en 12 mois</span><ul><li>5,0 ★ sur 250 avis</li><li>170,5 M$ de ventes</li></ul></div>
       <div><p class="o">NGU Ipswich Central</p><b>65</b><span>ventes en 12 mois</span><ul><li>21 jours médians en ligne</li><li>62,3 M$ de ventes</li></ul></div>
@@ -1188,7 +1221,7 @@ html:not(.gated) .gate{opacity:0;visibility:hidden;pointer-events:none}
       <div><p class="lab"><i>05</i>Votre achat</p><h2 class="h2">Votre vente <span>et votre achat</span></h2></div>
       <p class="lede">Trois façons de procéder, à valider avec votre courtier.</p>
     </div>
-    <div class="opts">
+    <div class="opts car">
       <div><span class="no">01</span><h3>Vendre d’abord</h3><p>Brassall sous contrat ferme avant de faire votre offre. Votre budget est connu avec précision et votre offre est sans condition de vente.</p><span class="t">Le plus sûr · le moins rapide</span></div>
       <div><span class="no">02</span><h3>Un règlement long</h3><p>Faire votre offre d’achat avec un règlement à 60–90 jours, aligné sur la vente de Brassall. Possible si le vendeur n’est pas pressé.</p><span class="t">Bon équilibre · à négocier</span></div>
       <div><span class="no">03</span><h3>Sous réserve de vente</h3><p>Offre conditionnée à la vente de Brassall. Moins attractive pour un vendeur, mais plus crédible si Brassall est déjà en ligne avec un prix clair.</p><span class="t">Le plus souple · le moins fort</span></div>
@@ -1280,9 +1313,9 @@ html:not(.gated) .gate{opacity:0;visibility:hidden;pointer-events:none}
           <table>
             <thead><tr><th></th><th>Standard</th><th class="up">Premiere + Audience Maximiser Gold</th></tr></thead>
             <tbody>
-              <tr><th>Position</th><td>Parmi les autres annonces, descend à chaque nouvelle mise en ligne</td><td class="up">En tête des résultats de recherche du secteur</td></tr>
-              <tr><th>Format</th><td>Format standard</td><td class="up">Grand format, plus de photos dans les résultats</td></tr>
-              <tr><th>Hors du site</th><td>Vue seulement par ceux qui cherchent sur le site</td><td class="up">Publicités sur Facebook, Instagram et des centaines de sites, auprès des acheteurs qui ont cherché un bien similaire</td></tr>
+              <tr><th>Position</th><td data-l="Standard">Parmi les autres annonces, descend à chaque nouvelle mise en ligne</td><td class="up" data-l="Avec l’option">En tête des résultats de recherche du secteur</td></tr>
+              <tr><th>Format</th><td data-l="Standard">Format standard</td><td class="up" data-l="Avec l’option">Grand format, plus de photos dans les résultats</td></tr>
+              <tr><th>Hors du site</th><td data-l="Standard">Vue seulement par ceux qui cherchent sur le site</td><td class="up" data-l="Avec l’option">Publicités sur Facebook, Instagram et des centaines de sites, auprès des acheteurs qui ont cherché un bien similaire</td></tr>
             </tbody>
           </table>
         </div>
@@ -1291,9 +1324,9 @@ html:not(.gated) .gate{opacity:0;visibility:hidden;pointer-events:none}
           <table>
             <thead><tr><th></th><th>Standard</th><th class="up">Platinum Edge + Social Boost</th></tr></thead>
             <tbody>
-              <tr><th>Position</th><td>Parmi les autres annonces</td><td class="up">Premier rang dans les résultats</td></tr>
-              <tr><th>Durée</th><td>Durée limitée</td><td class="up">Sans limite de durée, jusqu’à la vente</td></tr>
-              <tr><th>Hors du site</th><td>Aucune diffusion</td><td class="up">Facebook, Instagram et Google au lancement, puis campagne Social Boost ciblée avec les données acheteurs de Domain</td></tr>
+              <tr><th>Position</th><td data-l="Standard">Parmi les autres annonces</td><td class="up" data-l="Avec l’option">Premier rang dans les résultats</td></tr>
+              <tr><th>Durée</th><td data-l="Standard">Durée limitée</td><td class="up" data-l="Avec l’option">Sans limite de durée, jusqu’à la vente</td></tr>
+              <tr><th>Hors du site</th><td data-l="Standard">Aucune diffusion</td><td class="up" data-l="Avec l’option">Facebook, Instagram et Google au lancement, puis campagne Social Boost ciblée avec les données acheteurs de Domain</td></tr>
             </tbody>
           </table>
         </div>
@@ -1475,6 +1508,33 @@ html:not(.gated) .gate{opacity:0;visibility:hidden;pointer-events:none}
         .then(function(){clearTimeout(go);enter();},function(){clearTimeout(go);enter();});
     }catch(err){clearTimeout(go);enter();}
   });
+})();
+</script>
+<script>
+(function(){
+  "use strict";
+  var rm=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  /* carousels: dots + counter */
+  [].forEach.call(document.querySelectorAll('.car'),function(c){
+    var items=[].slice.call(c.children).filter(function(e){return e.offsetParent!==null||true;});
+    var d=document.createElement('div');d.className='dots';d.setAttribute('aria-hidden','true');
+    items.forEach(function(){d.appendChild(document.createElement('i'));});
+    var n=document.createElement('span');d.appendChild(n);c.parentNode.insertBefore(d,c.nextSibling);
+    function upd(){var w=items[0].getBoundingClientRect().width+12,i=Math.min(items.length-1,Math.round(c.scrollLeft/w));
+      [].forEach.call(d.querySelectorAll('i'),function(x,k){x.classList.toggle('on',k===i);});n.textContent=(i+1)+' / '+items.length;}
+    c.addEventListener('scroll',function(){requestAnimationFrame(upd);},{passive:true});upd();
+  });
+  /* scroll reveal */
+  if(rm||!('IntersectionObserver' in window))return;
+  var sel='main .head, main .h2, .sl>*, .rv>*, .nw>*, .opts>*, .phase, .est, .chart, .fit>*, .pcc, .mb .it, .free>div, .faq details, .nov .big, .tl>*, .cardc, .next';
+  var els=[].slice.call(document.querySelectorAll(sel)).filter(function(e){return e.getBoundingClientRect().top>window.innerHeight;});
+  if(!els.length)return;
+  document.documentElement.classList.add('fx');
+  els.forEach(function(e){e.classList.add('fxi');});
+  var io=new IntersectionObserver(function(es){es.forEach(function(en){if(en.isIntersecting){var t=en.target,sib=t.parentNode?[].indexOf.call(t.parentNode.children,t):0;
+    if(t.parentNode&&t.parentNode.classList.contains('car'))sib=0;
+    t.style.transitionDelay=Math.min(sib,4)*70+'ms';t.classList.add('seen');io.unobserve(t);}});},{rootMargin:'0px 0px -8% 0px',threshold:.08});
+  els.forEach(function(e){io.observe(e);});
 })();
 </script>
 </body></html>

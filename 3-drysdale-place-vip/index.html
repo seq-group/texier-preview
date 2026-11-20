@@ -1,4 +1,4 @@
-<!doctype html><html lang="en-AU"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<!doctype html><html lang="en-AU" class="gated"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>3 Drysdale Place, Brassall · Private pre-market</title>
 <meta name="claude:viewport-fit-sides" content="cover">
 <meta name="description" content="Private pre-market access: 3 Drysdale Place, Brassall. For registered buyers and buyers’ agents.">
@@ -985,6 +985,33 @@ html:not(.gated) .gate{opacity:0;visibility:hidden;pointer-events:none}
 .forms.one{grid-template-columns:1fr}
 @media (min-width:60rem){.forms.one{grid-template-columns:minmax(0,1.2fr) minmax(0,.8fr)}}
 </style>
+<style>
+.gcard .k{display:flex;align-items:center;gap:.7rem}
+.gcard .vip{display:inline-block;background:var(--steel);color:var(--noir);font-weight:800;letter-spacing:.2em;padding:.32rem .5rem .3rem .62rem;font-size:.58rem}
+.gcard .gbtn{width:100%;min-height:56px;margin-top:1.8rem;font-size:.68rem}
+.gagent{margin-top:1.2rem;border:1px solid rgba(245,244,241,.18);background:rgba(14,15,17,.55);padding:1.1rem 1.1rem 1.15rem;-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px)}
+.gagent b{font-family:var(--display);font-weight:700;font-size:.62rem;letter-spacing:.22em;text-transform:uppercase;color:var(--steel-2)}
+.gagent p{margin-top:.45rem;font-size:.9rem;line-height:1.55;color:rgba(245,244,241,.78)}
+.gagent .btn{width:100%;min-height:48px;margin-top:.9rem;font-size:.62rem}
+.gate .btn[disabled]{opacity:.6}
+</style>
+<style>
+.days{flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none;padding-bottom:2px;scroll-snap-type:x proximity}
+.days::-webkit-scrollbar{display:none}
+.days label{flex:0 0 auto;scroll-snap-align:start}
+.days span{flex-direction:column;align-items:flex-start;justify-content:center;min-width:4.4rem;min-height:58px!important;line-height:1.2}
+.days span small{font-family:var(--display);font-weight:600;font-size:.5rem;letter-spacing:.18em;text-transform:uppercase;opacity:.7}
+.more summary{cursor:pointer;font-size:.9rem;color:var(--steel-2);list-style:none;padding:.3rem 0}
+.more summary::-webkit-details-marker{display:none}
+.more summary::before{content:"+ "}
+.more[open] summary::before{content:"– "}
+.more summary i{font-style:normal;color:var(--mute-2)}
+.vsum{font-size:.86rem;color:var(--mute);margin-top:-.2rem}
+#v-form[hidden]{display:none}
+.gform{grid-template-columns:minmax(0,1fr)}
+.forms>*,.fbox,.q{min-width:0}
+.days{max-width:100%}
+</style>
 </head><body>
 <div class="gate" id="gate" role="dialog" aria-modal="true" aria-labelledby="g-title">
   <div class="gbg" aria-hidden="true"><img src="img/d-front.jpg" alt=""></div>
@@ -994,18 +1021,15 @@ html:not(.gated) .gate{opacity:0;visibility:hidden;pointer-events:none}
         <span class="div" aria-hidden="true"></span>
         <span class="tmark" aria-label="Cyril Texier Team"><svg class="mono" viewBox="0 0 44 44" aria-hidden="true"><path d="M36.6 9.8A19 19 0 1 0 36.6 34.2" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="square"/><path d="M14.5 15.5H43M28.5 15.5V33" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="square"/></svg><span class="w"><span class="w1">Cyril Texier</span><span class="w2">Team</span></span></span>
       </div>
-    <p class="k">Private pre-market</p>
+    <p class="k"><span class="vip">VIP</span>Private pre-market</p>
     <h1 id="g-title"><span>3 Drysdale</span>Place</h1>
-    <p class="why">Shared privately with NGU registered buyers and buyers’ agents, before it goes online. Please enter your details to view.</p>
-    <form class="gform" id="g-form" novalidate>
-      <div><label for="g-name">Name</label><input id="g-name" autocomplete="name" autocapitalize="words" required><span class="err" id="g-name-e" hidden>Please add your name.</span></div>
-      <div><label for="g-phone">Mobile</label><input id="g-phone" type="tel" inputmode="tel" autocomplete="tel" required><span class="err" id="g-phone-e" hidden>Please add a valid Australian mobile.</span></div>
-      <div><label for="g-email">Email</label><input id="g-email" type="email" inputmode="email" autocomplete="email" autocapitalize="off" spellcheck="false" required><span class="err" id="g-email-e" hidden>Please add a valid email.</span></div>
-      <div><label for="g-type">I am</label><select id="g-type"><option>A buyer</option><option>A buyer’s agent</option></select></div>
-      <div class="hp" aria-hidden="true"><label for="g-hp">Leave empty</label><input id="g-hp" tabindex="-1" autocomplete="off"></div>
-      <button class="btn" type="submit" id="g-btn">View the property</button>
-    </form>
-    <p class="priv">Your details go to Cyril Texier only, to follow up on this property.</p>
+    <p class="why">You’re receiving this as a valued NGU buyer. 3 Drysdale Place is being shown privately, before it goes online.</p>
+    <button class="btn gbtn" type="button" id="g-btn">View the property</button>
+    <div class="gagent">
+      <b>Buyer’s agent?</b>
+      <p>You’re welcome to view, book inspections and submit offers on behalf of your clients.</p>
+      <button class="btn line" type="button" id="g-agent">Enter as a buyer’s agent</button>
+    </div>
     <p class="tel">Questions? Cyril Texier, <a href="tel:+61402293358">0402 293 358</a></p>
   </div>
 </div>
@@ -1154,16 +1178,35 @@ html:not(.gated) .gate{opacity:0;visibility:hidden;pointer-events:none}
     <div class="forms one">
       <div class="fbox">
         <h3>Book a private viewing</h3>
-        <p class="sub">Cyril will call to confirm a time. Viewings are arranged with notice to the tenant.</p>
+        <p class="sub">Pick a day and a time that suits. Cyril confirms by text once the tenant has been given notice.</p>
         <form class="gform" id="v-form" novalidate>
+          <div class="q"><span class="ql" id="l-day">Day</span>
+            <fieldset class="chips days" id="v-days" aria-labelledby="l-day"></fieldset>
+          </div>
+          <div class="q"><span class="ql" id="l-time">Time</span>
+            <fieldset class="chips" aria-labelledby="l-time">
+              <label><input type="radio" name="vt" value="Morning" checked><span>Morning</span></label>
+              <label><input type="radio" name="vt" value="Midday"><span>Midday</span></label>
+              <label><input type="radio" name="vt" value="Afternoon"><span>Afternoon</span></label>
+              <label><input type="radio" name="vt" value="After 5 pm"><span>After 5 pm</span></label>
+            </fieldset>
+          </div>
           <div class="two"><div><label for="v-name">Name</label><input id="v-name" autocomplete="name" autocapitalize="words"><span class="err" id="v-name-e" hidden>Please add your name.</span></div><div><label for="v-phone">Mobile</label><input id="v-phone" type="tel" inputmode="tel" autocomplete="tel"><span class="err" id="v-phone-e" hidden>Please add a valid mobile.</span></div></div>
-          <div><label for="v-email">Email</label><input id="v-email" type="email" inputmode="email" autocomplete="email" autocapitalize="off" spellcheck="false"><span class="err" id="v-email-e" hidden>Please add a valid email.</span></div>
-          <div><label for="v-type">I am</label><select id="v-type"><option>A buyer</option><option>A buyer’s agent</option></select></div>
-                    <div><label for="v-when">Preferred time</label><select id="v-when"><option>Weekday</option><option>Weekday evening</option><option>Saturday</option><option>Any time</option></select></div>
-          <div><label for="v-msg">Message <i>(optional)</i></label><textarea id="v-msg"></textarea></div>
-          <button class="btn" type="submit" id="v-btn">Request a viewing</button>
-          <p class="done" id="v-done" hidden>Thank you. Cyril will call you to confirm a time.</p>
+          <details class="more"><summary>Add email or a note <i>(optional)</i></summary>
+            <div style="display:grid;gap:.85rem;margin-top:.85rem">
+              <div><label for="v-email">Email</label><input id="v-email" type="email" inputmode="email" autocomplete="email" autocapitalize="off" spellcheck="false"><span class="err" id="v-email-e" hidden>Please check the email.</span></div>
+              <div><label for="v-type">I am</label><select id="v-type"><option>A buyer</option><option>A buyer’s agent</option></select></div>
+              <div><label for="v-msg">Note</label><textarea id="v-msg" placeholder="Who’s coming, questions for Cyril"></textarea></div>
+            </div>
+          </details>
+          <button class="btn" type="submit" id="v-btn">Request this viewing</button>
+          <p class="vsum" id="v-sum" aria-live="polite"></p>
         </form>
+        <div class="sent" id="v-sent" hidden tabindex="-1" style="border:0;padding:0;background:none">
+          <h3>Request sent.</h3>
+          <p id="v-sent-t"></p>
+          <p><a class="btn line" href="#offer" style="margin-top:.6rem">Build an offer</a></p>
+        </div>
       </div>
       <div>
         <dl class="cardc">
@@ -1332,28 +1375,49 @@ html:not(.gated) .gate{opacity:0;visibility:hidden;pointer-events:none}
   function when(){return new Date().toLocaleString('en-AU',{dateStyle:'full',timeStyle:'short',timeZone:'Australia/Brisbane'})+' (Brisbane)';}
   function send(data){try{return fetch('https://formsubmit.co/ajax/'+TO,{method:'POST',keepalive:true,headers:{'Content-Type':'application/json','Accept':'application/json'},body:JSON.stringify(Object.assign({_template:'table',_captcha:'false'},data))}).then(function(r){return r.ok;},function(){return false;});}catch(e){return Promise.resolve(false);}}
   var who=null; try{who=JSON.parse(localStorage.getItem('d3v.who')||'null');}catch(e){}
-  if(who&&root.classList.contains('gated')){$('g-name').value=who.name||'';$('g-phone').value=who.phone||'';$('g-email').value=who.email||'';if(who.type)$('g-type').value=who.type;}
   function enter(){try{sessionStorage.setItem('d3v.pass','1');}catch(e){}root.classList.remove('gated');window.scrollTo(0,0);window.dispatchEvent(new Event('scroll'));}
-  if(root.classList.contains('gated'))$('g-form').addEventListener('submit',function(e){
-    e.preventDefault(); if($('g-hp').value)return;
-    var name=$('g-name').value.trim(), phone=auPhone($('g-phone').value), mail=$('g-email').value.trim(), type=$('g-type').value;
-    var ok=flag('g-name',name.length<2); ok=flag('g-phone',!phone)&&ok; ok=flag('g-email',!okEmail(mail))&&ok;
-    if(!ok){var b=document.querySelector('.gate .bad');if(b)b.focus();return;}
-    who={name:name,phone:phone,email:mail,type:type}; try{localStorage.setItem('d3v.who',JSON.stringify(who));}catch(err){}
-    $('g-btn').disabled=true; $('g-btn').textContent='Opening…';
-    var go=setTimeout(enter,1500);
-    send({_subject:'3 Drysdale VIP : nouvel acheteur, '+name,'Nom':name,'Mobile':phone,'Email':mail,'Profil':type,'Date':when(),'Page':location.href}).then(function(){clearTimeout(go);enter();});
-  });
+  function device(){var u=navigator.userAgent;return /iPhone/.test(u)?'iPhone':/iPad/.test(u)?'iPad':/Android/.test(u)?'Android':/Mac/.test(u)?'Mac':/Windows/.test(u)?'Windows':'Autre';}
+  function open(role,btn){
+    try{sessionStorage.setItem('d3v.role',role);}catch(e){}
+    if(role==='agent'){['v-type','o-type'].forEach(function(id){$(id).value='A buyer’s agent';});}
+    btn.disabled=true; btn.textContent='Opening…'; var go=setTimeout(enter,1200);
+    var n=0;try{n=+(localStorage.getItem('d3v.n')||0)+1;localStorage.setItem('d3v.n',n);}catch(e){}
+    send({_subject:'3 Drysdale VIP : page ouverte'+(role==='agent'?' (buyer’s agent)':'')+(who&&who.name?', '+who.name:''),'Profil':role==='agent'?'Buyer’s agent':'Acheteur','Ouverture n°':n||'—','Appareil':device(),'Contact connu':who&&who.name?who.name+' · '+(who.phone||'')+' · '+(who.email||''):'—','Date':when(),'Page':location.href}).then(function(){clearTimeout(go);enter();});
+  }
+  if(root.classList.contains('gated')){$('g-btn').addEventListener('click',function(){open('buyer',this);});$('g-agent').addEventListener('click',function(){open('agent',this);});}
+  try{if(sessionStorage.getItem('d3v.role')==='agent'&&!who){['v-type','o-type'].forEach(function(id){$(id).value='A buyer’s agent';});}}catch(e){}
   ['v','o'].forEach(function(f){if(who){$(f+'-name').value=who.name||'';$(f+'-phone').value=who.phone||'';$(f+'-email').value=who.email||'';if(who.type)$(f+'-type').value=who.type;}});
   function details(f){var name=$(f+'-name').value.trim(),phone=auPhone($(f+'-phone').value),mail=$(f+'-email').value.trim();
     var ok=flag(f+'-name',name.length<2); ok=flag(f+'-phone',!phone)&&ok; ok=flag(f+'-email',!okEmail(mail))&&ok;
     if(!ok){var b=$(f+'-form').querySelector('.bad'); if(b)b.focus(); return null;}
     who={name:name,phone:phone,email:mail,type:$(f+'-type').value}; try{localStorage.setItem('d3v.who',JSON.stringify(who));}catch(e){} return who;}
-  $('v-form').addEventListener('submit',function(e){
-    e.preventDefault(); var w=details('v'); if(!w)return; $('v-btn').disabled=true;
-    send({_subject:'3 Drysdale VIP : demande de visite, '+w.name,'Nom':w.name,'Mobile':w.phone,'Email':w.email,'Profil':w.type,'Créneau':$('v-when').value,'Message':$('v-msg').value||'—','Date':when()}).then(function(sent){
-      $('v-btn').disabled=false; $('v-done').hidden=false;
-      if(!sent) $('v-done').textContent='Please call or text Cyril on 0402 293 358 to book your viewing.';
+  /* ---------- viewing ---------- */
+  (function(){var box=$('v-days'),d=new Date(),out=0,first=true,fmt=function(x,o){return x.toLocaleDateString('en-AU',Object.assign({timeZone:'Australia/Brisbane'},o));};
+    d.setDate(d.getDate()+1);
+    while(out<8){if(d.getDay()!==0){var v=fmt(d,{weekday:'long',day:'numeric',month:'long'});
+      var l=document.createElement('label');l.innerHTML='<input type="radio" name="vd"><span><small></small></span>';
+      var i=l.querySelector('input');i.value=v;if(first){i.checked=true;first=false;}
+      l.querySelector('small').textContent=out===0?'Tomorrow':fmt(d,{weekday:'short'});l.querySelector('span').appendChild(document.createTextNode(fmt(d,{day:'numeric',month:'short'})));
+      box.appendChild(l);out++;}d.setDate(d.getDate()+1);}
+    var l2=document.createElement('label');l2.innerHTML='<input type="radio" name="vd" value="Flexible, call me"><span><small>Any day</small>Call me</span>';box.appendChild(l2);
+  })();
+  function vsum(){var dv=(F2().querySelector('input[name=vd]:checked')||{}).value||'',tv=(F2().querySelector('input[name=vt]:checked')||{}).value||'';$('v-sum').textContent=dv.indexOf('Flexible')===0?'Cyril will call to find a time.':'Requesting: '+dv+', '+tv.toLowerCase()+'.';}
+  function F2(){return $('v-form');}
+  F2().addEventListener('change',vsum); vsum();
+  if(who&&who.type)$('v-type').value=who.type;
+  F2().addEventListener('submit',function(e){
+    e.preventDefault();
+    var name=$('v-name').value.trim(),phone=auPhone($('v-phone').value),mail=$('v-email').value.trim();
+    var ok=flag('v-name',name.length<2); ok=flag('v-phone',!phone)&&ok; ok=flag('v-email',!!mail&&!okEmail(mail))&&ok;
+    if(!ok){var bad=F2().querySelector('.bad');if(bad){if(bad.id==='v-email')F2().querySelector('.more').open=true;bad.focus();}return;}
+    who=Object.assign({},who||{},{name:name,phone:phone,email:mail||(who&&who.email)||'',type:$('v-type').value}); try{localStorage.setItem('d3v.who',JSON.stringify(who));}catch(err){}
+    ['o-name','o-phone','o-email'].forEach(function(id,k){if(!$(id).value)$(id).value=[who.name,who.phone,who.email][k]||'';});
+    var dv=F2().querySelector('input[name=vd]:checked').value,tv=F2().querySelector('input[name=vt]:checked').value;
+    $('v-btn').disabled=true;$('v-btn').textContent='Sending…';
+    send({_subject:'3 Drysdale VIP : demande de visite, '+name,'Jour':dv,'Créneau':tv,'Nom':name,'Mobile':phone,'Email':mail||'—','Profil':$('v-type').value,'Note':$('v-msg').value||'—','Date':when()}).then(function(sent){
+      $('v-btn').disabled=false;$('v-btn').textContent='Request this viewing';
+      $('v-sent-t').textContent=sent?(dv.indexOf('Flexible')===0?'Thanks '+name.split(' ')[0]+'. Cyril will call you on '+phone+' to find a time.':'Thanks '+name.split(' ')[0]+'. You asked for '+dv+', '+tv.toLowerCase()+'. Cyril will text '+phone+' to confirm the exact time.'):'This page could not send your request. Please call or text Cyril on 0402 293 358.';
+      F2().hidden=true;$('v-sent').hidden=false;$('v-sent').focus();
     });
   });
   /* ---------- offer builder ---------- */
