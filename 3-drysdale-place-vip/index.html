@@ -898,6 +898,93 @@ html:not(.gated) .gate{opacity:0;visibility:hidden;pointer-events:none}
 </style>
 <style>html:not(.gated) .gate{display:none}</style>
 <style>@media (max-width:40rem){.top .r .vip-badge{display:none}}</style>
+<style>
+/* description */
+.desc{margin-top:2.6rem;display:grid;gap:1rem;max-width:36rem}
+.desc p{color:var(--mute);font-size:1rem;line-height:1.75}
+.desc p:first-child{color:var(--white);font-size:clamp(1.08rem,1.4vw,1.2rem);line-height:1.6}
+/* gallery */
+.gg figure{cursor:zoom-in}
+.gg figure.w4{grid-column:1/-1;aspect-ratio:21/9}
+@media (max-width:59.99rem){.gg figure.w4{aspect-ratio:3/2}}
+.gg button.gb{all:unset;position:absolute;inset:0;cursor:zoom-in}
+.gg button.gb:focus-visible{outline:2px solid var(--steel);outline-offset:-2px}
+.gcount{position:absolute;right:.6rem;top:.6rem;font-family:var(--display);font-weight:600;font-size:.54rem;letter-spacing:.2em;text-transform:uppercase;background:rgba(14,15,17,.75);padding:.4rem .6rem;pointer-events:none}
+.lb button{width:48px;height:48px;display:grid;place-items:center;border:1px solid var(--line-2);background:rgba(14,15,17,.6);color:var(--white);cursor:pointer;font-size:1.3rem;line-height:1}
+.lb .cap b{color:var(--steel-2);font-weight:600;margin-left:.8em}
+/* offer builder */
+.ob{display:grid;grid-template-columns:1fr;gap:clamp(1.6rem,3vw,2.6rem);margin-top:2.4rem}
+@media (min-width:62rem){.ob{grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);align-items:start}}
+.ob form{border:1px solid var(--line);background:var(--noir-2);padding:clamp(1.2rem,3vw,2.2rem);margin:0}
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:.4rem;margin:0 0 1.8rem;padding:0;list-style:none}
+.steps li{font-family:var(--display);font-weight:600;font-size:.52rem;letter-spacing:.18em;text-transform:uppercase;color:var(--mute-2);padding-top:.7rem;border-top:2px solid var(--line-2);transition:color .3s,border-color .3s}
+.steps li.on{color:var(--white);border-color:var(--steel)}
+.steps li.ok{color:var(--steel-2);border-color:var(--steel-2)}
+.st[hidden]{display:none}
+.st{display:grid;gap:1.4rem;animation:stin .45s var(--ease)}
+@keyframes stin{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+@media (prefers-reduced-motion:reduce){.st{animation:none}}
+.st h3{font-size:clamp(1.25rem,2.2vw,1.55rem);letter-spacing:-.025em}
+.st .hint{margin-top:.35rem;color:var(--mute);font-size:.9rem;line-height:1.55}
+.q > .ql{display:block;font-family:var(--display);font-weight:600;font-size:.58rem;letter-spacing:.2em;text-transform:uppercase;color:var(--mute);margin-bottom:.55rem}
+.bigp{position:relative}
+.bigp input{font-family:var(--display)!important;font-weight:700!important;font-size:clamp(1.7rem,5vw,2.4rem)!important;letter-spacing:-.02em;padding:.6rem .9rem .6rem 2.1rem!important;min-height:70px!important}
+.bigp::before{content:"$";position:absolute;left:.9rem;top:50%;transform:translateY(-50%);font-family:var(--display);font-weight:700;font-size:clamp(1.3rem,4vw,1.8rem);color:var(--mute);pointer-events:none}
+.chips{display:flex;flex-wrap:wrap;gap:.5rem;border:0;margin:0;padding:0;min-width:0}
+.chips label{position:relative;margin:0!important;cursor:pointer}
+.chips input{position:absolute;opacity:0;width:1px;height:1px}
+.chips span{display:inline-flex;align-items:center;min-height:44px;padding:.55rem .95rem;border:1px solid rgba(245,244,241,.22);font-family:var(--text);font-size:.92rem;font-weight:400;letter-spacing:0;text-transform:none;color:var(--white);background:rgba(245,244,241,.04);transition:background .2s,border-color .2s,color .2s}
+.chips input:checked+span{background:var(--white);color:var(--noir);border-color:var(--white);font-weight:500}
+.chips input:focus-visible+span{outline:2px solid var(--steel);outline-offset:2px}
+@media (hover:hover){.chips span:hover{border-color:var(--steel)}}
+.q .sub2{margin-top:.75rem}
+.q .sub2[hidden]{display:none}
+.nav2 [hidden]{display:none!important}
+.ob form[hidden]{display:none}
+.gform .ack{font-family:var(--text);font-weight:300;font-size:.9rem;letter-spacing:0;text-transform:none;color:var(--mute);margin:0}
+.gform .ack.bad{color:#F0A592}
+.gform .ack input{width:20px!important;height:20px;min-height:0!important;padding:0!important;-webkit-appearance:auto!important;appearance:auto!important;background:none}
+.nav2{display:flex;gap:.6rem;margin-top:.4rem}
+.nav2 .btn{width:auto;flex:1;min-height:54px;margin:0;font-size:.66rem}
+.nav2 .btn.line{flex:0 0 auto;padding-inline:1.3rem}
+.ack{display:flex;gap:.7rem;align-items:flex-start;font-size:.9rem;line-height:1.55;color:var(--mute);cursor:pointer}
+.ack input{width:20px;height:20px;margin-top:.15rem;accent-color:var(--steel);flex:0 0 auto}
+.ack.bad{color:#F0A592}
+/* live offer sheet */
+.sheet{background:var(--paper);color:var(--ink);padding:clamp(1.3rem,3vw,2rem);position:relative}
+@media (min-width:62rem){.sheet{position:sticky;top:5.2rem}}
+.sheet::before{content:"";position:absolute;left:0;right:0;top:0;height:4px;background:var(--navy)}
+.sheet .sh{display:flex;justify-content:space-between;gap:1rem;align-items:baseline;border-bottom:1px solid var(--hair);padding-bottom:.9rem}
+.sheet .sh b{font-family:var(--display);font-weight:700;font-size:.6rem;letter-spacing:.24em;text-transform:uppercase;color:var(--navy)}
+.sheet .sh span{font-family:var(--display);font-size:.54rem;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-3)}
+.sheet .addr{margin-top:1rem;font-family:var(--display);font-weight:700;font-size:1.05rem;letter-spacing:-.01em}
+.sheet .pv{margin-top:.6rem;font-family:var(--display);font-weight:800;font-stretch:108%;font-size:clamp(2rem,4.4vw,2.7rem);letter-spacing:-.035em;line-height:1.05;color:var(--ink)}
+.sheet .pv.empty{color:var(--hair-2)}
+.sheet dl{margin:1.2rem 0 0;display:grid}
+.sheet dl div{display:grid;grid-template-columns:7.2rem minmax(0,1fr);gap:.8rem;padding:.6rem 0;border-top:1px solid var(--hair)}
+.sheet dt{font-family:var(--display);font-weight:600;font-size:.54rem;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-3);padding-top:.2rem}
+.sheet dd{margin:0;font-size:.92rem;line-height:1.5;color:var(--ink);overflow-wrap:anywhere}
+.sheet dd.mute{color:var(--hair-2)}
+.meter{margin-top:1.3rem;padding-top:1.1rem;border-top:1px solid var(--hair)}
+.meter .mh{display:flex;justify-content:space-between;align-items:baseline;gap:1rem}
+.meter .mh span{font-family:var(--display);font-weight:600;font-size:.54rem;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-3)}
+.meter .mh b{font-family:var(--display);font-weight:700;font-size:.9rem;color:var(--navy)}
+.meter .bars{display:grid;grid-template-columns:repeat(4,1fr);gap:4px;margin-top:.6rem}
+.meter .bars i{height:6px;background:var(--hair);transition:background .35s var(--ease)}
+.meter .bars i.f{background:var(--navy)}
+.meter ul{margin:.8rem 0 0;padding:0;list-style:none;display:grid;gap:.35rem}
+.meter li{font-size:.84rem;line-height:1.5;color:var(--ink-2);padding-left:1rem;position:relative}
+.meter li::before{content:"";position:absolute;left:0;top:.62em;width:6px;height:1px;background:var(--ink-3)}
+.meter .why{margin-top:.8rem;font-size:.76rem;line-height:1.5;color:var(--ink-3)}
+.sent{border:1px solid var(--line);background:var(--noir-2);padding:clamp(1.4rem,3vw,2.2rem)}
+.sent[hidden]{display:none}
+.sent h3{font-size:clamp(1.4rem,2.6vw,1.9rem);letter-spacing:-.03em}
+.sent p{margin-top:.8rem;color:var(--mute);line-height:1.65}
+.sent ol{margin:1.2rem 0 0;padding-left:1.2rem;color:var(--mute);line-height:1.7}
+.sent ol b{color:var(--white)}
+.forms.one{grid-template-columns:1fr}
+@media (min-width:60rem){.forms.one{grid-template-columns:minmax(0,1.2fr) minmax(0,.8fr)}}
+</style>
 </head><body>
 <div class="gate" id="gate" role="dialog" aria-modal="true" aria-labelledby="g-title">
   <div class="gbg" aria-hidden="true"><img src="img/d-front.jpg" alt=""></div>
@@ -927,7 +1014,7 @@ html:not(.gated) .gate{opacity:0;visibility:hidden;pointer-events:none}
 <div class="bar" id="bar">
   <div class="wrap">
     <span class="t">3 Drysdale Place <span>&nbsp;Brassall</span></span>
-    <nav aria-label="Sections"><a href="#home">The home</a><a href="#details">Details</a><a href="#location">Location</a><a href="#suits">Who it suits</a><a href="#act">Inspect or offer</a></nav>
+    <nav aria-label="Sections"><a href="#home">The home</a><a href="#details">Details</a><a href="#location">Location</a><a href="#suits">Who it suits</a><a href="#act">Viewing</a><a href="#offer">Offer</a></nav>
     <a class="btn" href="#act">Book a viewing</a>
   </div>
 </div>
@@ -963,6 +1050,13 @@ html:not(.gated) .gate{opacity:0;visibility:hidden;pointer-events:none}
         <div class="big" style="margin-top:2.2rem">
           <div><b>3</b><span>Bedrooms</span></div><div><b>2</b><span>Baths</span></div><div><b>1</b><span>Garage</span></div><div><b>344</b><span>m² land</span></div>
         </div>
+        <div class="desc">
+          <p>Single level and easy to look after, on a fully fenced 344 m² block a few minutes from Ipswich CBD and the Warrego Highway.</p>
+          <p>The kitchen sits at the centre of the home, with stainless appliances, a gas cooktop and a breakfast bar opening to the dining and living area. The living area is air-conditioned, with ceiling fans through the rest of the house.</p>
+          <p>The master bedroom has its own ensuite and walk-in robe. The other two bedrooms have built-in robes and share the main bathroom, which has a bath and a separate toilet.</p>
+          <p>Sliding doors open to a covered patio and a grassed backyard. Single remote garage with internal access.</p>
+          <p>Leased until April 2027: income from day one for an investor, or a home to move into once the lease ends.</p>
+        </div>
       </div>
       <div>
         <ul>
@@ -982,11 +1076,19 @@ html:not(.gated) .gate{opacity:0;visibility:hidden;pointer-events:none}
 
 <section class="gal" aria-label="Photographs">
   <div class="wrap">
-    <div class="gg">
-      <figure class="w2"><img src="img/d-kitchen.jpg" alt="Kitchen and living"><figcaption>Kitchen and living</figcaption></figure>
-      <figure class="w2"><img src="img/d-lot.jpg" alt="Aerial view of the 344 m² block"><figcaption>The block, 344 m²</figcaption></figure>
+    <div class="gg" id="gg">
+      <figure class="w2"><img src="img/d-kitchen.jpg" alt="Kitchen and dining" loading="lazy" decoding="async"><figcaption>Kitchen and dining</figcaption><button class="gb" type="button" data-i="0" aria-label="Open photo: Kitchen and dining"></button></figure>
+      <figure class="w2"><img src="img/d-living.jpg" alt="Living area" loading="lazy" decoding="async"><figcaption>Living area</figcaption><button class="gb" type="button" data-i="1" aria-label="Open photo: Living area"></button></figure>
+      <figure><img src="img/d-kitchen2.jpg" alt="Kitchen" loading="lazy" decoding="async"><figcaption>Kitchen</figcaption><button class="gb" type="button" data-i="2" aria-label="Open photo: Kitchen"></button></figure>
+      <figure><img src="img/d-bed1.jpg" alt="Master bedroom" loading="lazy" decoding="async"><figcaption>Master bedroom</figcaption><button class="gb" type="button" data-i="3" aria-label="Open photo: Master bedroom"></button></figure>
+      <figure><img src="img/d-ensuite.jpg" alt="Ensuite" loading="lazy" decoding="async"><figcaption>Ensuite</figcaption><button class="gb" type="button" data-i="4" aria-label="Open photo: Ensuite"></button></figure>
+      <figure><img src="img/d-bed2.jpg" alt="Bedroom" loading="lazy" decoding="async"><figcaption>Bedroom</figcaption><button class="gb" type="button" data-i="5" aria-label="Open photo: Bedroom"></button></figure>
+      <figure><img src="img/d-bath.jpg" alt="Main bathroom" loading="lazy" decoding="async"><figcaption>Main bathroom</figcaption><button class="gb" type="button" data-i="6" aria-label="Open photo: Main bathroom"></button></figure>
+      <figure><img src="img/d-patio.jpg" alt="Covered patio" loading="lazy" decoding="async"><figcaption>Covered patio</figcaption><button class="gb" type="button" data-i="7" aria-label="Open photo: Covered patio"></button></figure>
+      <figure><img src="img/d-yard.jpg" alt="Backyard" loading="lazy" decoding="async"><figcaption>Backyard</figcaption><button class="gb" type="button" data-i="8" aria-label="Open photo: Backyard"></button></figure>
+      <figure><img src="img/d-lot.jpg" alt="The block, 344 m²" loading="lazy" decoding="async"><figcaption>The block, 344 m²</figcaption><button class="gb" type="button" data-i="9" aria-label="Open photo: The block, 344 m²"></button></figure>
     </div>
-    <p class="gn">Preview photos. Full professional photography, floor plan and video to follow.</p>
+    <p class="gn">Tap any photo to view it full screen. These are from the 2024 listing; new professional photography, a floor plan and video will follow.</p>
   </div>
 </section>
 
@@ -1046,10 +1148,10 @@ html:not(.gated) .gate{opacity:0;visibility:hidden;pointer-events:none}
 <section class="sec agent" id="act">
   <div class="wrap">
     <div class="head">
-      <div><p class="lab"><i>04</i>Inspect or offer</p><h2 class="h2">Next <span>steps</span></h2></div>
-      <p class="lede">Private viewings are available during the pre-market period. Offers are welcome before the property goes online.</p>
+      <div><p class="lab"><i>04</i>Viewing</p><h2 class="h2">Book a <span>viewing</span></h2></div>
+      <p class="lede">Private viewings run during the pre-market period, before the property goes online.</p>
     </div>
-    <div class="forms">
+    <div class="forms one">
       <div class="fbox">
         <h3>Book a private viewing</h3>
         <p class="sub">Cyril will call to confirm a time. Viewings are arranged with notice to the tenant.</p>
@@ -1063,33 +1165,150 @@ html:not(.gated) .gate{opacity:0;visibility:hidden;pointer-events:none}
           <p class="done" id="v-done" hidden>Thank you. Cyril will call you to confirm a time.</p>
         </form>
       </div>
-      <div class="fbox">
-        <h3>Make an early offer</h3>
-        <p class="sub">Every offer is presented to the owners. An offer here is not a contract.</p>
-        <form class="gform" id="o-form" novalidate>
-          <div class="two"><div><label for="o-name">Name</label><input id="o-name" autocomplete="name" autocapitalize="words"><span class="err" id="o-name-e" hidden>Please add your name.</span></div><div><label for="o-phone">Mobile</label><input id="o-phone" type="tel" inputmode="tel" autocomplete="tel"><span class="err" id="o-phone-e" hidden>Please add a valid mobile.</span></div></div>
-          <div><label for="o-email">Email</label><input id="o-email" type="email" inputmode="email" autocomplete="email" autocapitalize="off" spellcheck="false"><span class="err" id="o-email-e" hidden>Please add a valid email.</span></div>
-          <div><label for="o-type">I am</label><select id="o-type"><option>A buyer</option><option>A buyer’s agent</option></select></div>
-                    <div><label for="o-price">Offer price</label><input id="o-price" inputmode="numeric" placeholder="$"><span class="err" id="o-price-e" hidden>Please enter the full amount, for example 720,000.</span></div>
-          <div class="two">
-            <div><label for="o-fin">Finance</label><select id="o-fin"><option>Subject to finance</option><option>Pre-approved</option><option>Cash, no finance</option></select></div>
-            <div><label for="o-set">Settlement</label><select id="o-set"><option>30 days</option><option>45 days</option><option>60 days</option><option>To discuss</option></select></div>
-          </div>
-          <div><label for="o-cond">Conditions <i>(optional)</i></label><textarea id="o-cond" placeholder="Building and pest, other conditions"></textarea></div>
-          <button class="btn" type="submit" id="o-btn">Send my offer</button>
-          <p class="done" id="o-done" hidden></p>
-        </form>
+      <div>
+        <dl class="cardc">
+          <div class="r"><dt>Agent</dt><dd>Cyril Texier · NGU Real Estate</dd></div>
+          <div class="r"><dt>Mobile</dt><dd><a href="tel:+61402293358">0402 293 358</a></dd></div>
+          <div class="r"><dt>Email</dt><dd>cyril@ngurealestate.com.au</dd></div>
+        </dl>
+        <p class="legal">Prefer to talk first? Call or text Cyril any time. Buyers’ agents are welcome to book on behalf of clients.</p>
       </div>
     </div>
+  </div>
+</section>
+
+<section class="sec agent" id="offer" style="border-top:1px solid var(--line)">
+  <div class="wrap">
+    <div class="head">
+      <div><p class="lab"><i>05</i>Offer</p><h2 class="h2">Build your <span>offer</span></h2></div>
+      <p class="lede">Put your offer together in four short steps. The sheet on the right is exactly what the owners will see, and it shows how your terms read to a seller as you go.</p>
+    </div>
+    <div class="ob">
+      <div>
+        <form class="gform" id="o-form" novalidate>
+          <ol class="steps" aria-hidden="true"><li class="on">Price</li><li>Terms</li><li>You</li><li>Send</li></ol>
+
+          <div class="st" data-s="0">
+            <div><h3>Your price</h3><p class="hint">Enter the full amount. Price guidance is available from Cyril on request.</p></div>
+            <div class="q"><label class="ql" for="o-price">Offer price</label><div class="bigp"><input id="o-price" inputmode="numeric" autocomplete="off" placeholder="000,000" aria-describedby="o-price-e"></div><span class="err" id="o-price-e" hidden>Please enter the full amount, for example 715,000.</span></div>
+            <div class="q"><span class="ql" id="l-dep">Deposit</span>
+              <fieldset class="chips" aria-labelledby="l-dep">
+                <label><input type="radio" name="dep" value="5" checked><span>5%</span></label>
+                <label><input type="radio" name="dep" value="10"><span>10%</span></label>
+                <label><input type="radio" name="dep" value="x"><span>Other amount</span></label>
+              </fieldset>
+              <div class="sub2" id="dep-x" hidden><input id="o-depx" inputmode="numeric" placeholder="$ amount" aria-label="Deposit amount"></div>
+            </div>
+          </div>
+
+          <div class="st" data-s="1" hidden>
+            <div><h3>Your terms</h3><p class="hint">Tap what applies. Leave anything you are unsure about on the default; it can be adjusted with Cyril.</p></div>
+            <div class="q"><span class="ql" id="l-fin">Finance</span>
+              <fieldset class="chips" aria-labelledby="l-fin">
+                <label><input type="radio" name="fin" value="Cash, no finance"><span>Cash, no finance</span></label>
+                <label><input type="radio" name="fin" value="Subject to finance (pre-approved)" checked><span>Finance, pre-approved</span></label>
+                <label><input type="radio" name="fin" value="Subject to finance"><span>Finance, not yet approved</span></label>
+              </fieldset>
+              <div class="sub2" id="fin-d"><span class="ql" id="l-fd" style="margin-top:.4rem">Finance period</span>
+                <fieldset class="chips" aria-labelledby="l-fd">
+                  <label><input type="radio" name="fd" value="14"><span>14 days</span></label>
+                  <label><input type="radio" name="fd" value="21" checked><span>21 days</span></label>
+                  <label><input type="radio" name="fd" value="30"><span>30 days</span></label>
+                </fieldset>
+              </div>
+            </div>
+            <div class="q"><span class="ql" id="l-bp">Building and pest</span>
+              <fieldset class="chips" aria-labelledby="l-bp">
+                <label><input type="radio" name="bp" value="0"><span>Not required</span></label>
+                <label><input type="radio" name="bp" value="7" checked><span>7 days</span></label>
+                <label><input type="radio" name="bp" value="14"><span>14 days</span></label>
+              </fieldset>
+            </div>
+            <div class="q"><span class="ql" id="l-sale">Subject to selling another property</span>
+              <fieldset class="chips" aria-labelledby="l-sale">
+                <label><input type="radio" name="sale" value="No" checked><span>No</span></label>
+                <label><input type="radio" name="sale" value="Yes"><span>Yes</span></label>
+              </fieldset>
+            </div>
+            <div class="q"><span class="ql" id="l-set">Settlement</span>
+              <fieldset class="chips" aria-labelledby="l-set">
+                <label><input type="radio" name="set" value="30 days" checked><span>30 days</span></label>
+                <label><input type="radio" name="set" value="45 days"><span>45 days</span></label>
+                <label><input type="radio" name="set" value="60 days"><span>60 days</span></label>
+                <label><input type="radio" name="set" value="Flexible to suit the owners"><span>Flexible</span></label>
+              </fieldset>
+            </div>
+            <div class="q"><span class="ql" id="l-plan">After purchase</span>
+              <fieldset class="chips" aria-labelledby="l-plan">
+                <label><input type="radio" name="plan" value="Keep the tenant, investment" checked><span>Keep the tenant</span></label>
+                <label><input type="radio" name="plan" value="Move in when the lease ends"><span>Move in after April 2027</span></label>
+              </fieldset>
+            </div>
+            <div class="q"><label class="ql" for="o-cond">Anything else <i>(optional)</i></label><textarea id="o-cond" placeholder="Other conditions or notes for the owners"></textarea></div>
+          </div>
+
+          <div class="st" data-s="2" hidden>
+            <div><h3>Your details</h3><p class="hint">So Cyril can confirm your offer has been presented.</p></div>
+            <div class="two"><div><label for="o-name">Name</label><input id="o-name" autocomplete="name" autocapitalize="words"><span class="err" id="o-name-e" hidden>Please add your name.</span></div><div><label for="o-phone">Mobile</label><input id="o-phone" type="tel" inputmode="tel" autocomplete="tel"><span class="err" id="o-phone-e" hidden>Please add a valid mobile.</span></div></div>
+            <div><label for="o-email">Email</label><input id="o-email" type="email" inputmode="email" autocomplete="email" autocapitalize="off" spellcheck="false"><span class="err" id="o-email-e" hidden>Please add a valid email.</span></div>
+            <div><label for="o-type">I am</label><select id="o-type"><option>A buyer</option><option>A buyer’s agent</option></select></div>
+            <div id="o-cli-w" hidden><label for="o-cli">Buying on behalf of <i>(optional)</i></label><input id="o-cli" autocomplete="off"></div>
+          </div>
+
+          <div class="st" data-s="3" hidden>
+            <div><h3>Check and send</h3><p class="hint">Review the offer sheet. Cyril presents every offer to the owners and will come back to you either way.</p></div>
+            <label class="ack" id="ack-l"><input type="checkbox" id="o-ack"><span>I understand this is an offer to be presented to the owners, not a contract. Nothing is binding until a contract of sale is signed by both parties.</span></label>
+          </div>
+
+          <div class="nav2">
+            <button class="btn line" type="button" id="o-back" hidden>Back</button>
+            <button class="btn" type="button" id="o-next">Continue</button>
+            <button class="btn" type="submit" id="o-btn" hidden>Send my offer</button>
+          </div>
+        </form>
+        <div class="sent" id="o-sent" hidden tabindex="-1">
+          <h3>Offer received.</h3>
+          <p id="o-sent-t"></p>
+          <ol>
+            <li><b>Cyril calls you</b> to confirm the details.</li>
+            <li><b>Your offer goes to the owners</b>, in writing.</li>
+            <li><b>You hear back</b> with their response, whatever it is.</li>
+          </ol>
+        </div>
+      </div>
+
+      <aside class="sheet" aria-live="polite" aria-label="Your offer sheet">
+        <div class="sh"><b>Offer sheet</b><span id="sh-date"></span></div>
+        <p class="addr">3 Drysdale Place, Brassall</p>
+        <p class="pv empty" id="sh-price">$ —</p>
+        <dl>
+          <div><dt>Deposit</dt><dd id="sh-dep" class="mute">—</dd></div>
+          <div><dt>Finance</dt><dd id="sh-fin"></dd></div>
+          <div><dt>Building, pest</dt><dd id="sh-bp"></dd></div>
+          <div><dt>Sale of home</dt><dd id="sh-sale"></dd></div>
+          <div><dt>Settlement</dt><dd id="sh-set"></dd></div>
+          <div><dt>Tenancy</dt><dd id="sh-plan"></dd></div>
+          <div><dt>Buyer</dt><dd id="sh-who" class="mute">—</dd></div>
+        </dl>
+        <div class="meter">
+          <div class="mh"><span>How your terms read</span><b id="m-lab"></b></div>
+          <div class="bars" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+          <ul id="m-tips"></ul>
+          <p class="why">Price aside. Owners weigh certainty and timing too: fewer conditions and shorter periods make an offer easier to accept.</p>
+        </div>
+      </aside>
+    </div>
     <p class="legal">Nothing is binding until a contract of sale is signed by both parties. The seller disclosure statement (Form 2) is provided before any contract is signed.</p>
-    <dl class="cardc" style="margin-top:2.4rem">
-      <div class="r"><dt>Agent</dt><dd>Cyril Texier · NGU Real Estate</dd></div>
-      <div class="r"><dt>Mobile</dt><dd><a href="tel:+61402293358">0402 293 358</a></dd></div>
-      <div class="r"><dt>Email</dt><dd>cyril@ngurealestate.com.au</dd></div>
-    </dl>
   </div>
 </section>
 </main>
+<div class="lb" id="lb" hidden role="dialog" aria-modal="true" aria-label="Photo viewer">
+  <img id="lb-img" alt="">
+  <button class="p arrow" type="button" id="lb-p" aria-label="Previous photo">‹</button>
+  <button class="n arrow" type="button" id="lb-n" aria-label="Next photo">›</button>
+  <button class="c" type="button" id="lb-c" aria-label="Close">×</button>
+  <p class="cap" id="lb-cap"></p>
+</div>
 
 <footer class="foot">
   <div class="wrap g">
@@ -1137,18 +1356,72 @@ html:not(.gated) .gate{opacity:0;visibility:hidden;pointer-events:none}
       if(!sent) $('v-done').textContent='Please call or text Cyril on 0402 293 358 to book your viewing.';
     });
   });
-  var price=$('o-price');
+  /* ---------- offer builder ---------- */
+  var price=$('o-price'), F=$('o-form'), step=0, steps=[].slice.call(F.querySelectorAll('.st')), lis=[].slice.call(F.querySelectorAll('.steps li'));
   function num(v){return parseInt(String(v).replace(/[^\d]/g,''),10)||0;}
-  price.addEventListener('blur',function(){var n=num(price.value); if(n>=1000) price.value='$'+n.toLocaleString('en-AU');});
-  $('o-form').addEventListener('submit',function(e){
-    e.preventDefault(); var n=num(price.value);
-    if(!flag('o-price',n<100000)){price.focus();return;}
-    var w=details('o'); if(!w)return; $('o-btn').disabled=true;
-    send({_subject:'3 Drysdale VIP : OFFRE $'+n.toLocaleString('en-AU')+', '+w.name,'Offre':'$'+n.toLocaleString('en-AU'),'Financement':$('o-fin').value,'Règlement':$('o-set').value,'Conditions':$('o-cond').value||'—','Nom':w.name,'Mobile':w.phone,'Email':w.email,'Profil':w.type,'Bien':ADDR,'Date':when()}).then(function(sent){
-      $('o-btn').disabled=false; var d=$('o-done'); d.hidden=false;
-      d.textContent=sent?'Thank you. Your offer of $'+n.toLocaleString('en-AU')+' has reached Cyril, who will be in touch.':'Your offer could not be sent from this page. Please call or text Cyril on 0402 293 358.';
+  function money(n){return '$'+n.toLocaleString('en-AU');}
+  function val(n){var r=F.querySelector('input[name="'+n+'"]:checked');return r?r.value:'';}
+  function fmt(el){var n=num(el.value); el.value=n?n.toLocaleString('en-AU'):'';}
+  price.addEventListener('input',function(){var pos=price.value.length-price.selectionStart;fmt(price);try{price.setSelectionRange(price.value.length-pos,price.value.length-pos);}catch(e){}if(num(price.value)>=100000)flag('o-price',false);paint();});
+  $('o-depx').addEventListener('input',function(){fmt(this);paint();});
+  $('sh-date').textContent=new Date().toLocaleDateString('en-AU',{day:'numeric',month:'short',year:'numeric',timeZone:'Australia/Brisbane'});
+  function deposit(){var p=num(price.value),d=val('dep');if(d==='x'){var x=num($('o-depx').value);return x?money(x):'';}return p?money(Math.round(p*d/100))+' ('+d+'%)':d+'%';}
+  function terms(){var fin=val('fin'),cash=fin.indexOf('Cash')===0;
+    return {fin:fin,cash:cash,fd:cash?'':val('fd'),bp:val('bp'),sale:val('sale'),set:val('set'),plan:val('plan'),
+      finTxt:cash?'Cash, no finance':fin+', '+val('fd')+' days',bpTxt:val('bp')==='0'?'Not required':val('bp')+' days',
+      saleTxt:val('sale')==='Yes'?'Subject to sale':'Not required'};}
+  function score(t){var s=0,tips=[];
+    if(t.cash)s+=3;else{s+=t.fin.indexOf('pre-approved')>0?1.5:0;s+=t.fd==='14'?1:t.fd==='21'?.5:0;
+      if(t.fin.indexOf('pre-approved')<0)tips.push('Getting finance pre-approval before you offer gives the owners more certainty.');
+      else if(t.fd==='30')tips.push('A shorter finance period, if your lender can meet it, is easier to accept.');}
+    s+=t.bp==='0'?1.5:t.bp==='7'?1:0; if(t.bp==='14')tips.push('Seven days is usually enough for a building and pest inspection.');
+    if(t.sale==='Yes'){s-=3;tips.unshift('An offer subject to selling another home carries the most risk for the owners. Talk to Cyril about options.');}
+    var dv=val('dep'); if(dv==='10')s+=1; else if(dv==='x'){var p=num(price.value),x=num($('o-depx').value); if(p&&x/p>=.1)s+=1;}
+    if(t.set.indexOf('Flexible')===0)s+=1;
+    var lv=s>=5?4:s>=3.5?3:s>=1.5?2:1; return {lv:lv,lab:['','Conditional','Standard','Strong','Very firm'][lv],tips:tips.slice(0,2)};}
+  function paint(){var p=num(price.value),t=terms(),sc=score(t),pe=$('sh-price');
+    pe.textContent=p>=1000?money(p):'$ —'; pe.classList.toggle('empty',p<1000);
+    var d=deposit(); $('sh-dep').textContent=d||'—'; $('sh-dep').classList.toggle('mute',!d);
+    $('sh-fin').textContent=t.finTxt; $('sh-bp').textContent=t.bpTxt; $('sh-sale').textContent=t.saleTxt; $('sh-set').textContent=t.set; $('sh-plan').textContent=t.plan;
+    var n=$('o-name').value.trim(),ag=$('o-type').value.indexOf('agent')>0,cl=$('o-cli').value.trim();
+    $('sh-who').textContent=n?(ag?n+', buyer’s agent'+(cl?' for '+cl:''):n):'—'; $('sh-who').classList.toggle('mute',!n);
+    $('fin-d').hidden=t.cash; $('dep-x').hidden=val('dep')!=='x'; $('o-cli-w').hidden=!ag;
+    [].forEach.call(document.querySelectorAll('.meter .bars i'),function(b,i){b.classList.toggle('f',i<sc.lv);});
+    $('m-lab').textContent=sc.lab; $('m-tips').innerHTML=''; sc.tips.forEach(function(x){var li=document.createElement('li');li.textContent=x;$('m-tips').appendChild(li);});
+    if(!sc.tips.length){var li=document.createElement('li');li.textContent=sc.lv>=3?'Clean terms. The owners will see a straightforward offer.':'Fair terms. Price and timing will do the rest.';$('m-tips').appendChild(li);}}
+  F.addEventListener('change',paint); F.addEventListener('input',function(e){if(e.target!==price)paint();});
+  function show(i){step=i;steps.forEach(function(st,k){st.hidden=k!==i;});lis.forEach(function(l,k){l.className=k<i?'ok':k===i?'on':'';});
+    $('o-back').hidden=i===0; $('o-next').hidden=i===3; $('o-btn').hidden=i!==3;
+    var top=F.getBoundingClientRect().top; if(top<0||top>window.innerHeight*.5)F.scrollIntoView({behavior:'smooth',block:'start'});
+    var f=steps[i].querySelector('input:not([type=radio]):not([type=checkbox]),textarea'); if(f&&i!==1&&window.matchMedia('(hover:hover)').matches)f.focus({preventScroll:true});}
+  function check(i){if(i===0){if(!flag('o-price',num(price.value)<100000)){price.focus();return false;}if(val('dep')==='x'&&!num($('o-depx').value)){$('o-depx').focus();return false;}}
+    if(i===2&&!details('o'))return false; return true;}
+  $('o-next').addEventListener('click',function(){if(check(step))show(step+1);});
+  $('o-back').addEventListener('click',function(){show(step-1);});
+  F.addEventListener('keydown',function(e){if(e.key==='Enter'&&e.target.tagName==='INPUT'&&step<3){e.preventDefault();$('o-next').click();}});
+  F.addEventListener('submit',function(e){
+    e.preventDefault(); if(step<3){$('o-next').click();return;}
+    if(!$('o-ack').checked){$('ack-l').classList.add('bad');$('o-ack').focus();return;} $('ack-l').classList.remove('bad');
+    var w=details('o'); if(!w){show(2);return;} var n=num(price.value),t=terms(),sc=score(t); $('o-btn').disabled=true; $('o-btn').textContent='Sending…';
+    send({_subject:'3 Drysdale VIP : OFFRE '+money(n)+', '+w.name,'Offre':money(n),'Dépôt':deposit()||'—','Financement':t.finTxt,'Building & pest':t.bpTxt,'Sous réserve de vente':t.sale,'Règlement':t.set,'Après achat':t.plan,'Conditions':$('o-cond').value||'—','Lecture des conditions':sc.lab,'Nom':w.name,'Mobile':w.phone,'Email':w.email,'Profil':w.type+($('o-cli').value.trim()?' pour '+$('o-cli').value.trim():''),'Bien':ADDR,'Date':when()}).then(function(sent){
+      $('o-btn').disabled=false; $('o-btn').textContent='Send my offer';
+      if(!sent){$('o-sent-t').textContent='Your offer could not be sent from this page. Please call or text Cyril on 0402 293 358 and he will take it down.';}
+      else{$('o-sent-t').textContent='Your offer of '+money(n)+' has reached Cyril. Keep the sheet alongside for your records.';}
+      F.hidden=true; $('o-sent').hidden=false; $('o-sent').focus();
     });
   });
+  paint();
+  /* ---------- lightbox ---------- */
+  var figs=[].slice.call(document.querySelectorAll('#gg figure')),lb=$('lb'),li=0,lastF=null;
+  function lbShow(i){li=(i+figs.length)%figs.length;var im=figs[li].querySelector('img');$('lb-img').src=im.src;$('lb-img').alt=im.alt;$('lb-cap').innerHTML='';$('lb-cap').appendChild(document.createTextNode(im.alt));var b=document.createElement('b');b.textContent=(li+1)+' / '+figs.length;$('lb-cap').appendChild(b);}
+  function lbOpen(i){lastF=document.activeElement;lbShow(i);lb.hidden=false;document.body.style.overflow='hidden';$('lb-c').focus();}
+  function lbClose(){lb.hidden=true;document.body.style.overflow='';if(lastF)lastF.focus();}
+  document.querySelectorAll('#gg .gb').forEach(function(b){b.addEventListener('click',function(){lbOpen(+b.getAttribute('data-i'));});});
+  $('lb-p').addEventListener('click',function(){lbShow(li-1);}); $('lb-n').addEventListener('click',function(){lbShow(li+1);}); $('lb-c').addEventListener('click',lbClose);
+  lb.addEventListener('click',function(e){if(e.target===lb)lbClose();});
+  document.addEventListener('keydown',function(e){if(lb.hidden)return;if(e.key==='Escape')lbClose();else if(e.key==='ArrowLeft')lbShow(li-1);else if(e.key==='ArrowRight')lbShow(li+1);});
+  var tx=null; lb.addEventListener('touchstart',function(e){tx=e.touches[0].clientX;},{passive:true});
+  lb.addEventListener('touchend',function(e){if(tx===null)return;var dx=e.changedTouches[0].clientX-tx;if(Math.abs(dx)>40)lbShow(li+(dx<0?1:-1));tx=null;},{passive:true});
   /* sticky bar and progress */
   var bar=$('bar'),prog=$('prog'),hero=document.querySelector('.hero'),tick=false;
   var links=[].slice.call(document.querySelectorAll('.bar nav a')),secs=links.map(function(a){return document.querySelector(a.getAttribute('href'));});

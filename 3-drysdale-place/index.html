@@ -874,6 +874,25 @@ html:not(.gated) .gate{opacity:0;visibility:hidden;pointer-events:none}
   .need{gap:1.4rem}
 }
 </style>
+<style>
+.pc{margin-top:clamp(2.8rem,5vw,4rem)}
+.pc h3{font-size:clamp(1.3rem,2.2vw,1.7rem);letter-spacing:-.025em}
+.pc .pl{margin-top:.6rem;color:var(--ink-2);max-width:44rem;line-height:1.65}
+.pcg{display:grid;grid-template-columns:1fr;gap:1.2rem;margin-top:1.6rem}
+@media (min-width:60rem){.pcg{grid-template-columns:1fr 1fr}}
+.pcc{background:var(--paper-2);border:1px solid var(--hair);padding:clamp(1.1rem,2.6vw,1.6rem)}
+.pcc h4{margin:0;font-family:var(--display);font-weight:700;font-size:.62rem;letter-spacing:.22em;text-transform:uppercase;color:var(--navy)}
+.pcc table{width:100%;border-collapse:collapse;margin-top:1rem;font-size:.9rem;table-layout:fixed}
+.pcc th,.pcc td{text-align:left;vertical-align:top;padding:.7rem .6rem .7rem 0;border-top:1px solid var(--hair);line-height:1.5}
+.pcc thead th{border-top:0;font-family:var(--display);font-weight:600;font-size:.54rem;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-3);padding-top:0}
+.pcc thead th.up{color:var(--navy)}
+.pcc td{color:var(--ink-3)}
+.pcc td.up{color:var(--ink);background:var(--band);padding-left:.6rem}
+.pcc thead th.up{padding-left:.6rem}
+.pcc tbody th{font-weight:500;color:var(--ink-2);font-size:.84rem;width:24%}
+.pcc thead th:first-child{width:24%}
+@media (max-width:30rem){.pcc table{font-size:.82rem}.pcc tbody th{font-size:.76rem}}
+</style>
 </head><body>
 <div class="gate" id="gate" role="dialog" aria-modal="true" aria-labelledby="g-title">
   <div class="gbg" aria-hidden="true"><img src="img/d-front.jpg" alt=""></div>
@@ -1214,6 +1233,7 @@ html:not(.gated) .gate{opacity:0;visibility:hidden;pointer-events:none}
         <div class="gh"><b>Médias et lancement</b><span></span></div>
         <label class="it" data-p="0" data-g="media"><input class="sw" type="checkbox" checked><span class="nm">Photos, plan, visite 360° et drone<small>Photographie 550 $, plan 150 $, visite 360° 350 $, drone 250 $.</small></span><span class="pr"><s style="color:var(--ink-3);font-weight:400;margin-right:.4rem">1 300 $</s>0 $<em>Pris en charge</em></span></label>
         <label class="it" data-p="1100" data-g="media"><input class="sw" type="checkbox" checked><span class="nm">Vidéo professionnelle<small>Tournée le même jour que les photos. Celle qui circule le plus loin sur les réseaux.</small></span><span class="pr">1 100 $<em>Recommandé</em></span></label>
+        <label class="it" data-p="500" data-g="media"><input class="sw" type="checkbox"><span class="nm">Campagne publicitaire réseaux sociaux<small>Publicités payantes sur Facebook et Instagram, ciblées par zone et par profil d’acheteur, en plus des pages NGU. En option.</small></span><span class="pr">500 $</span></label>
         <div class="gh"><b>Sur place</b><span></span></div>
         <label class="it" data-p="310" data-g="social"><input class="sw" type="checkbox" checked><span class="nm">Panneau « À vendre »<small>Posé devant la maison pendant toute la campagne.</small></span><span class="pr">310 $<em>Recommandé</em></span></label>
         <label class="it" data-p="150" data-g="social"><input class="sw" type="checkbox" checked><span class="nm">50 brochures professionnelles<small>Remises aux acheteurs lors des visites.</small></span><span class="pr">150 $<em>Recommandé</em></span></label>
@@ -1249,6 +1269,35 @@ html:not(.gated) .gate{opacity:0;visibility:hidden;pointer-events:none}
         <div class="nv"><span>Pris en charge par Team Cyril</span><b>1 300 $</b></div>
         <p class="pay">Le marketing est payable avant le lancement ou, à votre convenance, au règlement de la vente. La commission n’est due qu’en cas de vente. Vendue en pré-marché : seul le pack photo est facturé.</p>
       </aside>
+    </div>
+
+    <div class="pc">
+      <h3>Annonce standard ou annonce mise en avant</h3>
+      <p class="pl">Ce que les deux options portails recommandées changent, comparé à une annonce standard sur chaque site.</p>
+      <div class="pcg">
+        <div class="pcc">
+          <h4>realestate.com.au</h4>
+          <table>
+            <thead><tr><th></th><th>Standard</th><th class="up">Premiere + Audience Maximiser Gold</th></tr></thead>
+            <tbody>
+              <tr><th>Position</th><td>Parmi les autres annonces, descend à chaque nouvelle mise en ligne</td><td class="up">En tête des résultats de recherche du secteur</td></tr>
+              <tr><th>Format</th><td>Format standard</td><td class="up">Grand format, plus de photos dans les résultats</td></tr>
+              <tr><th>Hors du site</th><td>Vue seulement par ceux qui cherchent sur le site</td><td class="up">Publicités sur Facebook, Instagram et des centaines de sites, auprès des acheteurs qui ont cherché un bien similaire</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="pcc">
+          <h4>Domain</h4>
+          <table>
+            <thead><tr><th></th><th>Standard</th><th class="up">Platinum Edge + Social Boost</th></tr></thead>
+            <tbody>
+              <tr><th>Position</th><td>Parmi les autres annonces</td><td class="up">Premier rang dans les résultats</td></tr>
+              <tr><th>Durée</th><td>Durée limitée</td><td class="up">Sans limite de durée, jusqu’à la vente</td></tr>
+              <tr><th>Hors du site</th><td>Aucune diffusion</td><td class="up">Facebook, Instagram et Google au lancement, puis campagne Social Boost ciblée avec les données acheteurs de Domain</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
     </div>
   </div>
 </section>
