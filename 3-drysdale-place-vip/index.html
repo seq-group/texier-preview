@@ -1051,6 +1051,25 @@ html.fx .fxi.seen{opacity:1;transform:none}
 .hero h1 .l{font-weight:300!important;letter-spacing:-.03em!important}
 .gcard h1 span{font-weight:300!important}
 </style>
+<style>
+#g-form{margin-top:1.6rem}
+#g-form .gbtn{margin-top:.5rem}
+.gform .gor{margin-top:-.3rem;font-size:.8rem;color:var(--mute-2)}
+.gform .gor.bad{color:#F0A592}
+.ledger{display:grid;grid-template-columns:1fr;gap:1px;background:var(--hair);border:1px solid var(--hair)}
+@media (min-width:56rem){.ledger{grid-template-columns:1fr 1fr}}
+.ledger .lg{background:var(--paper-2);padding:clamp(1.3rem,3vw,2rem)}
+.ledger h3{font-family:var(--display);font-weight:600;font-size:.62rem;letter-spacing:.26em;text-transform:uppercase;color:var(--ink-3)}
+.ledger dl{margin:.6rem 0 0}
+.ledger dl>div{display:grid;grid-template-columns:8.5rem minmax(0,1fr);gap:1rem;padding:.95rem 0;border-top:1px solid var(--hair)}
+.ledger dl>div:first-child{border-top:0}
+.ledger dt{font-size:.86rem;color:var(--ink-3);padding-top:.2rem}
+.ledger dd{margin:0;font-size:.98rem;line-height:1.5;color:var(--ink)}
+.ledger dd b{font-family:var(--display);font-weight:800;font-stretch:110%;font-size:1.5rem;letter-spacing:-.04em;margin-right:.3rem;white-space:nowrap}
+.ledger dd span{display:block;margin-top:.2rem;font-size:.84rem;line-height:1.5;color:var(--ink-2)}
+.ledger .src{margin-top:1rem;font-size:.78rem;line-height:1.55;color:var(--ink-3)}
+@media (max-width:30rem){.ledger dl>div{grid-template-columns:1fr;gap:.2rem}}
+</style>
 </head><body>
 <div class="gate" id="gate" role="dialog" aria-modal="true" aria-labelledby="g-title">
   <div class="gbg" aria-hidden="true"><img src="img/d-front.jpg" alt=""></div>
@@ -1063,12 +1082,17 @@ html.fx .fxi.seen{opacity:1;transform:none}
     <p class="k"><span class="vip">VIP</span>Private pre-market</p>
     <h1 id="g-title"><span>3 Drysdale</span>Place</h1>
     <p class="why">You’re receiving this as a valued NGU buyer. 3 Drysdale Place is being shown privately, before it goes online.</p>
-    <button class="btn gbtn" type="button" id="g-btn">View the property</button>
-    <div class="gagent">
-      <b>Buyer’s agent?</b>
-      <p>You’re welcome to view, book inspections and submit offers on behalf of your clients.</p>
-      <button class="btn line" type="button" id="g-agent">Enter as a buyer’s agent</button>
-    </div>
+    <form class="gform" id="g-form" novalidate>
+      <div><label for="g-name">Name</label><input id="g-name" autocomplete="name" autocapitalize="words"><span class="err" id="g-name-e" hidden>Please add your name.</span></div>
+      <div class="two">
+        <div><label for="g-phone">Mobile</label><input id="g-phone" type="tel" inputmode="tel" autocomplete="tel"><span class="err" id="g-phone-e" hidden>Please check the number.</span></div>
+        <div><label for="g-email">Email</label><input id="g-email" type="email" inputmode="email" autocomplete="email" autocapitalize="off" spellcheck="false"><span class="err" id="g-email-e" hidden>Please check the email.</span></div>
+      </div>
+      <p class="gor" id="g-or">Mobile or email. One is enough.</p>
+      <div><label for="g-type">I am</label><select id="g-type"><option>A buyer</option><option>A buyer’s agent</option></select></div>
+      <div class="hp" aria-hidden="true"><input id="g-hp" tabindex="-1" autocomplete="off"></div>
+      <button class="btn gbtn" type="submit" id="g-btn">View the property</button>
+    </form>
     <p class="tel">Questions? Cyril Texier, <a href="tel:+61402293358">0402 293 358</a></p>
   </div>
 </div>
@@ -1170,15 +1194,35 @@ html.fx .fxi.seen{opacity:1;transform:none}
         <span class="k">Pre-market price guidance is given by Cyril directly. Call or book a viewing below.</span>
       </div>
       <div class="side">
-        <div><span class="v">Leased</span><span class="k">Tenancy until April 2027. Rent and lease details on request. Owner-occupiers can buy now and move in when the lease ends.</span></div>
-        <div><span class="v">Ipswich</span><span class="k">Ipswich City Council. Council and water rates on request.</span></div>
+        <div><span class="v">Leased</span><span class="k">$530 a week until 10 April 2027. Owner-occupiers can buy now and move in when the lease ends.</span></div>
+        <div><span class="v">Ipswich</span><span class="k">Ipswich City Council. Rates and water charges below.</span></div>
         <div><span class="v">344 m²</span><span class="k">Fully fenced freehold block. Title search and seller disclosure (Form 2) provided before any contract.</span></div>
+      </div>
+    </div>
+    <div class="ledger" id="outgoings">
+      <div class="lg">
+        <h3>Lease</h3>
+        <dl>
+          <div><dt>Rent</dt><dd><b>$530</b>per week<span>$27,560 a year</span></dd></div>
+          <div><dt>Term</dt><dd>Fixed term, 11 April 2026 to 10 April 2027</dd></div>
+          <div><dt>Bond</dt><dd>$2,120, lodged with the RTA</dd></div>
+          <div><dt>Tenant pays</dt><dd>Water usage, electricity, gas and phone</dd></div>
+        </dl>
+      </div>
+      <div class="lg">
+        <h3>Rates and water</h3>
+        <dl>
+          <div><dt>Council rates</dt><dd><b>$644.25</b>per quarter<span>Paid by the due date ($677.25 after). $2,577 a year at the current rate.</span></dd></div>
+          <div><dt>Water and sewerage</dt><dd><b>$246.05</b>per quarter<span>Fixed charges. $984 a year at the current rate.</span></dd></div>
+          <div><dt>Water usage</dt><dd>Paid by the tenant<span>$63.90 last quarter, 14 kL over 91 days</span></dd></div>
+        </dl>
+        <p class="src">Ipswich City Council notice for 1 October to 31 December 2026. Urban Utilities account for 21 July to 19 October 2026. Yearly figures are the current quarter times four; rates are reset each July.</p>
       </div>
     </div>
     <div class="pack">
       <div>
         <h3>Information pack</h3>
-        <p>Price guidance, lease details, council and water rates, and the seller disclosure (Form 2) once it is ready. Sent to you by Cyril.</p>
+        <p>Price guidance and the seller disclosure (Form 2) once it is ready. Sent to you by Cyril.</p>
       </div>
       <form class="pform" id="p-form" novalidate>
         <input id="p-name" autocomplete="name" autocapitalize="words" placeholder="Name" aria-label="Name">
@@ -1218,7 +1262,7 @@ html.fx .fxi.seen{opacity:1;transform:none}
     <div class="fit">
       <div><span class="no">01</span><h3>First home buyers</h3><p>Three bedrooms, two bathrooms and a low-maintenance block. Buy now and move in within six months, when the lease ends in April 2027.</p></div>
       <div><span class="no">02</span><h3>Downsizers</h3><p>Single level, easy to look after, close to Ipswich and its shops.</p></div>
-      <div><span class="no">03</span><h3>Investors</h3><p>Leased until April 2027. Lease details and rental information in the pack.</p></div>
+      <div><span class="no">03</span><h3>Investors</h3><p>Leased at $530 a week until April 2027.</p></div>
     </div>
   </div>
 </section>
@@ -1417,7 +1461,7 @@ html.fx .fxi.seen{opacity:1;transform:none}
   <div class="wrap g">
     <p class="lab">Notes</p>
     <div>
-      <p>Private pre-market listing shared with registered NGU buyers and buyers’ agents. Features from the previous public listing (2024), to be confirmed at inspection. Drive times are approximate. Preview photography from the 2024 listing; new photography to follow.</p>
+      <p>Private pre-market listing shared with registered NGU buyers and buyers’ agents. Features from the previous public listing (2024), to be confirmed at inspection. Drive times are approximate. Preview photography from the 2024 listing; new photography to follow. Rent and lease terms from the current tenancy agreement; rates and water from the latest Ipswich City Council and Urban Utilities notices.</p>
       <p>Agent: Cyril Texier, licensed real estate agent, NGU Real Estate. All information is provided in good faith; buyers should rely on their own enquiries.</p>
       <p class="ng">Never give up.</p>
     </div>
@@ -1437,14 +1481,27 @@ html.fx .fxi.seen{opacity:1;transform:none}
   var who=null; try{who=JSON.parse(localStorage.getItem('d3v.who')||'null');}catch(e){}
   function enter(){try{sessionStorage.setItem('d3v.pass','1');}catch(e){}root.classList.remove('gated');window.scrollTo(0,0);window.dispatchEvent(new Event('scroll'));}
   function device(){var u=navigator.userAgent;return /iPhone/.test(u)?'iPhone':/iPad/.test(u)?'iPad':/Android/.test(u)?'Android':/Mac/.test(u)?'Mac':/Windows/.test(u)?'Windows':'Autre';}
-  function open(role,btn){
-    try{sessionStorage.setItem('d3v.role',role);}catch(e){}
-    if(role==='agent'){['v-type','o-type'].forEach(function(id){$(id).value='A buyer’s agent';});}
-    btn.disabled=true; btn.textContent='Opening…'; var go=setTimeout(enter,1200);
-    var n=0;try{n=+(localStorage.getItem('d3v.n')||0)+1;localStorage.setItem('d3v.n',n);}catch(e){}
-    send({_subject:'3 Drysdale VIP : page ouverte'+(role==='agent'?' (buyer’s agent)':'')+(who&&who.name?', '+who.name:''),'Profil':role==='agent'?'Buyer’s agent':'Acheteur','Ouverture n°':n||'—','Appareil':device(),'Contact connu':who&&who.name?who.name+' · '+(who.phone||'')+' · '+(who.email||''):'—','Date':when(),'Page':location.href}).then(function(){clearTimeout(go);enter();});
+  function enter2(btn){btn.disabled=true;btn.textContent='Opening…';}
+  if(root.classList.contains('gated')){
+    if(who){$('g-name').value=who.name||'';$('g-phone').value=who.phone||'';$('g-email').value=who.email||'';if(who.type)$('g-type').value=who.type;}
+    $('g-form').addEventListener('submit',function(e){
+      e.preventDefault(); if($('g-hp').value)return;
+      var name=$('g-name').value.trim(),rawP=$('g-phone').value.trim(),phone=rawP?auPhone(rawP):'',mail=$('g-email').value.trim(),none=!rawP&&!mail;
+      var ok=flag('g-name',name.length<2); ok=flag('g-phone',!!rawP&&!phone)&&ok; ok=flag('g-email',!!mail&&!okEmail(mail))&&ok;
+      $('g-or').classList.toggle('bad',none); if(none)ok=false;
+      if(!ok){var b=$('g-form').querySelector('input.bad')||$('g-phone');b.focus();return;}
+      var type=$('g-type').value,agent=type!=='A buyer';
+      who=Object.assign({},who||{},{name:name,phone:phone||'',email:mail||'',type:type}); try{localStorage.setItem('d3v.who',JSON.stringify(who));}catch(err){}
+      try{sessionStorage.setItem('d3v.role',agent?'agent':'buyer');}catch(err){}
+      ['v','o'].forEach(function(f){$(f+'-name').value=who.name;$(f+'-phone').value=who.phone;$(f+'-email').value=who.email;$(f+'-type').value=type;});
+      $('p-name').value=who.name; if(who.email)$('p-email').value=who.email;
+      var btn=$('g-btn'); enter2(btn); var go=setTimeout(enter,1500);
+      var n=0;try{n=+(localStorage.getItem('d3v.n')||0)+1;localStorage.setItem('d3v.n',n);}catch(err){}
+      var d={_subject:'3 Drysdale VIP : page ouverte, '+name+(agent?' (buyer’s agent)':''),'Nom':name,'Mobile':phone||'—','Email':mail||'—','Profil':agent?'Buyer’s agent':'Acheteur','Ouverture n°':n||'—','Appareil':device(),'Date':when(),'Page':location.href};
+      if(mail)d._replyto=mail;
+      send(d).then(function(){clearTimeout(go);enter();});
+    });
   }
-  if(root.classList.contains('gated')){$('g-btn').addEventListener('click',function(){open('buyer',this);});$('g-agent').addEventListener('click',function(){open('agent',this);});}
   try{if(sessionStorage.getItem('d3v.role')==='agent'&&!who){['v-type','o-type'].forEach(function(id){$(id).value='A buyer’s agent';});}}catch(e){}
   ['v','o'].forEach(function(f){if(who){$(f+'-name').value=who.name||'';$(f+'-phone').value=who.phone||'';$(f+'-email').value=who.email||'';if(who.type)$(f+'-type').value=who.type;}});
   function details(f){var name=$(f+'-name').value.trim(),phone=auPhone($(f+'-phone').value),mail=$(f+'-email').value.trim();
